@@ -1,0 +1,78 @@
+		<!-- This file is shared between the DotClear themes OUAIE and ANTHISNES -->
+		<header id="cyHeader" class="cyGrid-1">
+			<div class="cyGrid-2">
+				<div id="cySiteTitle" class="cyGrid-3">
+					<h1><a href="{{tpl:BlogURL}}" title="{{tpl:lang cySiteTitleTooltip}}">{{tpl:lang cySiteTitlePart1}}<span>{{tpl:lang cySiteTitlePart2}}</span>{{tpl:lang cySiteTitlePart3}}</a></h1>
+				</div>
+			</div>
+			<div class="cyGrid-2">
+				<div id="cySiteDescription" class="cyGrid-3">
+					<p>
+						{{tpl:lang cySiteDescription}}
+					</p>	
+				</div>
+			</div>
+			<!-- # --BEHAVIOR-- publicTopAfterContent -->
+			{{tpl:SysBehavior behavior="publicTopAfterContent"}}
+		</header>
+		<tpl:SysIf has_tpl="_ouaie.html">
+			<nav class="cyGrid-1">
+				<div class="cyGrid-2">
+					<div class="cyGrid-3">
+						<div id="cyMenu">
+							<div class="cyMenuItem cyMenuTooltip">
+								<h5><a href="{{tpl:BlogURL}}.."><img src="{{tpl:BlogURL}}../sharedpictures/home.png" class="cyMenuThumbnail" alt="Accueil" /></a></h5>
+								<div>
+									<p><a href="..">Accueil</a></p>
+								</div>
+							</div>
+							<div class="cyMenuItem">
+								<h5><img src="{{tpl:BlogURL}}../sharedpictures/photos.png" class="cyMenuThumbnail" alt="Photos" /></h5>
+								<div>
+									<p class="cyMenuTitle">Photos</p>
+									<p><a href="{{tpl:BlogURL}}../bateauivre/">Le bateau ivre</a></p>
+									<p><a href="{{tpl:BlogURL}}../dimanche/">Dimanche à la campagne</a></p>
+									<p><a href="{{tpl:BlogURL}}../voyage/">Les sept jours du voyage</a></p>
+									<p><a href="{{tpl:BlogURL}}../bois/">Par les bois du Djinn</a></p>
+									<p><a href="{{tpl:BlogURL}}../chanson/">Vieille chanson du jeune temps</a></p>
+									<p><a href="{{tpl:BlogURL}}../jardin/">Au jardin</a></p>
+								</div>
+							</div>
+							<div class="cyMenuItem">
+								<h5><img src="{{tpl:BlogURL}}../sharedpictures/blogs.png" class="cyMenuThumbnail"  alt="Blogs" /></h5>
+								<div>
+									<p class="cyMenuTitle">Blogs</p>
+									<p><a href="http://www.anthisnes.org/">anthisnes.org</a></p>
+									<p><a href="{{tpl:BlogURL}}">wwwouaiebe</a></p>
+								</div>
+							</div>
+							<div class="cyMenuItem">
+								<h5><img src="{{tpl:BlogURL}}../sharedpictures/pages.png" class="cyMenuThumbnail"  alt="Pages" /></h5>
+								<div>
+									<p class="cyMenuTitle">Et aussi...</p>
+									<p><a href="{{tpl:BlogURL}}../TravelNotes/">Travel &amp; Notes</a></p>
+									<p><a href="{{tpl:BlogURL}}pages/nord">En vélo, vers le Nord</a></p>
+									<p><a href="{{tpl:BlogURL}}../creativecommons">License Creative Commons</a></p>
+									<p><a href="{{tpl:BlogURL}}../infolegale/">Informations légales</a></p>
+									<p><a href="{{tpl:BlogURL}}../vieprivee/">Votre vie privée</a></p>
+									<p><a href="https://github.com/wwwouaiebe"  target="_blank">Coding on GitHub ↗</a></p>								
+									<p><a href="https://www.npmjs.com/~wwwouaiebe" target="_blank">NPM packages ↗</a></p>								
+								</div>
+							</div>
+							<div class="cyMenuItem cyMenuTooltip">
+								<h5><a href="{{tpl:BlogURL}}pages/contact"><img src="{{tpl:BlogURL}}../sharedpictures/contact.png" class="cyMenuThumbnail"  alt="Contact" /></a></h5>
+								<div>
+									<p><a href="{{tpl:BlogURL}}pages/contact">Contact</a></p>
+								</div>
+							</div>
+							<div class="cyMenuItem cyMenuTooltip">
+								<h5><a id="cyContrastViewBottom" href="javascript:void(0)" onclick="cyChangeStyleSheet()"><img src="../../../sharedpictures/contraste.png" class="cyMenuThumbnail"  alt="Contact" /></a></h5>
+								<div>
+									<p><script>cySetColorChooser ( )</script><noscript>Affichage</noscript></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>	
+		</tpl:SysIf>
