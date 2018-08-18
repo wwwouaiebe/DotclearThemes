@@ -1,158 +1,8 @@
-msgid "cySiteUrl"
-msgstr "http://www.ouaie.be/"
+msgid "cy403Text"
+msgstr "Ènocint catwaze moussî a sot, fåte http"
 
-msgid "cyAllCategoriesPageTitle"
-msgstr "Les pays"
-
-msgid "cyAllTagsPageTitle"
-msgstr "Les thèmes"
-
-msgid "cyAllArchivesPageTitle"
-msgstr "Le temps passé"
-
-msgid "cySiteTitleTooltip"
-msgstr "aller à l'accueil"
-
-msgid "cySiteTitlePart1"
-msgstr "www"
-
-msgid "cySiteTitlePart2"
-msgstr "ouaie"
-
-msgid "cySiteTitlePart3"
-msgstr "be"
-
-msgid "cySiteDescription"
-msgstr "Écoute, le vent dans les arbres..."
-
-msgid "cyNavigationTitleTop"
-msgstr "Navigation&nbsp;:"
-
-msgid "cyNavigationMenuTopHomeTooltip"
-msgstr "Aller à l'accueil"
-
-msgid "cyNavigationMenuTopHomeText"
-msgstr "Accueil"
-
-msgid "cyNavigationMenuTopContainsTooltip"
-msgstr "Aller au contenu de la page"
-
-msgid "cyNavigationMenuTopContainsText"
-msgstr "Aller au contenu de la page"
-
-msgid "cyNavigationMenuTopCategoryTooltip"
-msgstr "Voyagez de par le monde"
-
-msgid "cyNavigationMenuTopCategoryText"
-msgstr "Voyagez de par le monde"
-
-msgid "cyNavigationMenuTopTagsTooltip"
-msgstr "Parcourez les thèmes"
-
-msgid "cyNavigationMenuTopTagsText"
-msgstr "Parcourez les thèmes"
-
-msgid "cyNavigationMenuTopArchivesTooltip"
-msgstr "Voyagez dans le temps"
-
-msgid "cyNavigationMenuTopArchivesText"
-msgstr "Voyagez dans le temps"
-
-msgid "cyCategoriesTitleTop"
-msgstr "Voyagez de par le monde&nbsp;:"
-
-msgid "cyAllCategoriesMenuTopTooltip"
-msgstr "Voyagez dans tous les pays"
-
-msgid "cyAllCategoriesMenuTopText"
-msgstr "Voyagez dans tous les pays"
-
-msgid "cyTagsTitleTop"
-msgstr "Parcourez les thèmes&nbsp;:"
-
-msgid "cyAllTagsMenuTopTooltip"
-msgstr "Voir tous thèmes"
-
-msgid "cyAllTagsMenuTopText"
-msgstr "Voir tous thèmes"
-
-msgid "cyArchivesTitleTop"
-msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
-
-msgid "cyArchivesMenuTopTooltip"
-msgstr "Voyagez dans le temps jusqu'en "
-
-msgid "cyAllArchivesMenuTopTooltip"
-msgstr "Le temps passé"
-
-msgid "cyAllArchivesMenuTopText"
-msgstr "Le temps passé"
-
-msgid "cyPaginationPreviousText"
-msgstr "&#171; Photos plus anciennes"
-
-msgid "cyPaginationPreviousTooltip"
-msgstr "Photos plus anciennes"
-
-msgid "cyPaginationNextText"
-msgstr "Photos plus récentes &#187;"
-
-msgid "cyPaginationNextTooltip"
-msgstr "Photos plus récentes"
-
-msgid "cyPaginationHomeText"
-msgstr "Début du blog"
-
-msgid "cyPaginationHomeTooltip"
-msgstr "Début du blog"
-
-msgid "cyCategoriesTitleBottom"
-msgstr "Voyagez de par le monde&nbsp;:"
-
-msgid "cyCategoriesMenuBottomTooltip"
-msgstr "Voyagez dans tous les pays"
-
-msgid "cyAllCategoriesMenuBottomTooltip"
-msgstr "Voyagez dans tous les pays"
-
-msgid "cyAllCategoriesMenuBottomText"
-msgstr "Voyagez dans tous les pays"
-
-msgid "cyTagsTitleBottom"
-msgstr "Parcourez les thèmes&nbsp;:"
-
-msgid "cyAllTagsMenuBottomTooltip"
-msgstr "Voir tous thèmes"
-
-msgid "cyAllTagsMenuBottomText"
-msgstr "Voir tous thèmes"
-
-msgid "cyArchivesTitleBottom"
-msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
-
-msgid "cyArchivesMenuBottomTooltip"
-msgstr "Voyagez dans le temps jusqu'en "
-
-msgid "cyAllArchivesMenuBottomTooltip"
-msgstr "Le temps passé"
-
-msgid "cyAllArchivesMenuBottomText"
-msgstr "Le temps passé"
-
-msgid "cyHTMLValidation1"
-msgstr "Cette page est validée"
-
-msgid "cyHTMLValidation2"
-msgstr "XHTML 1.0"
-
-msgid "cyHTMLValidationTooltip"
-msgstr "Vérifier la validité de cette page XHTML 1.0"
-
-msgid "cyCSSValidation1"
-msgstr "&nbsp;&#8599;,"
-
-msgid "cyCSSValidation2"
-msgstr "CSS 3.0"
+msgid "cy404Text"
+msgstr "Oufti bièsse, fåte http"
 
 msgid "cyAAAValidation1"
 msgstr "&nbsp;&#8599; et est"
@@ -163,20 +13,314 @@ msgstr "accessible AAA"
 msgid "cyAAAValidation3"
 msgstr "&nbsp;&#8599;."
 
-msgid "cyCSSValidationTooltip"
-msgstr "Vérifier la validité de la feuille de styles CSS 3.0"
-
 msgid "cyAAAValidationTooltip"
 msgstr "W3C Web accessibility initiative"
 
-msgid "cyPostCopyrightHref"
-msgstr "creativecommons"
+msgid "cyAllArchivesMenuBottomText"
+msgstr "Le temps passé"
 
-msgid "cyPostCopyrightTooltip"
-msgstr "Voir la license Creative Commons"
+msgid "cyAllArchivesMenuBottomTooltip"
+msgstr "Le temps passé"
+
+msgid "cyAllArchivesMenuTopText"
+msgstr "Le temps passé"
+
+msgid "cyAllArchivesMenuTopTooltip"
+msgstr "Le temps passé"
+
+msgid "cyAllArchivesPageTitle"
+msgstr "Le temps passé"
+
+msgid "cyAllCategoriesMenuBottomText"
+msgstr "Voyagez dans tous les pays"
+
+msgid "cyAllCategoriesMenuBottomTooltip"
+msgstr "Voyagez dans tous les pays"
+
+msgid "cyAllCategoriesMenuTopText"
+msgstr "Voyagez dans tous les pays"
+
+msgid "cyAllCategoriesMenuTopTooltip"
+msgstr "Voyagez dans tous les pays"
+
+msgid "cyAllCategoriesPageTitle"
+msgstr "Les pays"
+
+msgid "cyAllTagsMenuBottomText"
+msgstr "Voir toutes les séries"
+
+msgid "cyAllTagsMenuBottomTooltip"
+msgstr "Voir toutes les séries"
+
+msgid "cyAllTagsMenuTopText"
+msgstr "Voir toutes les séries"
+
+msgid "cyAllTagsMenuTopTooltip"
+msgstr "Voir toutes les séries"
+
+msgid "cyAllTagsPageTitle"
+msgstr "Les séries"
+
+msgid "cyArchivesMenuBottomTooltip"
+msgstr "Voyagez dans le temps jusqu'en "
+
+msgid "cyArchivesMenuTopTooltip"
+msgstr "Voyagez dans le temps jusqu'en "
+
+msgid "cyArchivesTitleBottom"
+msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
+
+msgid "cyArchivesTitleTop"
+msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
+
+msgid "cyCategoriesMenuBottomTooltip"
+msgstr "Voyagez dans tous les pays"
+
+msgid "cyCategoriesMenuTopTooltip"
+msgstr "Voyagez dans tous les pays"
+
+msgid "cyCategoriesTitleBottom"
+msgstr "Voyagez de par le monde&nbsp;:"
+
+msgid "cyCategoriesTitleTop"
+msgstr "Voyagez de par le monde&nbsp;:"
+
+msgid "cyChangeDisplayMenuBottomText"
+msgstr ""
+
+msgid "cyChangeDisplayMenuBottomTooltip"
+msgstr ""
+
+msgid "cyChangeDisplayMenuTopText"
+msgstr ""
+
+msgid "cyChangeDisplayMenuTopTooltip"
+msgstr ""
+
+msgid "cyComing1"
+msgstr ""
+
+msgid "cyComing2"
+msgstr ""
+
+msgid "cyCondrozNearMenuBottomText"
+msgstr ""
+
+msgid "cyCondrozNearMenuBottomTooltip"
+msgstr ""
+
+msgid "cyCondrozNearMenuBottomUrl"
+msgstr ""
+
+msgid "cyCondrozNearMenuTopText"
+msgstr ""
+
+msgid "cyCondrozNearMenuTopTooltip"
+msgstr ""
+
+msgid "cyCondrozNearMenuTopUrl"
+msgstr ""
+
+msgid "cyCSSValidation1"
+msgstr "&nbsp;&#8599;,"
+
+msgid "cyCSSValidation2"
+msgstr "CSS 3.0"
+
+msgid "cyCSSValidationTooltip"
+msgstr "Vérifier la validité de la feuille de styles CSS 3.0"
+
+msgid "cyHTMLValidation1"
+msgstr "Cette page est validée"
+
+msgid "cyHTMLValidation2"
+msgstr "HTML 5.0"
+
+msgid "cyHTMLValidationTooltip"
+msgstr "Vérifier la validité de cette page HTML 5.0"
+
+msgid "cyMeuseNearMenuBottomText"
+msgstr ""
+
+msgid "cyMeuseNearMenuBottomTooltip"
+msgstr ""
+
+msgid "cyMeuseNearMenuBottomUrl"
+msgstr ""
+
+msgid "cyMeuseNearMenuTopText"
+msgstr ""
+
+msgid "cyMeuseNearMenuTopTooltip"
+msgstr ""
+
+msgid "cyMeuseNearMenuTopUrl"
+msgstr ""
+
+msgid "cyNavigationMenuTopArchivesText"
+msgstr "Voyagez dans le temps"
+
+msgid "cyNavigationMenuTopArchivesTooltip"
+msgstr "Voyagez dans le temps"
+
+msgid "cyNavigationMenuTopCategoryText"
+msgstr "Voyagez de par le monde"
+
+msgid "cyNavigationMenuTopCategoryTooltip"
+msgstr "Voyagez de par le monde"
+
+msgid "cyNavigationMenuTopContainsText"
+msgstr "Aller au contenu de la page"
+
+msgid "cyNavigationMenuTopContainsTooltip"
+msgstr "Aller au contenu de la page"
+
+msgid "cyNavigationMenuTopHomeText"
+msgstr "Accueil"
+
+msgid "cyNavigationMenuTopHomeTooltip"
+msgstr "Accueil"
+
+msgid "cyNavigationMenuTopNearText"
+msgstr ""
+
+msgid "cyNavigationMenuTopNearTooltip"
+msgstr ""
+
+msgid "cyNavigationMenuTopPagesText"
+msgstr ""
+
+msgid "cyNavigationMenuTopPagesTooltip"
+msgstr ""
+
+msgid "cyNavigationMenuTopTagsText"
+msgstr "Parcourez les séries"
+
+msgid "cyNavigationMenuTopTagsTooltip"
+msgstr "Parcourez les séries"
+
+msgid "cyNavigationTitleTop"
+msgstr "Navigation&nbsp;:"
+
+msgid "cyNearTitleBottom"
+msgstr ""
+
+msgid "cyNearTitleTop"
+msgstr ""
+
+msgid "CyOuaiebeMenuBottomText"
+msgstr ""
+
+msgid "CyOuaiebeMenuBottomTooltip"
+msgstr ""
+
+msgid "CyOuaiebeMenuBottomUrl"
+msgstr ""
+
+msgid "CyOuaiebeMenuTopText"
+msgstr ""
+
+msgid "CyOuaiebeMenuTopTooltip"
+msgstr ""
+
+msgid "CyOuaiebeMenuTopUrl"
+msgstr ""
+
+msgid "cyOurtheNearMenuBottomText"
+msgstr ""
+
+msgid "cyOurtheNearMenuBottomTooltip"
+msgstr ""
+
+msgid "cyOurtheNearMenuBottomUrl"
+msgstr ""
+
+msgid "cyOurtheNearMenuTopText"
+msgstr ""
+
+msgid "cyOurtheNearMenuTopTooltip"
+msgstr ""
+
+msgid "cyOurtheNearMenuTopUrl"
+msgstr ""
+
+msgid "cyPagesTitleBottom"
+msgstr ""
+
+msgid "cyPagesTitleTop"
+msgstr ""
+
+msgid "cyPaginationHomeText"
+msgstr "Début du blog"
+
+msgid "cyPaginationHomeTooltip"
+msgstr "Début du blog"
+
+msgid "cyPaginationNextText"
+msgstr "Photos plus récentes &#187;"
+
+msgid "cyPaginationNextTooltip"
+msgstr "Photos plus récentes"
+
+msgid "cyPaginationPreviousText"
+msgstr "&#171; Photos plus anciennes"
+
+msgid "cyPaginationPreviousTooltip"
+msgstr "Photos plus anciennes"
+
+msgid "cyParcoursArtistes2016MenuBottomText"
+msgstr ""
+
+msgid "cyParcoursArtistes2016MenuBottomTooltip"
+msgstr ""
+
+msgid "cyParcoursArtistes2016MenuBottomUrl"
+msgstr ""
+
+msgid "cyParcoursArtistes2016MenuTopText"
+msgstr ""
+
+msgid "cyParcoursArtistes2016MenuTopTooltip"
+msgstr ""
+
+msgid "cyParcoursArtistes2016MenuTopUrl"
+msgstr ""
+
+msgid "cyParcoursArtistesMenuBottomText"
+msgstr ""
+
+msgid "cyParcoursArtistesMenuBottomTooltip"
+msgstr ""
+
+msgid "cyParcoursArtistesMenuBottomUrl"
+msgstr ""
+
+msgid "cyParcoursArtistesMenuTopText"
+msgstr ""
+
+msgid "cyParcoursArtistesMenuTopTooltip"
+msgstr ""
+
+msgid "cyParcoursArtistesMenuTopUrl"
+msgstr ""
+
+msgid "cyPostCategoryText"
+msgstr ""
+
+msgid "cyPostCategoryTooltip"
+msgstr ""
+
+msgid "cyPostCommentSubmitted"
+msgstr "Votre commentaire a été envoyé. Notez qu'il doit être approuvé par le responsable du site et que cela peut prendre du temps..."
+
+msgid "cyPostCopyrightHref"
+msgstr "/creativecommons"
 
 msgid "cyPostCopyrightText"
 msgstr "&#169; "
+
+msgid "cyPostCopyrightTooltip"
+msgstr "Voir la license Creative Commons"
 
 msgid "cyPostDateText1"
 msgstr "Photo réalisée le "
@@ -188,17 +332,28 @@ msgid "cyPostDateText3"
 msgstr " heures "
 
 msgid "cyPostTagsText"
-msgstr "Thèmes&nbsp;:"
+msgstr "Série&nbsp;:"
 
-msgid "cyPostCategoryTooltip"
-msgstr "Laissez-vous pousser par le vent vers "
+msgid "cySiteDescription"
+msgstr "Écoute, le vent dans les arbres..."
 
-msgid "cy404Text"
-msgstr "Oufti bièsse, fåte http"
+msgid "cySiteTitlePart1"
+msgstr "www"
 
-msgid "cy403Text"
-msgstr "Ènocint catwaze moussî a sot, fåte http"
+msgid "cySiteTitlePart2"
+msgstr "ouaie"
 
-msgid "cyPostCommentSubmitted"
-msgstr "Votre commentaire a été envoyé. Notez qu'il doit être approuvé par l'auteur du message et que cela peut prendre du temps..."
+msgid "cySiteTitlePart3"
+msgstr "be"
 
+msgid "cySiteTitleTooltip"
+msgstr "aller à l'accueil"
+
+msgid "cySiteUrl"
+msgstr "http://www.ouaie.be/"
+
+msgid "cyTagsTitleBottom"
+msgstr "Parcourez les séries&nbsp;:"
+
+msgid "cyTagsTitleTop"
+msgstr "Parcourez les séries&nbsp;:"
