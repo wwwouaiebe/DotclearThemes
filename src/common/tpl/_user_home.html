@@ -1,0 +1,58 @@
+﻿					<!-- This file is shared between the DotClear themes OUAIE and ANTHISNES -->
+					<tpl:Entries>
+						<tpl:DateHeader><h2 class="cyPostTitleDate">{{tpl:EntryDate}}</h2></tpl:DateHeader>
+						<article id="cy{{tpl:EntryID}}" class="cyPost cy{{tpl:EntryIfOdd return="cyPostCommentOdd"}} {{tpl:EntryIfFirst return="cyPageCommentFirst"}}" lang="{{tpl:EntryLang}}" xml:lang="{{tpl:EntryLang}}">
+							<script>cyEntryTitle ( "{{tpl:EntryTitle encode_html='1'}}" )</script><noscript><h3 class="cyPostTitle">{{tpl:EntryTitle encode_html="1"}}</h3></noscript>
+							<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+							{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+							<!-- # Entry without excerpt -->
+							<tpl:EntryIf extended="0">
+								<div class="cyPostContent">
+									{{tpl:EntryContent}}
+									{{tpl:include src="_user_post_content.html"}}
+								</div>
+							</tpl:EntryIf>
+							<!-- # --BEHAVIOR-- publicEntryAfterContent -->
+							{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+							<!-- # Number of comments, trackbacks and attachments -->
+							<tpl:EntryIf operator="or" show_comments="1" show_pings="1" has_attachment="1">
+								<p class="cyPostComments">
+							</tpl:EntryIf>
+							<tpl:EntryIf show_comments="1">
+								<a href="{{tpl:EntryURL}}#cyPostComments" class="cyPostCommentCount">{{tpl:EntryCommentCount}}</a>
+							</tpl:EntryIf>
+							<tpl:EntryIf show_pings="1">
+								<a href="{{tpl:EntryURL}}#cyPostPings" class="cyPostPingCount">{{tpl:EntryPingCount}}</a>
+							</tpl:EntryIf>
+							<tpl:EntryIf has_attachment="1">
+								<a href="{{tpl:EntryURL}}#cyPostAttachments" class="cyPostAttachCount">{{tpl:EntryAttachmentCount}}</a>
+							</tpl:EntryIf>
+							<tpl:EntryIf operator="or" show_comments="1" show_pings="1" has_attachment="1">
+								</p>
+							</tpl:EntryIf>
+						</article>
+						<tpl:EntriesFooter>
+							<tpl:Pagination>
+								<nav id="cyPagination">
+									<ul>
+										<li>
+											<tpl:PaginationIf end="0">
+												<a href="{{tpl:PaginationURL offset="+1"}}" title="{{tpl:lang cyPaginationPreviousTooltip}}" class="cyPaginationPrevious">{{tpl:lang cyPaginationPreviousText}}</a>
+											</tpl:PaginationIf>
+										</li>
+										<li>
+											<a href="{{tpl:BlogURL}}" title="{{tpl:lang cyPaginationHomeTooltip}}" class="cyPaginationHome">{{tpl:lang cyPaginationHomeText}}</a>
+										</li>
+										<li>
+											<tpl:PaginationIf start="0">
+												<a href="{{tpl:PaginationURL offset="-1"}}" title="{{tpl:lang cyPaginationNextTooltip}}" class="cyPaginationNext">{{tpl:lang cyPaginationNextText}}</a>
+											</tpl:PaginationIf>
+										</li>
+									</ul>
+								</nav>
+								<nav id="cyPageCounter">
+									{{tpl:lang page}} {{tpl:PaginationCurrent}} {{tpl:lang of}} {{tpl:PaginationCounter}}
+								</nav>
+							</tpl:Pagination>
+						</tpl:EntriesFooter>
+					</tpl:Entries>

@@ -1,0 +1,114 @@
+﻿				<!-- This file is shared between the DotClear themes OUAIE and ANTHISNES -->
+				<nav id="cyMainMenu" class="cyGrid-3 cyOrder-1">
+					<h2 id="cyNavigationTitleTop" class="cyNavigationTitle cyMenuTitle">{{tpl:lang cyNavigationTitleTop}}</h2>
+					<ul id="cyNavigationMenuTop" class="cyCNavigationMenu cyMenu">
+						<li>
+							<a href="{{tpl:BlogURL}}" title ="{{tpl:lang cyNavigationMenuTopHomeTooltip}}">{{tpl:lang cyNavigationMenuTopHomeText}}</a>
+						</li>
+						<li>
+							<a href="#cyMainContent" title ="{{tpl:lang cyNavigationMenuTopContainsTooltip}}">{{tpl:lang cyNavigationMenuTopContainsText}}</a>
+						</li>
+						<li>
+							<a href="#cyCategoriesTitleBottom" title ="{{tpl:lang cyNavigationMenuTopCategoryTooltip}}">{{tpl:lang cyNavigationMenuTopCategoryText}}</a>
+						</li>
+						<tpl:SysIf has_tpl="_anthisnes.html">
+							<li>
+								<a href="#cyNearTitleBottom" title ="{{tpl:lang cyNavigationMenuTopNearTooltip}}">{{tpl:lang cyNavigationMenuTopNearText}}</a>
+							</li>
+						</tpl:SysIf>
+						<li>
+							<a href="#cyTagsTitleBottom" title ="{{tpl:lang cyNavigationMenuTopTagsTooltip}}">{{tpl:lang cyNavigationMenuTopTagsText}}</a>
+						</li>
+						<li>
+							<a href="#cyArchivesTitleBottom" title ="{{tpl:lang cyNavigationMenuTopArchivesTooltip}}">{{tpl:lang cyNavigationMenuTopArchivesText}}</a>
+						</li>
+						<tpl:SysIf has_tpl="_anthisnes.html">
+							<li>
+								<a href="#cyPagesTitleBottom" title ="{{tpl:lang cyNavigationMenuTopPagesTooltip}}">{{tpl:lang cyNavigationMenuTopPagesText}}</a>
+							</li>
+						</tpl:SysIf>
+					</ul>					
+					<h2 id="cyCategoriesTitleTop" class="cyCategoriesTitle cyMenuTitle">{{tpl:lang cyCategoriesTitleTop}}</h2>
+					<ul id="cyCategoriesMenuTop" class="cyCategoriesMenu cyMenu">
+						<tpl:SysIf has_tpl="_ouaie.html">
+							<tpl:Categories level="1">
+								<li class="cyCategoryFirst">
+									{{tpl:CategoryTitle}}
+								</li>
+								<tpl:CategoryFirstChildren>
+								<li>
+									<a href="{{tpl:CategoryURL}}" title ="{{tpl:CategoryTitle}}">{{tpl:CategoryTitle}}</a>
+								</li>
+								</tpl:CategoryFirstChildren>
+							</tpl:Categories>
+						</tpl:SysIf>
+						<tpl:SysIf has_tpl="_anthisnes.html">
+							<tpl:Categories>
+								<li>
+									<a href="{{tpl:CategoryURL}}" title ="{{tpl:lang cyCategoriesMenuTopTooltip}}{{tpl:CategoryTitle}}">{{tpl:CategoryTitle}}</a>
+								</li>
+							</tpl:Categories>
+						</tpl:SysIf>
+						<li id="cyAllCategoriesTop"> 
+							<a href="{{tpl:BlogURL}}categories" title="{{tpl:lang cyAllCategoriesMenuTopTooltip}}">{{tpl:lang cyAllCategoriesMenuTopText}}</a>
+						</li>
+					</ul>					
+					<tpl:SysIf has_tpl="_anthisnes.html">
+						<h2 id="cyNearTitleTop" class="cyNearTitle cyMenuTitle">{{tpl:lang cyNearTitleTop}}</h2>
+						<ul id="cyNearMenuTop" class="cyNearMenu cyMenu">
+							<li>
+								<a target="_blank" href="http://www.ouaie.be/blog/category/Belgique/Condroz" title ="{{tpl:lang cyCondrozNearMenuTopTooltip}}">{{tpl:lang cyCondrozNearMenuTopText}}</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://www.ouaie.be/blog/category/Belgique/Vallee-de-la-Meuse" title ="{{tpl:lang cyMeuseNearMenuTopTooltip}}">{{tpl:lang cyMeuseNearMenuTopText}}</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://www.ouaie.be/blog/category/Belgique/Vallee-de-l-Ourthe" title ="{{tpl:lang cyOurtheNearMenuTopTooltip}}">{{tpl:lang cyOurtheNearMenuTopText}}</a>
+							</li>
+						</ul>					
+					</tpl:SysIf>
+					<h2 id="cyTagsTitleTop" class="cyTagsTitle cyMenuTitle">{{tpl:lang cyTagsTitleTop}}</h2>
+					<ul id="cyTagsMenuTop" class="cyTagsMenu cyMenu">
+						<tpl:Tags>
+							<li>
+								<a href="{{tpl:TagURL}}" title ="{{tpl:TagID}}">{{tpl:TagID}}</a>
+							</li>
+						</tpl:Tags>
+						<li id="cyAllTagsTop"> 
+							<a href="{{tpl:BlogURL}}tags" title="{{tpl:lang cyAllTagsMenuTopTooltip}}">{{tpl:lang cyAllTagsMenuTopText}}</a>
+						</li>
+					</ul>
+					<h2 id="cyArchivesTitleTop" class="cyArchivesTitle cyMenuTitle">{{tpl:lang cyArchivesTitleTop}}</h2>
+					<ul id="cyArchivesMenuTop" class="cyArchivesMenu cyMenu">
+						<tpl:Archives no_context="1">
+							<li>
+								<a href="{{tpl:ArchiveURL}}" title ="{{tpl:lang cyArchivesMenuTopTooltip}}{{tpl:ArchiveDate}}">{{tpl:ArchiveDate}}</a>
+							</li>
+						</tpl:Archives>
+						<li id="cyAllArchivesTop"> 
+							<a href="{{tpl:BlogURL}}archive" title="{{tpl:lang cyAllArchivesMenuTopTooltip}}">{{tpl:lang cyAllArchivesMenuTopText}}</a>
+						</li>
+					</ul>	
+					<tpl:SysIf has_tpl="_anthisnes.html">
+						<h2 id="cyPagesTitleTop" class="cyPagesTitle cyMenuTitle">{{tpl:lang cyPagesTitleTop}}</h2>
+						<ul id="cyPagesMenuTop" class="cyPagesMenu cyMenu">
+							<li>
+								<a target="_blank" href="http://www.ouaie.be/blog/pages/parcours-artistes" title ="{{tpl:lang cyParcoursArtistesMenuTopTooltip}}">{{tpl:lang cyParcoursArtistesMenuTopText}}</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://www.ouaie.be/blog/pages/parcours-artistes-2016" title ="{{tpl:lang cyParcoursArtistes2016MenuTopTooltip}}">{{tpl:lang cyParcoursArtistes2016MenuTopText}}</a>
+							</li>
+							<tpl:Entries lastn="1000" no_category="1" no_context="1" ignore_pagination="1" type="page">
+								<li>
+									<a href="{{tpl:EntryURL}}" title ="{{tpl:EntryTitle}}"> {{tpl:EntryTitle}}</a>
+								</li>
+							</tpl:Entries>
+							<li>
+								<a target="_blank" href="http://www.ouaie.be/" title="{{tpl:lang CyOuaiebeMenuTopTooltip}}">{{tpl:lang CyOuaiebeMenuTopText}}</a>
+							</li>
+							<li>
+								<script>cySetColorChooser ( )</script>
+							</li>
+						</ul>	
+					</tpl:SysIf>
+				</nav>

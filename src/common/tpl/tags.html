@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{tpl:BlogLanguage}}">
+	<!-- This file is shared between the DotClear themes OUAIE and ANTHISNES -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+		<title>{{tpl:BlogName encode_html="1"}} - {{tpl:lang cyAllTagsPageTitle}} </title>
+		<meta name="description" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}} - {{tpl:lang cyAllTagsPageTitle}}" />
+		<meta name="author" content="{{tpl:BlogEditor encode_html="1"}}" />
+		<meta name="dc.title" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}} - {{tpl:lang cyAllTagsPageTitle}}" />
+		<meta name="dc.description" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}} - {{tpl:lang cyAllTagsPageTitle}}" />
+		<meta name="dc.language" content="{{tpl:BlogLanguage}}" />
+		<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+		<meta name="dc.type" content="text" />
+		<tpl:Tags>
+		<link rel="section" href="{{tpl:TagURL}}" title="{{tpl:TagID}}" />
+		</tpl:Tags>
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{tpl:BlogRSDURL}}" />
+		<link rel="meta" type="application/xbel+xml" title="Blogroll" href="{{tpl:BlogrollXbelLink}}" />
+		{{tpl:include src="_head.html"}}
+	</head>
+	<body id="cyTags">
+		{{tpl:include src="_top.html"}}
+		<div  id="cyMain" class="cyGrid-1">
+			<div class="cyGrid-2">
+				{{tpl:include src="_user_top_menu.html"}}
+				<section id="cyMainContent" class="cyGrid-3 cyOrder-2">
+					<tpl:Tags type="tag">
+						<h2>{{tpl:TagID}}</h2>
+						<p class="cyThumbnails">
+							<tpl:Entries lastn="1000" ignore_pagination="1" type="post">
+								<a href="{{tpl:EntryURL}}" title="{{tpl:EntryCategory}} - {{tpl:EntryDate}}">{{tpl:EntryFirstImage size="s" class="cyThumbnail"}}</a>
+							</tpl:Entries>
+						</p>
+					</tpl:Tags>
+				</section>
+			</div>
+		</div>
+		{{tpl:include src="_footer.html"}}
+	</body>
+</html>

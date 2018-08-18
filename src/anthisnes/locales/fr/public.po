@@ -1,0 +1,320 @@
+cyAllTagsPageTitle
+
+msgid "cyAllCategoriesPageTitle"
+msgstr "Les villages"
+
+msgid "cyAllTagsPageTitle"
+msgstr "Les chemins et les champs"
+
+msgid "cyAllArchivesPageTitle"
+msgstr "Le temps passé"
+
+msgid "cySiteTitleTooltip"
+msgstr "aller au début du blog"
+
+msgid "cySiteTitlePart1"
+msgstr "anthisnes"
+
+msgid "cySiteTitlePart2"
+msgstr "●"
+
+msgid "cySiteTitlePart3"
+msgstr "org"
+
+msgid "cySiteDescription"
+msgstr "Photos d'Anthisnes, au fil des saisons, au gré du vent"
+
+msgid "cyNavigationMenuTopHomeTooltip"
+msgstr "Accueil"
+
+msgid "cyNavigationTitleTop"
+msgstr "Navigation&nbsp;:"
+
+msgid "cyNavigationMenuTopHomeText"
+msgstr "Accueil"
+
+msgid "cyNavigationMenuTopContainsTooltip"
+msgstr "Aller au contenu de la page"
+
+msgid "cyNavigationMenuTopCategoryTooltip"
+msgstr "Laissez-vous pousser par le vent vers les villages"
+
+msgid "cyNavigationMenuTopCategoryText"
+msgstr "Laissez-vous pousser par le vent vers les villages"
+
+msgid "cyNavigationMenuTopNearTooltip"
+msgstr "Près d'Anthisnes"
+
+msgid "cyNavigationMenuTopNearText"
+msgstr "Près d'Anthisnes"
+
+msgid "cyNavigationMenuTopTagsTooltip"
+msgstr "Parcourez les chemins et les champs"
+
+msgid "cyNavigationMenuTopTagsText"
+msgstr "Parcourez les chemins et les champs"
+
+msgid "cyNavigationMenuTopArchivesTooltip"
+msgstr "Voyagez dans le temps"
+
+msgid "cyNavigationMenuTopArchivesText"
+msgstr "Voyagez dans le temps"
+
+msgid "cyNavigationMenuTopPagesTooltip"
+msgstr "Et aussi..."
+
+msgid "cyNavigationMenuTopPagesText"
+msgstr "Et aussi..."
+
+msgid "cyNavigationMenuTopContainsText"
+msgstr "Aller au contenu de la page"
+
+msgid "cyCategoriesTitleTop"
+msgstr "Laissez-vous pousser par le vent vers&nbsp;:"
+
+msgid "cyCategoriesMenuTopTooltip"
+msgstr "Laissez-vous pousser par le vent vers "
+
+msgid "cyAllCategoriesMenuTopTooltip"
+msgstr "Voir tous les villages"
+
+msgid "cyAllCategoriesMenuTopText"
+msgstr "Tous les villages"
+
+msgid "cyNearTitleTop"
+msgstr "Près d'Anthisnes:"
+
+msgid "cyCondrozNearMenuTopTooltip"
+msgstr "Le Condroz"
+
+msgid "cyCondrozNearMenuTopText"
+msgstr "Le Condroz &#8599;"
+
+msgid "cyMeuseNearMenuTopTooltip"
+msgstr "La Meuse"
+
+msgid "cyMeuseNearMenuTopText"
+msgstr "La Meuse &#8599;"
+
+msgid "cyOurtheNearMenuTopTooltip"
+msgstr "L'Ourthe"
+
+msgid "cyOurtheNearMenuTopText"
+msgstr "L'Ourthe &#8599;"
+
+msgid "cyTagsTitleTop"
+msgstr "Parcourez les chemins et les champs&nbsp;:"
+
+msgid "cyAllTagsMenuTopTooltip"
+msgstr "Voir tous les chemins"
+
+msgid "cyAllTagsMenuTopText"
+msgstr "Tous les chemins et les champs"
+
+msgid "cyArchivesTitleTop"
+msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
+
+msgid "cyArchivesMenuTopTooltip"
+msgstr "Voyagez dans le temps jusqu'en "
+
+msgid "cyAllArchivesMenuTopTooltip"
+msgstr "Le temps passé"
+
+msgid "cyAllArchivesMenuTopText"
+msgstr "Le temps passé"
+
+msgid "cyPagesTitleTop"
+msgstr "Et aussi&nbsp;:"
+
+msgid "cyParcoursArtistesMenuTopTooltip"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
+
+msgid "cyParcoursArtistesMenuTopText"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018 &#8599;"
+
+msgid "cyParcoursArtistes2016MenuTopTooltip"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016"
+
+msgid "cyParcoursArtistes2016MenuTopText"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016 &#8599;"
+
+msgid "CyOuaiebeMenuTopTooltip"
+msgstr "Mon autre blog: www.ouaie.be"
+
+msgid "CyOuaiebeMenuTopText"
+msgstr "wwwouaiebe &#8599;"
+
+msgid "cyChangeDisplayMenuTopTooltip"
+msgstr "Passer en affichage contrasté"
+
+msgid "cyChangeDisplayMenuTopText"
+msgstr "Affichage contrasté"
+
+msgid "cyPaginationPreviousText"
+msgstr "&#171; Photos plus anciennes"
+
+msgid "cyPaginationPreviousTooltip"
+msgstr "Photos plus anciennes"
+
+msgid "cyPaginationNextText"
+msgstr "Photos plus récentes &#187;"
+
+msgid "cyPaginationNextTooltip"
+msgstr "Photos plus récentes"
+
+msgid "cyPaginationHomeText"
+msgstr "Début du blog"
+
+msgid "cyPaginationHomeTooltip"
+msgstr "Début du blog"
+
+msgid "cyCategoriesTitleBottom"
+msgstr "Laissez-vous pousser par le vent vers&nbsp;:"
+
+msgid "cyCategoriesMenuBottomTooltip"
+msgstr "Laissez-vous pousser par le vent vers "
+
+msgid "cyAllCategoriesMenuBottomTooltip"
+msgstr "Voir tous les villages"
+
+msgid "cyAllCategoriesMenuBottomText"
+msgstr "Tous les villages"
+
+msgid "cyNearTitleBottom"
+msgstr "Près d'Anthisnes:"
+
+msgid "cyCondrozNearMenuBottomTooltip"
+msgstr "Le Condroz"
+
+msgid "cyCondrozNearMenuBottomText"
+msgstr "Le Condroz &#8599;"
+
+msgid "cyMeuseNearMenuBottomTooltip"
+msgstr "La Meuse"
+
+msgid "cyMeuseNearMenuBottomText"
+msgstr "La Meuse &#8599;"
+
+msgid "cyOurtheNearMenuBottomTooltip"
+msgstr "L'Ourthe"
+
+msgid "cyOurtheNearMenuBottomText"
+msgstr "L'Ourthe &#8599;"
+
+msgid "cyTagsTitleBottom"
+msgstr "Parcourez les chemins et les champs&nbsp;:"
+
+msgid "cyAllTagsMenuBottomTooltip"
+msgstr "Voir tous les chemins"
+
+msgid "cyAllTagsMenuBottomText"
+msgstr "Tous les chemins et les champs"
+
+msgid "cyArchivesTitleBottom"
+msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
+
+msgid "cyArchivesMenuBottomTooltip"
+msgstr "Voyagez dans le temps jusqu'en "
+
+msgid "cyAllArchivesMenuBottomTooltip"
+msgstr "Le temps passé"
+
+msgid "cyAllArchivesMenuBottomText"
+msgstr "Le temps passé"
+
+msgid "cyPagesTitleBottom"
+msgstr "Et aussi&nbsp;:"
+
+msgid "cyParcoursArtistesMenuBottomTooltip"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
+
+msgid "cyParcoursArtistesMenuBottomText"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018 &#8599;"
+
+msgid "cyParcoursArtistes2016MenuBottomTooltip"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016"
+
+msgid "cyParcoursArtistes2016MenuBottomText"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016 &#8599;"
+
+msgid "CyOuaiebeMenuBottomTooltip"
+msgstr "Mon autre blog: www.ouaie.be"
+
+msgid "CyOuaiebeMenuBottomText"
+msgstr "wwwouaiebe &#8599;"
+
+msgid "cyChangeDisplayMenuBottomTooltip"
+msgstr "Passer en affichage contrasté"
+
+msgid "cyChangeDisplayMenuBottomText"
+msgstr "Affichage contrasté"
+
+msgid "cyHTMLValidation1"
+msgstr "Cette page est validée"
+
+msgid "cyHTMLValidation2"
+msgstr "HTML 5.0"
+
+msgid "cyHTMLValidationTooltip"
+msgstr "Vérifier la validité de cette page HTML 5.0"
+
+msgid "cyCSSValidation1"
+msgstr "&nbsp;&#8599;,"
+
+msgid "cyCSSValidation2"
+msgstr "CSS 3.0"
+
+msgid "cyAAAValidation1"
+msgstr "&nbsp;&#8599; et est"
+
+msgid "cyAAAValidation2"
+msgstr "accessible AAA"
+
+msgid "cyAAAValidation3"
+msgstr "&nbsp;&#8599;."
+
+msgid "cyCSSValidationTooltip"
+msgstr "Vérifier la validité de la feuille de styles CSS 3.0"
+
+msgid "cyAAAValidationTooltip"
+msgstr "W3C Web accessibility initiative"
+
+msgid "cyPostCopyrightHref"
+msgstr "pages/LicenseCreativeCommons"
+
+msgid "cyPostCopyrightTooltip"
+msgstr "Voir la license Creative Commons"
+
+msgid "cyPostCopyrightText"
+msgstr "&#169; "
+
+msgid "cyPostDateText1"
+msgstr "Photo réalisée le "
+
+msgid "cyPostDateText2"
+msgstr " à "
+
+msgid "cyPostDateText3"
+msgstr " heures "
+
+msgid "cyPostCategoryText"
+msgstr "Laissez-vous pousser par le vent vers "
+
+msgid "cyPostCategoryTooltip"
+msgstr "Laissez-vous pousser par le vent vers "
+
+msgid "cy404Text"
+msgstr "Oufti bièsse, fåte http"
+
+msgid "cy403Text"
+msgstr "Ènocint catwaze moussî a sot, fåte http"
+
+msgid "cyComing1"
+msgstr "Le vent vous a emmené aux Floxhes"
+
+msgid "cyComing2"
+msgstr "Le vent vous a emmené à "
+
+msgid "cyPostCommentSubmitted"
+msgstr "Votre commentaire a été envoyé. Notez qu'il doit être approuvé par l'auteur du message et que cela peut prendre du temps..."
+

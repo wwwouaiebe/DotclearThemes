@@ -1,0 +1,49 @@
+﻿									<!-- This file is shared between the DotClear themes OUAIE and ANTHISNES -->
+									<p class="cyPostLocationName">
+										<tpl:EntryCategoriesBreadcrumb>
+										{{tpl:CategoryTitle encode_html="1"}} &#9656;
+										</tpl:EntryCategoriesBreadcrumb>
+										{{tpl:EntryCategory}}
+										<tpl:SysIf has_tpl="_anthisnes.html">
+											<tpl:EntryTags>
+												<tpl:TagsHeader> - </tpl:TagsHeader>
+													{{tpl:TagID}}
+												<tpl:TagsFooter></tpl:TagsFooter>
+											</tpl:EntryTags>
+										</tpl:SysIf>						  
+									</p>
+									<p class="cyPostCopyright">
+										<a href="{{tpl:lang cyPostCopyrightHref}}" title="{{tpl:lang cyPostCopyrightTooltip}}">
+											{{tpl:lang cyPostCopyrightText}}
+											{{tpl:EntryAuthorCommonName}}
+											{{tpl:EntryDate format="%Y"}}
+										</a>
+									</p>
+									<p class="cyPostDate">
+										{{tpl:lang cyPostDateText1}}
+										{{tpl:EntryDate format="%A %e %B %Y"}}
+										{{tpl:lang cyPostDateText2}}
+										{{tpl:EntryTime format="%H"}}
+										{{tpl:lang cyPostDateText3}}
+										{{tpl:EntryTime format="%M"}}
+									</p>
+									<tpl:SysIf has_tpl="_ouaie.html">
+										<p class="cyPostTags">
+											<tpl:EntryTags>
+												<tpl:TagsHeader>
+													{{tpl:lang cyPostTagsText}}
+												</tpl:TagsHeader>
+												<a href="{{tpl:TagURL}}" title="{{tpl:TagID}}">{{tpl:TagID}}</a>
+											</tpl:EntryTags>
+										</p>
+									</tpl:SysIf>						  
+									<tpl:SysIf has_tpl="_anthisnes.html">
+										<p class="cyPostCategory">
+							 
+							   
+											{{tpl:lang cyPostCategoryText}}
+								
+											<a href="{{tpl:EntryCategoryURL}}" title="{{tpl:lang cyPostCategoryTooltip}}{{tpl:EntryCategory}}">{{tpl:EntryCategory}}</a>							
+							  
+										</p>
+									</tpl:SysIf>
