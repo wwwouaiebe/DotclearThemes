@@ -74,14 +74,14 @@ MS Edge don't understand var css, so it's needed to have 2 times the colors prop
 	padding: 0.5em;
 	margin-bottom: 0.4em;
 	color: black;
-	color: var(--cyMenuTitle-color, black);
+	/*color: var(--cyMenuTitle-color, black);*/
 	background-color: lightgray;
 	/*background-color: var(--cyMenuTitle-background-color, white);*/
 }
 .cyMenuItem div p a
 {
 	color: white;
-	color: var(--link-color, white);
+	/*color: var(--link-color, white);*/
 	text-decoration:none;
 	border-left-style: solid;
 	border-left-width: 0.3em;
