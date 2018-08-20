@@ -87,11 +87,17 @@ function cySetColorChooser ( )
 	
 		if ( 'standard' == strCurrentStyle )
 		{
-			document.writeln ( '<a href="javascript:cyChangeStyleSheet()" title="Passer en affichage normal" >Affichage normal</a>' );
+			if ( document.getElementById ( 'cyColorChooserMenuTop' ) ) 
+			{
+				document.getElementById ( 'cyColorChooserMenuTop' ).outerHTML = '<a id="cyColorChooserMenuTop" href="javascript:cyChangeStyleSheet()" title="Passer en affichage normal" >Affichage normal</a>';
+			}
 		}
 		else
 		{
-			document.writeln ( '<a href="javascript:cyChangeStyleSheet()" title="Passer en affichage contrasté" >Affichage contrasté</a>' );
+			if ( document.getElementById ( 'cyColorChooserMenuTop' ) ) 
+			{
+				document.getElementById ( 'cyColorChooserMenuTop' ).outerHTML = '<a id="cyColorChooserMenuTop" href="javascript:cyChangeStyleSheet()" title="Passer en affichage contrasté" >Affichage contrasté</a>';
+			}
 		}
 	}		
 }
@@ -113,7 +119,9 @@ function cySetColorStyleSheet ( strPath )
 	{
 		var strCurrentStyle = cyReadStorage ( "style" );
 		localStorage.setItem ( 'style', strCurrentStyle );
-		document.writeln ( '<link href="' + strPath + strCurrentStyle + 'ColorScheme.css" type="text/css" rel="stylesheet"  title="Normal" media="screen" />' );
+
+		var linkElement = document.getElementById ( "cyColorSchemeLink" );
+		linkElement.href = strPath + strCurrentStyle + 'ColorScheme.css';
 	}
 }	
 

@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
-			files: ['Gruntfile.js'],
+			files: ['Gruntfile.js', 'src/common/sharedscripts/*.js' ],
 		},
 		copy: {
 			main: {

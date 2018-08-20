@@ -2,7 +2,7 @@
 					<tpl:Entries>
 						<tpl:DateHeader><h2 class="cyPostTitleDate">{{tpl:EntryDate}}</h2></tpl:DateHeader>
 						<article id="cy{{tpl:EntryID}}" class="cyPost cy{{tpl:EntryIfOdd return="cyPostCommentOdd"}} {{tpl:EntryIfFirst return="cyPageCommentFirst"}}" lang="{{tpl:EntryLang}}" xml:lang="{{tpl:EntryLang}}">
-							<h3 class="cyPostTitle">{{tpl:EntryTitle encode_html="1"}}</h3>
+							<h3 class="cyPostTitle">{{tpl:EntryTitle remove_html="1"}}</h3>
 							<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
 							{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
 							<!-- # Entry without excerpt -->
