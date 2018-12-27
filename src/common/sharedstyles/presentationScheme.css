@@ -178,7 +178,9 @@ ul.cyMenu > li
 	padding-bottom: 1em;
 }
 .cyPictureLandscape img,
+.cyPictureLandscape video,
 .cyPictureLandscape > p > img,
+.cyPictureLandscape > p > video,
 .cyPicturePortrait img,
 .cyPictureSquare img,					  
 .cyPicturePortrait > p > img,
@@ -188,7 +190,9 @@ ul.cyMenu > li
 	border-width: 0.1em;
 }						 
 .cyPictureLandscape img,
-.cyPictureLandscape > p > img
+.cyPictureLandscape video,
+.cyPictureLandscape > p > img,
+.cyPictureLandscape > p > video
 {
 	width: 100%;
 }							 
