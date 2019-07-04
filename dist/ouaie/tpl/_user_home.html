@@ -6,12 +6,9 @@
 							<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
 							{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
 							<!-- # Entry without excerpt -->
-							<tpl:EntryIf extended="0">
 								<div class="cyPostContent">
-									{{tpl:EntryContent}}
 									{{tpl:include src="_user_post_content.html"}}
 								</div>
-							</tpl:EntryIf>
 							<!-- # --BEHAVIOR-- publicEntryAfterContent -->
 							{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
 							<!-- # Number of comments, trackbacks and attachments -->
@@ -23,9 +20,6 @@
 							</tpl:EntryIf>
 							<tpl:EntryIf show_pings="1">
 								<a href="{{tpl:EntryURL}}#cyPostPings" class="cyPostPingCount">{{tpl:EntryPingCount}}</a>
-							</tpl:EntryIf>
-							<tpl:EntryIf has_attachment="1">
-								<a href="{{tpl:EntryURL}}#cyPostAttachments" class="cyPostAttachCount">{{tpl:EntryAttachmentCount}}</a>
 							</tpl:EntryIf>
 							<tpl:EntryIf operator="or" show_comments="1" show_pings="1" has_attachment="1">
 								</p>
@@ -56,3 +50,5 @@
 							</tpl:Pagination>
 						</tpl:EntriesFooter>
 					</tpl:Entries>
+					{{tpl:include src="_copyright.html"}}
+					

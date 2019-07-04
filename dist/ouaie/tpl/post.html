@@ -36,43 +36,12 @@
 						<h3 class="cyPostTitle">{{tpl:EntryTitle remove_html="1"}}</h3>
 						<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
 						{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
-						<!-- # Entry with an excerpt -->
-						<tpl:EntryIf extended="1">
-							<div class="cyPostExcerpt">
-								{{tpl:EntryExcerpt}}
-							</div>
-						</tpl:EntryIf>
 						<div class="cyPostContent">
-							{{tpl:EntryContent}}
 							{{tpl:include src="_user_post_content.html"}}
 						</div>
 						<!-- # --BEHAVIOR-- publicEntryAfterContent -->
 						{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
 					</div>
-					<!-- # Attachments -->
-					<tpl:Attachments>
-						<tpl:AttachmentsHeader>
-						<div id="cyPostAttachments">
-							<h4>{{tpl:lang Attachments}}</h4>
-							<ul>
-								</tpl:AttachmentsHeader>
-								<li class="cyPost{{tpl:AttachmentType}}">
-								<tpl:AttachmentIf is_mp3="1">
-								{{tpl:include src="_mp3_player.html"/}} -
-								</tpl:AttachmentIf>
-								<tpl:AttachmentIf is_flv="1">
-								{{tpl:include src="_flv_player.html"/}}
-								</tpl:AttachmentIf>
-								<tpl:AttachmentIf is_flv="0">
-								<a href="{{tpl:AttachmentURL}}"
-								title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})">{{tpl:AttachmentTitle}}</a>
-								</tpl:AttachmentIf>
-								</li>
-								<tpl:AttachmentsFooter>
-							</ul>
-						</div>
-						</tpl:AttachmentsFooter>
-					</tpl:Attachments>
 					<!-- # Comments -->
 					<tpl:EntryIf show_comments="1">
 						<tpl:Comments>
@@ -218,6 +187,7 @@
 							</a>
 						</p>
 					</tpl:EntryIf>
+					{{tpl:include src="_copyright.html"}}
 				</section>
 			</div>
 		</div>

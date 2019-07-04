@@ -1,32 +1,71 @@
-﻿									<!-- This file is shared between the DotClear themes OUAIE and ANTHISNES -->
-									<p class="cyPostLocationName">
-										<tpl:EntryCategoriesBreadcrumb>
-										{{tpl:CategoryTitle encode_html="1"}} &#9656;
-										</tpl:EntryCategoriesBreadcrumb>
-										{{tpl:EntryCategory}}
-										<tpl:SysIf has_tpl="_anthisnes.html">
-											<tpl:EntryTags>
-												<tpl:TagsHeader> - </tpl:TagsHeader>
-													{{tpl:TagID}}
-												<tpl:TagsFooter></tpl:TagsFooter>
-											</tpl:EntryTags>
-										</tpl:SysIf>						  
-									</p>
-									<p class="cyPostCopyright">
-										<a href="{{tpl:lang cyPostCopyrightHref}}" title="{{tpl:lang cyPostCopyrightTooltip}}">
-											{{tpl:lang cyPostCopyrightText}}
-											{{tpl:EntryAuthorCommonName}}
-											{{tpl:EntryDate format="%Y"}}
-										</a>
-									</p>
-									<p class="cyPostDate">
-										{{tpl:lang cyPostDateText1}}
-										{{tpl:EntryDate format="%A %e %B %Y"}}
-										{{tpl:lang cyPostDateText2}}
-										{{tpl:EntryTime format="%H"}}
-										{{tpl:lang cyPostDateText3}}
-										{{tpl:EntryTime format="%M"}}
-									</p>
+﻿
+									<!-- This file is shared between the DotClear themes OUAIE and ANTHISNES -->
+									<tpl:EntryIf extended="1">
+									{{tpl:EntryExcerpt}}
+									</tpl:EntryIf>
+									<tpl:MediaInfos>
+										<div class="cyPicture{{tpl:MediaInfoClass}}">
+<p><img src="{{tpl:BlogURL}}{{tpl:MediaInfoRelUrl}}" title=
+"<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} <tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader></tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter> </tpl:TagsFooter></tpl:EntryTags></tpl:SysIf>
+<tpl:MediaInfoIf has_exif="1">{{tpl:MediaInfoDateTime format="%A %e %B %Y"}}</tpl:MediaInfoIf>
+<tpl:MediaInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaInfoIf>
+" ></img></p>
+										</div>
+										<p class="cyPostLocationName">
+											<tpl:EntryCategoriesBreadcrumb>
+											{{tpl:CategoryTitle encode_html="1"}} &#9656;
+											</tpl:EntryCategoriesBreadcrumb>
+											{{tpl:EntryCategory}}
+											<tpl:SysIf has_tpl="_anthisnes.html">
+												<tpl:EntryTags>
+													<tpl:TagsHeader> - </tpl:TagsHeader>
+														{{tpl:TagID}}
+													<tpl:TagsFooter></tpl:TagsFooter>
+												</tpl:EntryTags>
+											</tpl:SysIf>						  
+										</p>
+										<tpl:MediaInfoIf has_exif="0">
+											<p class="cyPictureDate">
+												{{tpl:lang cyPostDateText1}}
+												{{tpl:EntryDate format="%A %e %B %Y"}}
+												{{tpl:lang cyPostDateText2}}
+												{{tpl:EntryTime format="%H:%M"}}
+											</p>
+										</tpl:MediaInfoIf>
+										<tpl:MediaInfoIf has_exif="1">
+											<p class="cyPictureDate">
+												{{tpl:lang cyPostDateText1}}
+												{{tpl:MediaInfoDateTime format="%A %e %B %Y"}}
+												{{tpl:lang cyPostDateText2}}
+												{{tpl:MediaInfoDateTime format="%H heures %M"}}
+											</p>
+											<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaInfoPhoto format="%s %s mm - f %s %s s. %s ISO"}}</span></p>
+										</tpl:MediaInfoIf>
+									</tpl:MediaInfos>
+									{{tpl:EntryContent}}
+									<tpl:EntryIf has_attachment="0">
+										<p class="cyPostLocationName">
+											<tpl:EntryCategoriesBreadcrumb>
+											{{tpl:CategoryTitle encode_html="1"}} &#9656;
+											</tpl:EntryCategoriesBreadcrumb>
+											{{tpl:EntryCategory}}
+											<tpl:SysIf has_tpl="_anthisnes.html">
+												<tpl:EntryTags>
+													<tpl:TagsHeader> - </tpl:TagsHeader>
+														{{tpl:TagID}}
+													<tpl:TagsFooter></tpl:TagsFooter>
+												</tpl:EntryTags>
+											</tpl:SysIf>						  
+										</p>
+										<p class="cyPostDate">
+											{{tpl:lang cyPostDateText1}}
+											{{tpl:EntryDate format="%A %e %B %Y"}}
+											{{tpl:lang cyPostDateText2}}
+											{{tpl:EntryTime format="%H"}}
+											{{tpl:lang cyPostDateText3}}
+											{{tpl:EntryTime format="%M"}}
+										</p>
+									</tpl:EntryIf>
 									<tpl:SysIf has_tpl="_ouaie.html">
 										<p class="cyPostTags">
 											<tpl:EntryTags>
@@ -36,14 +75,12 @@
 												<a href="{{tpl:TagURL}}" title="{{tpl:TagID}}">{{tpl:TagID}}</a>
 											</tpl:EntryTags>
 										</p>
-									</tpl:SysIf>						  
+									</tpl:SysIf>	
 									<tpl:SysIf has_tpl="_anthisnes.html">
-										<p class="cyPostCategory">
-							 
-							   
-											{{tpl:lang cyPostCategoryText}}
-								
-											<a href="{{tpl:EntryCategoryURL}}" title="{{tpl:lang cyPostCategoryTooltip}}{{tpl:EntryCategory}}">{{tpl:EntryCategory}}</a>							
-							  
-										</p>
+										<tpl:EntryIf has_category="1">
+											<p class="cyPostCategory">
+												{{tpl:lang cyPostCategoryText}}
+												<a href="{{tpl:EntryCategoryURL}}" title="{{tpl:lang cyPostCategoryTooltip}}{{tpl:EntryCategory}}">{{tpl:EntryCategory}}</a>							
+											</p>
+										</tpl:EntryIf>
 									</tpl:SysIf>

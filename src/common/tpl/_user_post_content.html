@@ -5,7 +5,7 @@
 									</tpl:EntryIf>
 									<tpl:MediaInfos>
 										<div class="cyPicture{{tpl:MediaInfoClass}}">
-<p><img src="{{tpl:MediaInfoRelUrl}}" title=
+<p><img src="{{tpl:BlogURL}}{{tpl:MediaInfoRelUrl}}" title=
 "<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} <tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader></tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter> </tpl:TagsFooter></tpl:EntryTags></tpl:SysIf>
 <tpl:MediaInfoIf has_exif="1">{{tpl:MediaInfoDateTime format="%A %e %B %Y"}}</tpl:MediaInfoIf>
 <tpl:MediaInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaInfoIf>

@@ -1,0 +1,12 @@
+<tpl:Entries lastn="1000" ignore_pagination="1" type="post">
+	<a href="{{tpl:EntryURL}}" title="{{tpl:EntryCategory}} - {{tpl:EntryDate}}">
+	<tpl:EntryIf has_attachment="1">
+		<tpl:MediaInfos>
+			<img class="cyThumbnail" src="{{tpl:MediaInfoThumbnailURL}}" />
+		</tpl:MediaInfos>
+	</tpl:EntryIf>
+	<tpl:EntryIf has_attachment="0">
+		{{tpl:EntryFirstImage size="s" class="cyThumbnail"}}
+	</tpl:EntryIf>
+	</a>
+</tpl:Entries>
