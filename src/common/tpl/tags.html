@@ -30,11 +30,10 @@
 					<tpl:Tags type="tag">
 						<h2>{{tpl:TagID}}</h2>
 						<p class="cyThumbnails">
-							<tpl:Entries lastn="1000" ignore_pagination="1" type="post">
-								<a href="{{tpl:EntryURL}}" title="{{tpl:EntryCategory}} - {{tpl:EntryDate}}">{{tpl:EntryFirstImage size="s" class="cyThumbnail"}}</a>
-							</tpl:Entries>
+							{{tpl:include src="_thumbnails.html"}}
 						</p>
 					</tpl:Tags>
+					{{tpl:include src="_copyright.html"}}
 				</section>
 			</div>
 		</div>
