@@ -2,7 +2,7 @@
 	<a href="{{tpl:EntryURL}}" title="{{tpl:EntryCategory}} - {{tpl:EntryDate}}">
 	<tpl:EntryIf has_attachment="1">
 		<tpl:MediaInfos>
-			<img class="cyThumbnail" src="{{tpl:MediaInfoThumbnailURL}}" />
+			<img class="cyThumbnail" src="{{tpl:BlogURL}}{{tpl:MediaInfoThumbnailURL}}" />
 		</tpl:MediaInfos>
 	</tpl:EntryIf>
 	<tpl:EntryIf has_attachment="0">
