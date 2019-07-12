@@ -7,7 +7,7 @@
 										<div class="cyPicture{{tpl:MediaInfoClass}}">
 <p><img src="{{tpl:BlogURL}}{{tpl:MediaInfoRelUrl}}" title=
 "<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} <tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader></tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter> </tpl:TagsFooter></tpl:EntryTags></tpl:SysIf>
-<tpl:MediaInfoIf has_exif="1">{{tpl:MediaInfoDateTime format="%A %e %B %Y"}}</tpl:MediaInfoIf>
+<tpl:MediaInfoIf has_exif="1">{{tpl:MediaInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaInfoIf>
 <tpl:MediaInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaInfoIf>
 " ></img></p>
 										</div>
@@ -35,11 +35,11 @@
 										<tpl:MediaInfoIf has_exif="1">
 											<p class="cyPictureDate">
 												{{tpl:lang cyPostDateText1}}
-												{{tpl:MediaInfoDateTime format="%A %e %B %Y"}}
+												{{tpl:MediaInfoDateTimeOriginal format="%A %e %B %Y"}}
 												{{tpl:lang cyPostDateText2}}
-												{{tpl:MediaInfoDateTime format="%H heures %M"}}
+												{{tpl:MediaInfoDateTimeOriginal format="%H heures %M"}}
 											</p>
-											<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaInfoPhoto format="%s %s mm - f %s %s s. %s ISO"}}</span></p>
+											<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaInfoAllExif format="%Model% %FocalLength% mm - f %FNumber% %ExposureTime% sec. %ISOSpeedRatings% ISO"}}</span></p>
 										</tpl:MediaInfoIf>
 									</tpl:MediaInfos>
 									{{tpl:EntryContent}}
