@@ -331,6 +331,9 @@ msgstr " à "
 msgid "cyPostDateText3"
 msgstr " heures "
 
+msgid "cyPostDateText4"
+msgstr "Publié le "
+
 msgid "cyPostTagsText"
 msgstr ""
 

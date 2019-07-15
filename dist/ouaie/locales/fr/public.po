@@ -61,6 +61,15 @@ msgstr "Voir toutes les séries"
 msgid "cyAllTagsPageTitle"
 msgstr "Les séries"
 
+msgid "cyAnthisnesOrgMenuTopText"
+msgstr "anthisnes.org &#8599;"
+
+msgid "cyAnthisnesOrgMenuTopTooltip"
+msgstr "Mon autre blog: www.anthisnes.org"
+
+msgid "cyAnthisnesOrgMenuTopUrl"
+msgstr "http://www.anthisnes.org/"
+
 msgid "cyArchivesMenuBottomTooltip"
 msgstr "Voyagez dans le temps jusqu'en "
 
@@ -121,6 +130,24 @@ msgstr ""
 msgid "cyCondrozNearMenuTopUrl"
 msgstr ""
 
+msgid "cyContactMenuTopUrl"
+msgstr "pages/Contact"
+
+msgid "cyContactMenuTopTooltip"
+msgstr "Me contacter"
+
+msgid "cyContactMenuTopText"
+msgstr "Me contacter"
+
+msgid "cyCreativeCommonsMenuTopUrl"
+msgstr "pages/LicenseCreativeCommons"
+
+msgid "cyCreativeCommonsMenuTopTooltip"
+msgstr "License Creative Commons"
+
+msgid "cyCreativeCommonsMenuTopText"
+msgstr "License Creative Commons"
+
 msgid "cyCSSValidation1"
 msgstr "&nbsp;&#8599;,"
 
@@ -130,6 +157,15 @@ msgstr "CSS 3.0"
 msgid "cyCSSValidationTooltip"
 msgstr "Vérifier la validité de la feuille de styles CSS 3.0"
 
+msgid "cyGithubMenuTopUrl"
+msgstr "https://github.com/wwwouaiebe"
+
+msgid "cyGithubMenuTopTooltip"
+msgstr "Coding on Github &#8599;"
+
+msgid "GithubMenuTopText"
+msgstr "Coding on Github &#8599;"
+
 msgid "cyHTMLValidation1"
 msgstr "Cette page est validée"
 
@@ -138,6 +174,15 @@ msgstr "HTML 5.0"
 
 msgid "cyHTMLValidationTooltip"
 msgstr "Vérifier la validité de cette page HTML 5.0"
+
+msgid "cyInfoLegaleMenuTopUrl"
+msgstr "pages/InformationsLegales"
+
+msgid "cyInfoLegaleMenuTopTooltip"
+msgstr "Informations légales"
+
+msgid "cyInfoLegaleMenuTopText"
+msgstr "Informations légales"
 
 msgid "cyMeuseNearMenuBottomText"
 msgstr ""
@@ -245,10 +290,10 @@ msgid "cyOurtheNearMenuTopUrl"
 msgstr ""
 
 msgid "cyPagesTitleBottom"
-msgstr ""
+msgstr "Et aussi&nbsp;:"
 
 msgid "cyPagesTitleTop"
-msgstr ""
+msgstr "Et aussi&nbsp;:"
 
 msgid "cyPaginationHomeText"
 msgstr "Début du blog"
@@ -269,40 +314,40 @@ msgid "cyPaginationPreviousTooltip"
 msgstr "Photos plus anciennes"
 
 msgid "cyParcoursArtistes2016MenuBottomText"
-msgstr ""
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016"
 
 msgid "cyParcoursArtistes2016MenuBottomTooltip"
-msgstr ""
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016"
 
 msgid "cyParcoursArtistes2016MenuBottomUrl"
-msgstr ""
+msgstr "pages/parcours-artistes-2016"
 
 msgid "cyParcoursArtistes2016MenuTopText"
-msgstr ""
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016"
 
 msgid "cyParcoursArtistes2016MenuTopTooltip"
-msgstr ""
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016"
 
 msgid "cyParcoursArtistes2016MenuTopUrl"
-msgstr ""
+msgstr "pages/parcours-artistes-2016"
 
 msgid "cyParcoursArtistesMenuBottomText"
-msgstr ""
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
 msgid "cyParcoursArtistesMenuBottomTooltip"
-msgstr ""
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
 msgid "cyParcoursArtistesMenuBottomUrl"
-msgstr ""
+msgstr "pages/parcours-artistes-2018"
 
-msgid "cyParcoursArtistesMenuTopText"
-msgstr ""
+msgid "cyParcoursArtistes2018MenuTopText"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
-msgid "cyParcoursArtistesMenuTopTooltip"
-msgstr ""
+msgid "cyParcoursArtistes2018MenuTopTooltip"
+msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
-msgid "cyParcoursArtistesMenuTopUrl"
-msgstr ""
+msgid "cyParcoursArtistes2018MenuTopUrl"
+msgstr "pages/parcours-artistes-2018"
 
 msgid "cyPostCategoryText"
 msgstr ""
@@ -331,6 +376,9 @@ msgstr " à "
 msgid "cyPostDateText3"
 msgstr " heures "
 
+msgid "cyPostDateText4"
+msgstr "Publié le "
+
 msgid "cyPostTagsText"
 msgstr "Série&nbsp;:"
 
@@ -357,3 +405,21 @@ msgstr "Parcourez les séries&nbsp;:"
 
 msgid "cyTagsTitleTop"
 msgstr "Parcourez les séries&nbsp;:"
+
+msgid "cyVeloNordMenuTopUrl"
+msgstr "pages/707"
+
+msgid "cyVeloNordMenuTopTooltip"
+msgstr "En vélo, vers le Nord"
+
+msgid "cyVeloNordMenuTopText"
+msgstr "En vélo, vers le Nord"
+
+msgid "cyViePriveeMenuTopUrl"
+msgstr "pages/ViePrivee"
+
+msgid "cyViePriveeMenuTopTooltip"
+msgstr "Votre vie privée"
+
+msgid "cyViePriveeMenuTopText"
+msgstr "Votre vie privée"

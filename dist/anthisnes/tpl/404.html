@@ -1,39 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{tpl:BlogLanguage}}">
-	<!-- This file is shared between the DotClear themes OUAIE and ANTHISNES -->
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX"}}" />
+		{{tpl:include src="_head.html"}}
+		<meta name="dc.description" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}}" />
+		<meta name="dc.title" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}} - {{tpl:lang cy404Text}}" />
 		<title>{{tpl:BlogName encode_html="1"}} - {{tpl:lang cy404Text}}</title>
 		<meta name="description" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}}" />
-		<meta name="author" content="{{tpl:BlogEditor encode_html="1"}}" />
-		<meta name="dc.title" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}} - {{tpl:lang cy404Text}}" />
-		<meta name="dc.description" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription cut_string="180" encode_html="1"}}" />
-		<meta name="dc.language" content="{{tpl:BlogLanguage}}" />
-		<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
-		<meta name="dc.type" content="text" />
-		<link rel="contents" title="{{tpl:lang Archives}}" href="{{tpl:BlogArchiveURL}}" />
-		<tpl:Categories>
-		<link rel="section" href="{{tpl:CategoryURL}}" title="{{tpl:CategoryTitle encode_html="1"}}" />
-		</tpl:Categories>
-		<tpl:Entries no_content="1">
-		<tpl:EntriesHeader>
-		<tpl:Pagination>
-		<tpl:PaginationIf end="0">
-		<link rel="prev" title="{{tpl:lang previous entries}}" href="{{tpl:PaginationURL offset="1"}}" />
-		</tpl:PaginationIf>
-		<tpl:PaginationIf start="0">
-		<link rel="next" title="{{tpl:lang next entries}}" href="{{tpl:PaginationURL offset="-1"}}" />
-		</tpl:PaginationIf>
-		</tpl:Pagination>
-		</tpl:EntriesHeader>
-		<link rel="chapter" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" />
-		</tpl:Entries>
-		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
-		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{tpl:BlogRSDURL}}" />
-		<link rel="meta" type="application/xbel+xml" title="Blogroll" href="{{tpl:BlogrollXbelLink}}" />
-		{{tpl:include src="_head.html"}}
 	</head>
 	<body id="cyHttpFault">
 		{{tpl:include src="_top.html"}}

@@ -121,6 +121,24 @@ msgstr "Le Condroz"
 msgid "cyCondrozNearMenuTopUrl"
 msgstr "http://www.ouaie.be/blog/category/Belgique/Condroz"
 
+msgid "cyContactMenuTopUrl"
+msgstr "pages/Contact"
+
+msgid "cyContactMenuTopTooltip"
+msgstr "Me contacter"
+
+msgid "cyContactMenuTopText"
+msgstr "Me contacter"
+
+msgid "cyCreativeCommonsMenuTopUrl"
+msgstr "pages/LicenseCreativeCommons"
+
+msgid "cyCreativeCommonsMenuTopTooltip"
+msgstr "License Creative Commons"
+
+msgid "cyCreativeCommonsMenuTopText"
+msgstr "License Creative Commons"
+
 msgid "cyCSSValidation1"
 msgstr "&nbsp;&#8599;,"
 
@@ -138,6 +156,15 @@ msgstr "HTML 5.0"
 
 msgid "cyHTMLValidationTooltip"
 msgstr "Vérifier la validité de cette page HTML 5.0"
+
+msgid "cyInfoLegaleMenuTopUrl"
+msgstr "pages/InformationsLegales"
+
+msgid "cyInfoLegaleMenuTopTooltip"
+msgstr "Informations légales"
+
+msgid "cyInfoLegaleMenuTopText"
+msgstr "Informations légales"
 
 msgid "cyMeuseNearMenuBottomText"
 msgstr "La Meuse &#8599;"
@@ -208,22 +235,22 @@ msgstr "Près d'Anthisnes:"
 msgid "cyNearTitleTop"
 msgstr "Près d'Anthisnes:"
 
-msgid "CyOuaiebeMenuBottomText"
+msgid "cyOuaiebeMenuBottomText"
 msgstr "wwwouaiebe &#8599;"
 
-msgid "CyOuaiebeMenuBottomTooltip"
+msgid "cyOuaiebeMenuBottomTooltip"
 msgstr "Mon autre blog: www.ouaie.be"
 
-msgid "CyOuaiebeMenuBottomUrl"
+msgid "cyOuaiebeMenuBottomUrl"
 msgstr "http://www.ouaie.be/"
 
-msgid "CyOuaiebeMenuTopText"
+msgid "cyOuaiebeMenuTopText"
 msgstr "wwwouaiebe &#8599;"
 
-msgid "CyOuaiebeMenuTopTooltip"
+msgid "cyOuaiebeMenuTopTooltip"
 msgstr "Mon autre blog: www.ouaie.be"
 
-msgid "CyOuaiebeMenuTopUrl"
+msgid "cyOuaiebeMenuTopUrl"
 msgstr "http://www.ouaie.be/"
 
 msgid "cyOurtheNearMenuBottomText"
@@ -293,16 +320,16 @@ msgid "cyParcoursArtistesMenuBottomTooltip"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
 msgid "cyParcoursArtistesMenuBottomUrl"
-msgstr "http://www.ouaie.be/blog/pages/parcours-artistes"
+msgstr "http://www.ouaie.be/blog/pages/parcours-artistes-2018"
 
-msgid "cyParcoursArtistesMenuTopText"
+msgid "cyParcoursArtistes2018MenuTopText"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018 &#8599;"
 
-msgid "cyParcoursArtistesMenuTopTooltip"
+msgid "cyParcoursArtistes2018MenuTopTooltip"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
-msgid "cyParcoursArtistesMenuTopUrl"
-msgstr "http://www.ouaie.be/blog/pages/parcours-artistes"
+msgid "cyParcoursArtistes2018MenuTopUrl"
+msgstr "http://www.ouaie.be/blog/pages/parcours-artistes-2018"
 
 msgid "cyPostCategoryText"
 msgstr "Laissez-vous pousser par le vent vers "
@@ -331,6 +358,9 @@ msgstr " à "
 msgid "cyPostDateText3"
 msgstr " heures "
 
+msgid "cyPostDateText4"
+msgstr "Publié le "
+
 msgid "cyPostTagsText"
 msgstr ""
 
@@ -357,3 +387,13 @@ msgstr "Parcourez les chemins et les champs&nbsp;:"
 
 msgid "cyTagsTitleTop"
 msgstr "Parcourez les chemins et les champs&nbsp;:"
+
+msgid "cyViePriveeMenuTopUrl"
+msgstr "pages/ViePrivee"
+
+msgid "cyViePriveeMenuTopTooltip"
+msgstr "Votre vie privée"
+
+msgid "cyViePriveeMenuTopText"
+msgstr "Votre vie privée"
+
