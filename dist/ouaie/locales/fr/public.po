@@ -61,6 +61,15 @@ msgstr "Voir toutes les séries"
 msgid "cyAllTagsPageTitle"
 msgstr "Les séries"
 
+msgid "cyAnthisnesOrgMenuBottomText"
+msgstr "anthisnes.org &#8599;"
+
+msgid "cyAnthisnesOrgMenuBottomTooltip"
+msgstr "Mon autre blog: www.anthisnes.org"
+
+msgid "cyAnthisnesOrgMenuBottomUrl"
+msgstr "http://www.anthisnes.org/"
+
 msgid "cyAnthisnesOrgMenuTopText"
 msgstr "anthisnes.org &#8599;"
 
@@ -130,6 +139,15 @@ msgstr ""
 msgid "cyCondrozNearMenuTopUrl"
 msgstr ""
 
+msgid "cyContactMenuBottomUrl"
+msgstr "pages/Contact"
+
+msgid "cyContactMenuBottomTooltip"
+msgstr "Me contacter"
+
+msgid "cyContactMenuBottomText"
+msgstr "Me contacter"
+
 msgid "cyContactMenuTopUrl"
 msgstr "pages/Contact"
 
@@ -138,6 +156,15 @@ msgstr "Me contacter"
 
 msgid "cyContactMenuTopText"
 msgstr "Me contacter"
+
+msgid "cyCreativeCommonsMenuBottomUrl"
+msgstr "pages/LicenseCreativeCommons"
+
+msgid "cyCreativeCommonsMenuBottomTooltip"
+msgstr "License Creative Commons"
+
+msgid "cyCreativeCommonsMenuBottomText"
+msgstr "License Creative Commons"
 
 msgid "cyCreativeCommonsMenuTopUrl"
 msgstr "pages/LicenseCreativeCommons"
@@ -157,6 +184,15 @@ msgstr "CSS 3.0"
 msgid "cyCSSValidationTooltip"
 msgstr "Vérifier la validité de la feuille de styles CSS 3.0"
 
+msgid "cyGithubMenuBottomUrl"
+msgstr "https://github.com/wwwouaiebe"
+
+msgid "cyGithubMenuBottomTooltip"
+msgstr "Coding on Github &#8599;"
+
+msgid "GithubMenuBottomText"
+msgstr "Coding on Github &#8599;"
+
 msgid "cyGithubMenuTopUrl"
 msgstr "https://github.com/wwwouaiebe"
 
@@ -174,6 +210,15 @@ msgstr "HTML 5.0"
 
 msgid "cyHTMLValidationTooltip"
 msgstr "Vérifier la validité de cette page HTML 5.0"
+
+msgid "cyInfoLegaleMenuBottomUrl"
+msgstr "pages/InformationsLegales"
+
+msgid "cyInfoLegaleMenuBottomTooltip"
+msgstr "Informations légales"
+
+msgid "cyInfoLegaleMenuBottomText"
+msgstr "Informations légales"
 
 msgid "cyInfoLegaleMenuTopUrl"
 msgstr "pages/InformationsLegales"
@@ -253,22 +298,22 @@ msgstr ""
 msgid "cyNearTitleTop"
 msgstr ""
 
-msgid "CyOuaiebeMenuBottomText"
+msgid "cyOuaiebeMenuBottomText"
 msgstr ""
 
-msgid "CyOuaiebeMenuBottomTooltip"
+msgid "cyOuaiebeMenuBottomTooltip"
 msgstr ""
 
-msgid "CyOuaiebeMenuBottomUrl"
+msgid "cyOuaiebeMenuBottomUrl"
 msgstr ""
 
-msgid "CyOuaiebeMenuTopText"
+msgid "cyOuaiebeMenuTopText"
 msgstr ""
 
-msgid "CyOuaiebeMenuTopTooltip"
+msgid "cyOuaiebeMenuTopTooltip"
 msgstr ""
 
-msgid "CyOuaiebeMenuTopUrl"
+msgid "cyOuaiebeMenuTopUrl"
 msgstr ""
 
 msgid "cyOurtheNearMenuBottomText"
@@ -331,13 +376,13 @@ msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2
 msgid "cyParcoursArtistes2016MenuTopUrl"
 msgstr "pages/parcours-artistes-2016"
 
-msgid "cyParcoursArtistesMenuBottomText"
+msgid "cyParcoursArtistes2018MenuBottomText"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
-msgid "cyParcoursArtistesMenuBottomTooltip"
+msgid "cyParcoursArtistes2018MenuBottomTooltip"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
-msgid "cyParcoursArtistesMenuBottomUrl"
+msgid "cyParcoursArtistes2018MenuBottomUrl"
 msgstr "pages/parcours-artistes-2018"
 
 msgid "cyParcoursArtistes2018MenuTopText"
@@ -406,6 +451,15 @@ msgstr "Parcourez les séries&nbsp;:"
 msgid "cyTagsTitleTop"
 msgstr "Parcourez les séries&nbsp;:"
 
+msgid "cyVeloNordMenuBottomUrl"
+msgstr "pages/707"
+
+msgid "cyVeloNordMenuBottomTooltip"
+msgstr "En vélo, vers le Nord"
+
+msgid "cyVeloNordMenuBottomText"
+msgstr "En vélo, vers le Nord"
+
 msgid "cyVeloNordMenuTopUrl"
 msgstr "pages/707"
 
@@ -414,6 +468,15 @@ msgstr "En vélo, vers le Nord"
 
 msgid "cyVeloNordMenuTopText"
 msgstr "En vélo, vers le Nord"
+
+msgid "cyViePriveeMenuBottomUrl"
+msgstr "pages/ViePrivee"
+
+msgid "cyViePriveeMenuBottomTooltip"
+msgstr "Votre vie privée"
+
+msgid "cyViePriveeMenuBottomText"
+msgstr "Votre vie privée"
 
 msgid "cyViePriveeMenuTopUrl"
 msgstr "pages/ViePrivee"

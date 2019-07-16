@@ -82,6 +82,13 @@ function cySetColorChooser ( )
 {
 	if ( cyStorageAvailable ( 'localStorage' ) )
 	{
+		var colorChooserLi = document.createElement ( 'li' );
+		var colorChooserAnchor = document.createElement ( 'a' );
+		colorChooserAnchor.id = 'cyColorChooserMenuTop';
+		colorChooserLi.appendChild ( colorChooserAnchor );
+		if ( document.getElementById ( 'cyPagesMenuTop' ) ) {
+			document.getElementById ( 'cyPagesMenuTop' ).appendChild ( colorChooserLi );
+		}
 		var strCurrentStyle = cyReadStorage ( "style" );
 		localStorage.setItem ( 'style', strCurrentStyle );
 	

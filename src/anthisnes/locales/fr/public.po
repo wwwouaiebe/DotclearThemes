@@ -61,6 +61,24 @@ msgstr "Voir tous les chemins et les champs"
 msgid "cyAllTagsPageTitle"
 msgstr "Les chemins et les champs"
 
+msgid "cyAnthisnesOrgMenuBottomText"
+msgstr ""
+
+msgid "cyAnthisnesOrgMenuBottomTooltip"
+msgstr ""
+
+msgid "cyAnthisnesOrgMenuBottomUrl"
+msgstr ""
+
+msgid "cyAnthisnesOrgMenuTopText"
+msgstr ""
+
+msgid "cyAnthisnesOrgMenuTopTooltip"
+msgstr ""
+
+msgid "cyAnthisnesOrgMenuTopUrl"
+msgstr ""
+
 msgid "cyArchivesMenuBottomTooltip"
 msgstr "Voyagez dans le temps jusqu'en "
 
@@ -121,6 +139,15 @@ msgstr "Le Condroz"
 msgid "cyCondrozNearMenuTopUrl"
 msgstr "http://www.ouaie.be/blog/category/Belgique/Condroz"
 
+msgid "cyContactMenuBottomUrl"
+msgstr "pages/Contact"
+
+msgid "cyContactMenuBottomTooltip"
+msgstr "Me contacter"
+
+msgid "cyContactMenuBottomText"
+msgstr "Me contacter"
+
 msgid "cyContactMenuTopUrl"
 msgstr "pages/Contact"
 
@@ -129,6 +156,15 @@ msgstr "Me contacter"
 
 msgid "cyContactMenuTopText"
 msgstr "Me contacter"
+
+msgid "cyCreativeCommonsMenuBottomUrl"
+msgstr "pages/LicenseCreativeCommons"
+
+msgid "cyCreativeCommonsMenuBottomTooltip"
+msgstr "License Creative Commons"
+
+msgid "cyCreativeCommonsMenuBottomText"
+msgstr "License Creative Commons"
 
 msgid "cyCreativeCommonsMenuTopUrl"
 msgstr "pages/LicenseCreativeCommons"
@@ -148,6 +184,23 @@ msgstr "CSS 3.0"
 msgid "cyCSSValidationTooltip"
 msgstr "Vérifier la validité de la feuille de styles CSS 3.0"
 
+msgid "cyGithubMenuBottomUrl"
+msgstr ""
+
+msgid "cyGithubMenuBottomTooltip"
+msgstr ""
+
+msgid "GithubMenuBottomText"
+msgstr ""
+
+msgid "cyGithubMenuTopUrl"
+msgstr ""
+
+msgid "cyGithubMenuTopTooltip"
+msgstr ""
+
+msgid "GithubMenuTopText"
+msgstr ""
 msgid "cyHTMLValidation1"
 msgstr "Cette page est validée"
 
@@ -156,6 +209,15 @@ msgstr "HTML 5.0"
 
 msgid "cyHTMLValidationTooltip"
 msgstr "Vérifier la validité de cette page HTML 5.0"
+
+msgid "cyInfoLegaleMenuBottomUrl"
+msgstr "pages/InformationsLegales"
+
+msgid "cyInfoLegaleMenuBottomTooltip"
+msgstr "Informations légales"
+
+msgid "cyInfoLegaleMenuBottomText"
+msgstr "Informations légales"
 
 msgid "cyInfoLegaleMenuTopUrl"
 msgstr "pages/InformationsLegales"
@@ -313,13 +375,13 @@ msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2
 msgid "cyParcoursArtistes2016MenuTopUrl"
 msgstr "http://www.ouaie.be/blog/pages/parcours-artistes-2016"
 
-msgid "cyParcoursArtistesMenuBottomText"
+msgid "cyParcoursArtistes2018MenuBottomText"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018 &#8599;"
 
-msgid "cyParcoursArtistesMenuBottomTooltip"
+msgid "cyParcoursArtistes2018MenuBottomTooltip"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
-msgid "cyParcoursArtistesMenuBottomUrl"
+msgid "cyParcoursArtistes2018MenuBottomUrl"
 msgstr "http://www.ouaie.be/blog/pages/parcours-artistes-2018"
 
 msgid "cyParcoursArtistes2018MenuTopText"
@@ -387,6 +449,33 @@ msgstr "Parcourez les chemins et les champs&nbsp;:"
 
 msgid "cyTagsTitleTop"
 msgstr "Parcourez les chemins et les champs&nbsp;:"
+
+msgid "cyVeloNordMenuBottomUrl"
+msgstr ""
+
+msgid "cyVeloNordMenuBottomTooltip"
+msgstr ""
+
+msgid "cyVeloNordMenuBottomText"
+msgstr ""
+
+msgid "cyVeloNordMenuTopUrl"
+msgstr ""
+
+msgid "cyVeloNordMenuTopTooltip"
+msgstr ""
+
+msgid "cyVeloNordMenuTopText"
+msgstr ""
+
+msgid "cyViePriveeMenuBottomUrl"
+msgstr "pages/ViePrivee"
+
+msgid "cyViePriveeMenuBottomTooltip"
+msgstr "Votre vie privée"
+
+msgid "cyViePriveeMenuBottomText"
+msgstr "Votre vie privée"
 
 msgid "cyViePriveeMenuTopUrl"
 msgstr "pages/ViePrivee"
