@@ -24,20 +24,14 @@
 	</p>
 	<tpl:MediaInfoIf has_exif="0">
 		<p class="cyPictureDate">
-			{{tpl:lang cyPostDateText1}}
-			{{tpl:EntryDate format="%A %e %B %Y"}}
-			{{tpl:lang cyPostDateText2}}
-			{{tpl:EntryTime format="%H:%M"}}
+			{{tpl:lang cyPostDateText1}}{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
 		</p>
 	</tpl:MediaInfoIf>
 	<tpl:MediaInfoIf has_exif="1">
 		<p class="cyPictureDate">
-			{{tpl:lang cyPostDateText1}}
-			{{tpl:MediaInfoDateTimeOriginal format="%A %e %B %Y"}}
-			{{tpl:lang cyPostDateText2}}
-			{{tpl:MediaInfoDateTimeOriginal format="%H heures %M"}}
+			{{tpl:lang cyPostDateText1}}{{tpl:MediaInfoDateTimeOriginal format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:MediaInfoDateTimeOriginal format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:MediaInfoDateTimeOriginal format="%M"}}
 		</p>
-		<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaInfoAllExif format="%Model% %FocalLength% mm - f %FNumber% %ExposureTime% sec. %ISOSpeedRatings% ISO"}}</span></p>
+		<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaInfoAllExif format="%Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}</span></p>
 	</tpl:MediaInfoIf>
 </tpl:MediaInfos>
 <tpl:EntryIf selected="1">
@@ -45,12 +39,7 @@
 </tpl:EntryIf>
 <tpl:EntryIf has_attachment="0">
 	<p class="cyPostDate">
-		{{tpl:lang cyPostDateText4}}
-		{{tpl:EntryDate format="%A %e %B %Y"}}
-		{{tpl:lang cyPostDateText2}}
-		{{tpl:EntryTime format="%H"}}
-		{{tpl:lang cyPostDateText3}}
-		{{tpl:EntryTime format="%M"}}
+		{{tpl:lang cyPostDateText4}}{{tpl:EntryDate format="%%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
 	</p>
 </tpl:EntryIf>
 <tpl:SysIf has_tpl="_ouaie.html">

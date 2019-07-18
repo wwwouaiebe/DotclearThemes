@@ -115,6 +115,18 @@ msgstr "Affichage contrasté"
 msgid "cyChangeDisplayMenuTopTooltip"
 msgstr "Passer en affichage contrasté"
 
+msgid "cyColorChooserContraste"
+msgstr "Affichage contrasté"
+
+msgid "cyColorChooserContrasteTitle"
+msgstr "Passer en affichage contrasté"
+
+msgid "cyColorChooserNormal"
+msgstr "Affichage normal"
+
+msgid "cyColorChooserNormalTitle"
+msgstr "Passer en affichage normal"
+
 msgid "cyComing1"
 msgstr "Le vent vous a emmené aux Floxhes"
 
@@ -176,10 +188,13 @@ msgid "cyCreativeCommonsMenuTopText"
 msgstr "License Creative Commons"
 
 msgid "cyCSSValidation1"
-msgstr "&nbsp;&#8599;,"
+msgstr "&nbsp;&#8599; et"
 
 msgid "cyCSSValidation2"
 msgstr "CSS 3.0"
+
+msgid "cyCSSValidation3"
+msgstr "&nbsp;&#8599;"
 
 msgid "cyCSSValidationTooltip"
 msgstr "Vérifier la validité de la feuille de styles CSS 3.0"
@@ -418,7 +433,7 @@ msgid "cyPostDateText2"
 msgstr " à "
 
 msgid "cyPostDateText3"
-msgstr " heures "
+msgstr "&nbsp;heures&nbsp;"
 
 msgid "cyPostDateText4"
 msgstr "Publié le "

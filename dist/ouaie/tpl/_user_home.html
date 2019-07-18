@@ -2,6 +2,7 @@
 	<tpl:DateHeader><h2 class="cyPostTitleDate">{{tpl:EntryDate}}</h2></tpl:DateHeader>
 	<article id="cy{{tpl:EntryID}}" class="cyPost cy{{tpl:EntryIfOdd return="cyPostCommentOdd"}} {{tpl:EntryIfFirst return="cyPageCommentFirst"}}" lang="{{tpl:EntryLang}}" xml:lang="{{tpl:EntryLang}}">
 		{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+		<h3 class="cyPostTitle">&nbsp;</h3>
 		<div class="cyPostContent">
 			{{tpl:include src="_user_post_content.html"}}
 		</div>

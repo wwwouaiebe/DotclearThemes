@@ -82,29 +82,49 @@ function cySetColorChooser ( )
 {
 	if ( cyStorageAvailable ( 'localStorage' ) )
 	{
-		var colorChooserLi = document.createElement ( 'li' );
-		var colorChooserAnchor = document.createElement ( 'a' );
-		colorChooserAnchor.id = 'cyColorChooserMenuTop';
-		colorChooserLi.appendChild ( colorChooserAnchor );
+		var colorChooserTopLi = document.createElement ( 'li' );
+		var colorChooserTopAnchor = document.createElement ( 'a' );
+		colorChooserTopAnchor.id = 'cyColorChooserMenuTop';
+		colorChooserTopLi.appendChild ( colorChooserTopAnchor );
 		if ( document.getElementById ( 'cyPagesMenuTop' ) ) {
-			document.getElementById ( 'cyPagesMenuTop' ).appendChild ( colorChooserLi );
+			document.getElementById ( 'cyPagesMenuTop' ).appendChild ( colorChooserTopLi );
 		}
+		
+		var colorChooserBottomLi = document.createElement ( 'li' );
+		var colorChooserBottomAnchor = document.createElement ( 'a' );
+		colorChooserBottomAnchor.id = 'cyColorChooserMenuBottom';
+		colorChooserBottomLi.appendChild ( colorChooserBottomAnchor );
+		if ( document.getElementById ( 'cyPagesMenuBottom' ) ) {
+			document.getElementById ( 'cyPagesMenuBottom' ).appendChild ( colorChooserBottomLi );
+		}
+		
 		var strCurrentStyle = cyReadStorage ( "style" );
 		localStorage.setItem ( 'style', strCurrentStyle );
 	
+		var outerHTML = '';
 		if ( 'standard' == strCurrentStyle )
 		{
-			if ( document.getElementById ( 'cyColorChooserMenuTop' ) ) 
-			{
-				document.getElementById ( 'cyColorChooserMenuTop' ).outerHTML = '<a id="cyColorChooserMenuTop" href="javascript:cyChangeStyleSheet()" title="Passer en affichage normal" >Affichage normal</a>';
-			}
+			outerHTML = '<a id="cyColorChooserMenuTop" href="javascript:cyChangeStyleSheet()" title="' +
+				cyLanguage.cyColorChooserNormalTitle +
+				'" >' + 
+				cyLanguage.cyColorChooserNormal + 
+				'</a>';
 		}
 		else
 		{
-			if ( document.getElementById ( 'cyColorChooserMenuTop' ) ) 
-			{
-				document.getElementById ( 'cyColorChooserMenuTop' ).outerHTML = '<a id="cyColorChooserMenuTop" href="javascript:cyChangeStyleSheet()" title="Passer en affichage contrasté" >Affichage contrasté</a>';
-			}
+			outerHTML = '<a id="cyColorChooserMenuTop" href="javascript:cyChangeStyleSheet()" title="' +
+				cyLanguage.cyColorChooserContrasteTitle +
+				'" >' + 
+				cyLanguage.cyColorChooserContraste + 
+				'</a>';
+		}
+		if ( document.getElementById ( 'cyColorChooserMenuTop' ) ) 
+		{
+			document.getElementById ( 'cyColorChooserMenuTop' ).outerHTML = outerHTML;
+		}
+		if ( document.getElementById ( 'cyColorChooserMenuBottom' ) ) 
+		{
+			document.getElementById ( 'cyColorChooserMenuBottom' ).outerHTML = outerHTML;
 		}
 	}		
 }
