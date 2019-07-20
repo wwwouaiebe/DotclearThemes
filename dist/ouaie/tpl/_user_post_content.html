@@ -1,12 +1,13 @@
-﻿<tpl:EntryIf extended="1">
+﻿<div>{{tpl:ImgExifInfoContent addClass="cy" before="Ouverture f/ %FNumber% - Exposition : %ExposureTime% - Sensibilité: %ISOSpeedRatings%" title="%Title% - Marque : %Make%" after="Marque : %Make% - Boitier: %Model% - Focale : %FocalLength%"}}</div>
+<tpl:EntryIf extended="1">
 <div  class="cyPostExcerpt">{{tpl:EntryExcerpt}}</div>
 </tpl:EntryIf>
-<tpl:MediaInfos>
-	<div class="cyPicture{{tpl:MediaInfoClass}}">
-<p><img src="{{tpl:BlogURL}}{{tpl:MediaInfoRelUrl}}" title=
+<tpl:MediaExifInfos>
+	<div class="cyPicture{{tpl:MediaExifInfoClass}}">
+<p><img src="{{tpl:BlogURL}}{{tpl:MediaExifInfoRelUrl}}" title=
 "<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} <tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader>, </tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter> </tpl:TagsFooter></tpl:EntryTags> - </tpl:SysIf>
-<tpl:MediaInfoIf has_exif="1">{{tpl:MediaInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaInfoIf>
-<tpl:MediaInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaInfoIf>
+<tpl:MediaExifInfoIf has_exif="1">{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>
+<tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>
 " /></p>
 	</div>
 	<p class="cyPostLocationName">
@@ -22,18 +23,18 @@
 			</tpl:EntryTags>
 		</tpl:SysIf>						  
 	</p>
-	<tpl:MediaInfoIf has_exif="0">
+	<tpl:MediaExifInfoIf has_exif="0">
 		<p class="cyPictureDate">
 			{{tpl:lang cyPostDateText1}}{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
 		</p>
-	</tpl:MediaInfoIf>
-	<tpl:MediaInfoIf has_exif="1">
+	</tpl:MediaExifInfoIf>
+	<tpl:MediaExifInfoIf has_exif="1">
 		<p class="cyPictureDate">
-			{{tpl:lang cyPostDateText1}}{{tpl:MediaInfoDateTimeOriginal format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:MediaInfoDateTimeOriginal format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:MediaInfoDateTimeOriginal format="%M"}}
+			{{tpl:lang cyPostDateText1}}{{tpl:MediaExifInfoDateTimeOriginal format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:MediaExifInfoDateTimeOriginal format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:MediaExifInfoDateTimeOriginal format="%M"}}
 		</p>
-		<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaInfoAllExif format="%Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}</span></p>
-	</tpl:MediaInfoIf>
-</tpl:MediaInfos>
+		<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaExifInfoAllExif format="%Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}</span></p>
+	</tpl:MediaExifInfoIf>
+</tpl:MediaExifInfos>
 <tpl:EntryIf selected="1">
 	<div class="cyPostText">{{tpl:EntryContent}}</div>
 </tpl:EntryIf>

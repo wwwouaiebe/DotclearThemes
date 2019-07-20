@@ -1,14 +1,14 @@
 <tpl:Entries lastn="1000" ignore_pagination="1" type="post">
 	<a href="{{tpl:EntryURL}}" title="{{tpl:EntryCategory}} - {{tpl:EntryDate}}">
 	<tpl:EntryIf has_attachment="1">
-		<tpl:MediaInfos>
-			<img class="cyThumbnail" src="{{tpl:BlogURL}}{{tpl:MediaInfoThumbnailUrl}}" 
+		<tpl:MediaExifInfos>
+			<img class="cyThumbnail" src="{{tpl:BlogURL}}{{tpl:MediaExifInfoThumbnailUrl}}" 
 title=
 "<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} <tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader>, </tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter> </tpl:TagsFooter></tpl:EntryTags> - </tpl:SysIf>
-<tpl:MediaInfoIf has_exif="1">{{tpl:MediaInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaInfoIf>
-<tpl:MediaInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaInfoIf>
+<tpl:MediaExifInfoIf has_exif="1">{{tpl:MediaExifInfoDateTimeOriginal format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>
+<tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>
 " />
-		</tpl:MediaInfos>
+		</tpl:MediaExifInfos>
 	</tpl:EntryIf>
 	<tpl:EntryIf has_attachment="0">
 		{{tpl:EntryFirstImage size="s" class="cyThumbnail"}}
