@@ -64,7 +64,7 @@ function cyReadStorage ( strName )
 	}
 	else
 	{
-		return 'standard';
+		return '';
 	}
 }
 
@@ -82,77 +82,56 @@ function cySetColorChooser ( )
 {
 	if ( cyStorageAvailable ( 'localStorage' ) )
 	{
+		var strCurrentStyle = cyReadStorage ( "style" );
+		if ( 'cyAlternateColor' !== strCurrentStyle ) {
+			strCurrentStyle = 'cyStandardColor';
+		}
+		localStorage.setItem ( 'style', strCurrentStyle );
+	
 		var colorChooserTopLi = document.createElement ( 'li' );
 		var colorChooserTopAnchor = document.createElement ( 'a' );
+		colorChooserTopAnchor.addEventListener ( 'click', function ( ) {cyChangeStyleSheet ( );}, false );
 		colorChooserTopAnchor.id = 'cyColorChooserMenuTop';
 		colorChooserTopLi.appendChild ( colorChooserTopAnchor );
 		if ( document.getElementById ( 'cyPagesMenuTop' ) ) {
 			document.getElementById ( 'cyPagesMenuTop' ).appendChild ( colorChooserTopLi );
 		}
 		
-		var colorChooserBottomLi = document.createElement ( 'li' );
-		var colorChooserBottomAnchor = document.createElement ( 'a' );
-		colorChooserBottomAnchor.id = 'cyColorChooserMenuBottom';
-		colorChooserBottomLi.appendChild ( colorChooserBottomAnchor );
-		if ( document.getElementById ( 'cyPagesMenuBottom' ) ) {
+		var menuBottom = document.getElementById ( 'cyPagesMenuBottom' );
+		var colorChooserBottomAnchor = null;
+		if ( menuBottom ) {
+			var colorChooserBottomLi = document.createElement ( 'li' );
+			colorChooserBottomAnchor = document.createElement ( 'a' );
+			colorChooserBottomAnchor.addEventListener ( 'click', function ( ) {cyChangeStyleSheet ( );}, false );
+			colorChooserBottomAnchor.id = 'cyColorChooserMenuBottom';
+			colorChooserBottomLi.appendChild ( colorChooserBottomAnchor );
 			document.getElementById ( 'cyPagesMenuBottom' ).appendChild ( colorChooserBottomLi );
 		}
 		
-		var strCurrentStyle = cyReadStorage ( "style" );
-		localStorage.setItem ( 'style', strCurrentStyle );
-	
-		var outerHTML = '';
-		if ( 'standard' == strCurrentStyle )
+		if ( 'cyStandardColor' === strCurrentStyle )
 		{
-			outerHTML = '<a id="cyColorChooserMenuTop" href="javascript:cyChangeStyleSheet()" title="' +
-				cyLanguage.cyColorChooserNormalTitle +
-				'" >' + 
-				cyLanguage.cyColorChooserNormal + 
-				'</a>';
+			colorChooserTopAnchor.innerHTML = cyLanguage.cyColorChooserNormal;
+			colorChooserTopAnchor.title = cyLanguage.cyColorChooserNormalTitle;
+			if ( colorChooserBottomAnchor ) {
+				colorChooserBottomAnchor.innerHTML = cyLanguage.cyColorChooserNormal;
+				colorChooserBottomAnchor.title = cyLanguage.cyColorChooserNormalTitle;
+			}
 		}
 		else
 		{
-			outerHTML = '<a id="cyColorChooserMenuTop" href="javascript:cyChangeStyleSheet()" title="' +
-				cyLanguage.cyColorChooserContrasteTitle +
-				'" >' + 
-				cyLanguage.cyColorChooserContraste + 
-				'</a>';
-		}
-		if ( document.getElementById ( 'cyColorChooserMenuTop' ) ) 
-		{
-			document.getElementById ( 'cyColorChooserMenuTop' ).outerHTML = outerHTML;
-		}
-		if ( document.getElementById ( 'cyColorChooserMenuBottom' ) ) 
-		{
-			document.getElementById ( 'cyColorChooserMenuBottom' ).outerHTML = outerHTML;
+			colorChooserTopAnchor.innerHTML = cyLanguage.cyColorChooserContraste;
+			colorChooserTopAnchor.title = cyLanguage.cyColorChooserContrasteTitle;
+			if ( colorChooserBottomAnchor ) {
+				colorChooserBottomAnchor.innerHTML = cyLanguage.cyColorChooserContraste;
+				colorChooserBottomAnchor.title = cyLanguage.cyColorChooserContrasteTitle;
+			}
+			document.body.classList.add ( 'cyAlternateColor' );
+			document.body.classList.remove ( 'cyStandardColor' );
 		}
 	}		
 }
 
 /* --- End of cySetColorChooser function --- */		
-
-/* 
---- cySetColorStyleSheet function ------------------------------------------------------------------------------------------
-
-This function ...
-
-------------------------------------------------------------------------------------------------------------------------
-*/
-
-function cySetColorStyleSheet ( strPath )
-{
-	
-	if ( cyStorageAvailable ( 'localStorage' ) )
-	{
-		var strCurrentStyle = cyReadStorage ( "style" );
-		localStorage.setItem ( 'style', strCurrentStyle );
-
-		var linkElement = document.getElementById ( "cyColorSchemeLink" );
-		linkElement.href = strPath + strCurrentStyle + 'ColorScheme.css';
-	}
-}	
-
-/* --- End of cySetColorStyleSheet function --- */		
 
 /* 
 --- cyChangeStyleSheet function ------------------------------------------------------------------------------------------
@@ -164,19 +143,35 @@ This function ...
 
 function cyChangeStyleSheet ( )
 {
-	if ( cyStorageAvailable ( 'localStorage' ) )
-	{
-		var strCurrentStyle = cyReadStorage ( "style" );
-		var strNewStyle = 'standard';
-		if ( 'standard' == strCurrentStyle )
-		{
-			strNewStyle = 'alternate';
-		}
+	var strCurrentStyle = cyReadStorage ( "style" );
+	
+	var colorChooserTopAnchor = document.getElementById ( 'cyColorChooserMenuTop' );
+	var colorChooserBottomAnchor = document.getElementById ( 'cyColorChooserMenuBottom' );
+	
+	if ( 'cyStandardColor' === strCurrentStyle ) {
 		
-		localStorage.setItem ( 'style', strNewStyle );
-			
-		window.location.reload ( );
+		colorChooserTopAnchor.innerHTML = cyLanguage.cyColorChooserContraste;
+		colorChooserTopAnchor.title = cyLanguage.cyColorChooserContrasteTitle;
+		if ( colorChooserBottomAnchor ) {
+			colorChooserBottomAnchor.innerHTML = cyLanguage.cyColorChooserContraste;
+			colorChooserBottomAnchor.title = cyLanguage.cyColorChooserContrasteTitle;
+		}
+		document.body.classList.add ( 'cyAlternateColor' );
+		document.body.classList.remove ( 'cyStandardColor' );
+		localStorage.setItem ( 'style', 'cyAlternateColor' );
 	}
+	else {
+		colorChooserTopAnchor.innerHTML = cyLanguage.cyColorChooserNormal;
+		colorChooserTopAnchor.title = cyLanguage.cyColorChooserNormalTitle;
+		if ( colorChooserBottomAnchor ) {
+			colorChooserBottomAnchor.innerHTML = cyLanguage.cyColorChooserNormal;
+			colorChooserBottomAnchor.title = cyLanguage.cyColorChooserNormalTitle;
+		}
+		document.body.classList.add ( 'cyStandardColor' );
+		document.body.classList.remove ( 'cyAlternateColor' );
+		localStorage.setItem ( 'style', 'cyStandardColor' );
+	}
+	
 }
 
 /* --- End of cyChangeStyleSheet function --- */		

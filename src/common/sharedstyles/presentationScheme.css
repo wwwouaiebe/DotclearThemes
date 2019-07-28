@@ -1,4 +1,30 @@
 /* This file is shared between the DotClear themes OUAIE and ANTHISNES -->*/
+/* start reset */
+
+html, body, div, span, object,
+h1, h2, h3, h4, h5, h6, p,
+a, img, sub, sup, ul, li,
+figure, figcaption
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	box-sizing: border-box;	
+}
+body
+{
+	line-height: 1;
+}
+ul
+{
+	list-style: none;
+}
+
+/* End reset*/
 /*
 	Largeurs retenues:
 	- smartphones: 600px max (media queries):
@@ -28,21 +54,45 @@ body
 	margin-left: 2%;
 	margin-right: 2%;
 }
+body.cyStandardColor
+{
+	background-color: black;
+	color: white;
+}
+body.cyAlternateColor
+{
+	background-color: white;
+	color: black;
+}
 /* Fin du corps */
 /* Titres */
-h1, h2 , h3, h4, h5
+h1, h2, h3, h4, h5, h6
 {
 	padding-bottom: 1em;
 }
 /* Fin titres */
+/* Liens */
+body.cyStandardColor a
+{
+	color: #555555;
+}
+body.cyAlternateColor a
+{
+	color: #555555;
+}
+body.cyStandardColor a:hover
+{
+	color: orange;
+}
+body.cyAlternateColor a:hover
+{
+	color: purple;
+}
+/* Fin liens */
 /* Paragraphes */
 p, ul
 {
 	padding-bottom: 0.5em;
-}
-p.cyNote
-{
-	font-size: 80%;
 }
 /* Images */
 img
@@ -66,7 +116,8 @@ figcaption
 	font-size: 80%;
 }
 /* Fin des figures */
-/* En-têre */
+
+/* En-têre => _top.html*/
 #cySiteTitle
 {
 	border-bottom-style: solid;
@@ -84,6 +135,40 @@ figcaption
 {
 	text-decoration: none;
 }
+body.cyStandardColor #cySiteTitle > h1 > a
+{
+	color: white;
+}
+body.cyAlternateColor #cySiteTitle > h1 > a
+{
+	color: black;
+}
+body.cyStandardColor #cySiteTitle > h1 > a:hover
+{
+	color: white;
+}
+body.cyAlternateColor #cySiteTitle > h1 > a:hover
+{
+	color: black;
+}
+body.cyStandardColor #cySiteTitle > h1 > a > span
+{
+	color: orange
+}
+body.cyAlternateColor #cySiteTitle > h1 > a > span
+{
+	color: purple;
+}
+body.cyStandardColor #cySiteTitle > h1 > a:hover > span
+{
+	color: purple;
+	transition: color 1s;
+}
+body.cyAlternateColor #cySiteTitle > h1 > a:hover > span
+{
+	color: orange;
+	transition: color 1s;
+}
 #cySiteDescription
 {
 	padding-top: 0.5em;
@@ -92,7 +177,8 @@ figcaption
 	text-align: right;
 }
 /* Fin de l'en-tête */
-/* Corps de la page */
+
+/* Corps de la page => home.html, page.html, post.html, category.html, categories.html, tag.html, tags.html, archives_month.html, archive.html, 403.html, 404.html  */
 #cyMain
 {
 	padding-top: 2em;
@@ -109,15 +195,16 @@ figcaption
 	font-size: 80%;
 }
 /* Fin du pied de page */
-/* Menus */
-ul.cyMenu
+
+/* Menus => _user_top_menu.html, _footer.html*/
+.cyMenu
 {
 	padding-top: 1em;
 	padding-bottom: 1.95em;
 	line-height: 1.55em;
 	text-align: center;
 }
-ul.cyMenu > li
+.cyMenuItem
 {
 	display: inline;
 	white-space: nowrap;
@@ -160,7 +247,8 @@ ul.cyMenu > li
 	border-bottom-width: 0.1em;
 }
 /* Fin des menus */
-/* Billets */
+
+/* Billets => post.html, _user_home.html */
 .cyPost
 {
 	padding-bottom: 4em;
@@ -183,38 +271,45 @@ ul.cyMenu > li
 {
 	padding-bottom: 1em;
 }
-.cyPictureLandscape img,
-.cyPictureLandscape video,
-.cyPictureLandscape > p > img,
-.cyPictureLandscape > p > video,
-.cyPicturePortrait img,
-.cyPictureSquare img,					  
-.cyPicturePortrait > p > img,
-.cyPictureSquare > p > img
+.cyPictureLandscape,
+.cyPicturePortrait,
+.cyPictureSquare			  
 {
 	border-style: solid;
 	border-width: 0.1em;
 }						 
-.cyPictureLandscape img,
-.cyPictureLandscape video,
-.cyPictureLandscape > p > img,
-.cyPictureLandscape > p > video
+.cyPictureLandscape
 {
 	width: 100%;
 }							 
-.cyPicturePortrait  img,
-.cyPictureSquare  img,					  
-.cyPicturePortrait > p > img,
-.cyPictureSquare > p > img
+.cyPicturePortrait,
+.cyPictureSquare
 {
 	width: 66%;
+}
+body.cyStandardColor .cyPicturePortrait,
+body.cyStandardColor .cyPictureSquare,
+body.cyStandardColor .cyPictureLandscape
+{
+	border-color: white;
+}
+body.cyAlternateColor .cyPicturePortrait,
+body.cyAlternateColor .cyPictureSquare,
+body.cyAlternateColor .cyPictureLandscape
+{
+	border-color: black;
 }
 p.cyPictureInfo > span + span
 {
 	display: inline-block;
 }
+.cyNote
+{
+	font-size: 80%;
+}
 /* Fin des billets */
-/* Pages */
+
+/* Pages => See page content*/
 .cyPage > div.cyPageContent > h3
 {
 	text-transform: uppercase;
@@ -225,85 +320,6 @@ p.cyPictureInfo > span + span
 	padding-top: 3em;
 }
 /* Fin des pages */
-/* Commentaires */
-.cyPageCommentPreview  > dl > dt,
-.cyPostCommentPreview  > dl > dt,
-#cyPageComments > dl  > dt,
-#cyPostComments > dl > dt
-{
-	padding-bottom: 1em;
-}
-.cyPageCommentPreview > dl > dd,
-.cyPostCommentPreview > dl > dd,
-#cyPageComments > dl > dd,
-#cyPostComments > dl > dd
-{
-	padding-bottom: 1em;
-}
-.cyPageCommentPreview > dl > dd > p,
-.cyPostCommentPreview > dl > dd > p,
-#cyPageComments > dl > dd > p,
-#cyPostComments > dl > dd > p
-{
-	padding-bottom: 1em;
-	font-size: 80%;
-	padding-left: 1em;
-}
-dd.cyPageCommentMe,
-dd.cyPostCommentMe
-{
-	font-style: italic;
-}
-dt.cyPageCommentMe:after
-{
-	content: ", auteur de la page";
-}
-dt.cyPostCommentMe:after
-{
-	content: ", auteur de la photo";
-}
-/* Fin des commentaires */
-/* Formulaire d'envoi des commentaires */
-form.cyPageCommentForm,
-form.cyPostCommentForm
-{
-	padding-top: 1em;
-	padding-bottom: 1em;
-}
-form.cyPageCommentForm  label,
-form.cyPostCommentForm  label
-{
-	display: inline-block;
-	min-width: 10em;
-	text-align: right;
-	vertical-align: top;
-}
-form.cyPageCommentForm input,
-form.cyPostCommentForm input
-{
-	min-width: 30em;
-}
-form.cyPageCommentForm textarea,
-form.cyPostCommentForm textarea
-{
-	min-width: 30em;
-}
-p.cyButtons > input
-{
-	min-width: 0;
-	height: 3em;
-	vertical-align: top;
-	text-align: center;
-	border-radius: 0.5em;
-	font-weight: bold;
-	margin-bottom: 1em;
-}
-.form-help
-{
-	padding-top: 1em;
-	padding-bottom: 1em;
-}
-/* Fin du formulaire d'envoi des commentaires */
 /* Pagination */
 #cyPagination
 {
@@ -311,12 +327,12 @@ p.cyButtons > input
 	border-top-width: 0.1em;
 	padding-top: 2em;
 }
-#cyPagination > ul
+.cyPaginationList
 {
 	padding-bottom: 1em;
 	text-align: center
 }
-#cyPagination > ul > li
+.cyPaginationListItem
 {
 	display: inline;
 	padding-left: 3em;
@@ -332,7 +348,7 @@ p.cyButtons > input
 {
 	padding-bottom: 3em;
 }
-img.cyThumbnail
+.cyThumbnail
 {
 	height: 100px;
 	width: auto;
@@ -352,6 +368,14 @@ img.cyThumbnail
 	padding-top: 5em;
 	padding-bottom: 5em;
 }
+body.cyStandardColor #cyHttpFaultText
+{
+	color: orange;
+}
+body.cyAlternateColor #cyHttpFaultText
+{
+	color: purple;
+}
 /* Fin des pages 403 404 */
 @media screen and (min-width: 1px) and (max-width: 600px)
 {
@@ -369,13 +393,13 @@ img.cyThumbnail
 	}
 	/* Fin du corps de la page */
 	/* Menus */
-	ul.cyMenu
+	.cyMenu
 	{
 		text-align: left;
 		padding-top: 0;
 		padding-bottom: 1em;
 	}
-	ul.cyMenu > li
+	.cyMenuItem
 	{
 		white-space: normal;
 		line-height: 2.25em;
@@ -409,12 +433,12 @@ img.cyThumbnail
 	}
 	/* Fin des billets */
 	/* Pagination */
-	#cyPagination > ul
+	.cyPaginationList
 	{
 		text-align: left;
 		line-height: 1.55em;
 	}
-	#cyPagination > ul > li
+	.cyPaginationListItem
 	{
 		display: block;
 		padding-left: 0;
@@ -469,11 +493,7 @@ img.cyThumbnail
 	{
 		width: calc(972px + 0.2em);
 	}
-	.cyGrid-1 > div.cyGrid-2 > div.cyGrid-3.cyOrder-1,
-	.cyGrid-1 > div.cyGrid-2 > nav.cyGrid-3.cyOrder-1
-	{
-	}
-	.cyGrid-1 > div.cyGrid-2 > div.cyGrid-3.cyOrder-3
+	div.cyGrid-3.cyOrder-3
 	{
 		border-left-style: solid;
 		border-left-width: 0.1em;
@@ -508,7 +528,7 @@ img.cyThumbnail
 	{
 		padding-top: 0;
 	}
-	html > body#cyCategory > div#cyMain.cyGrid-1 > div.cyGrid-2 > section#cyMainContent.cyGrid-3.cyOrder-2 > p.cyComing
+	.cyComing
 	{
 		padding-top: 1em;
 	}
@@ -599,29 +619,47 @@ img.cyThumbnail
 	{
 		padding-bottom: 1em;
 	}
-	ul.cyMenu
+	.cyMenu
 	{
 		padding-top: 0;
 		line-height: 1.15em;
 		padding-bottom: 1em;
 	}
-	ul.cyMenu > li.cyCategoryFirst
+	.cyCategoryFirst
 	{
 		padding-top: 1em;
 		padding-bottom: 1em;
 	}
-	ul.cyMenu > li
+	.cyMenuItem
 	{
 		display: block;
 		padding-left: 0;
 		padding-right: 0;
 	}
-	ul.cyMenu > li > a
+	.cyMenuItem > a
 	{
 		padding-left: 0.6em;
 		border-left-style: solid;
 		border-left-width: 0.3em;
 		text-decoration: none;
+	}
+	body.cyStandardColor .cyMenuItem > a
+	{
+		border-color: black;
+	}
+	body.cyAlternateColor .cyMenuItem > a
+	{
+		border-color: white;
+	}
+	body.cyStandardColor .cyMenuItem > a:hover
+	{
+		border-color: orange;
+		transition: border-color 2s;
+	}
+	body.cyAlternateColor .cyMenuItem > a:hover
+	{
+		border-color: purple;
+		transition: border-color 2s;
 	}
 	#cyPagination
 	{
@@ -634,4 +672,54 @@ img.cyThumbnail
 		padding: 1em;
 	}
 	/* Fin de la pagination */
+	/* Javascript enabled */
+	body.cyJSPage #cyCategoriesMenuTop > li, 
+	body.cyJSPage #cyTagsMenuTop > li, 
+	body.cyJSPage #cyArchivesMenuTop > li, 
+	body.cyJSPage #cyPagesMenuTop > li
+	{
+		display: inline-block;
+	}
+	body.cyJSPage #cyCategoriesMenuTop.cyHiddenMenuPart, 
+	body.cyJSPage #cyTagsMenuTop.cyHiddenMenuPart, 
+	body.cyJSPage #cyArchivesMenuTop.cyHiddenMenuPart, 
+	body.cyJSPage #cyPagesMenuTop.cyHiddenMenuPart
+	{
+		transform: scaleY(0);
+		transform-origin: 0 0;
+		opacity:0;
+		line-height:0;
+	}
+	body.cyJSPage #cyCategoriesMenuTop > li, 
+	body.cyJSPage #cyTagsMenuTop > li, 
+	body.cyJSPage #cyArchivesMenuTop > li, 
+	body.cyJSPage #cyPagesMenuTop > li
+	{
+		padding:0;
+		margin:0;
+	}
+	body.cyJSPage .cyPostTitleDate.cyHidden,
+	body.cyJSPage .cyPost.cyHidden, 
+	body.cyJSPage .cyPost.cyHidden .cyPostTitle,
+	body.cyJSPage .cyPost.cyHidden .cyPostContent,
+	body.cyJSPage .cyPost.cyHidden .cyPictureLandscape,
+	body.cyJSPage .cyPost.cyHidden .cyPostLocationName,
+	body.cyJSPage .cyPost.cyHidden .cyPictureDate,
+	body.cyJSPage .cyPost.cyHidden .cyPictureInfo,
+	body.cyJSPage .cyPost.cyHidden .cyPostTags,
+	body.cyJSPage .cyPost.cyHidden .cyPictureLandscape,
+	body.cyJSPage .cyPost.cyHidden .cyPicturePottrait,
+	body.cyJSPage .cyPost.cyHidden .cyPictureSquare
+	{
+		transform: scale(0);
+		transform-origin: 0 0;
+		line-height:0;
+		padding: 0;
+		margin: 0;
+		width: 0;
+		height: 0;
+		border-width: 0;
+		border-style: none;
+	}	
+	/* Fin Javascript enabled */
 }

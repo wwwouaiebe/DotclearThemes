@@ -11,16 +11,16 @@
 	<tpl:EntriesFooter>
 		<tpl:Pagination>
 			<nav id="cyPagination">
-				<ul>
-					<li>
+				<ul class="cyPaginationList">
+					<li class="cyPaginationListItem">
 						<tpl:PaginationIf end="0">
 							<a href="{{tpl:PaginationURL offset="+1"}}" title="{{tpl:lang cyPaginationPreviousTooltip}}" class="cyPaginationPrevious">{{tpl:lang cyPaginationPreviousText}}</a>
 						</tpl:PaginationIf>
 					</li>
-					<li>
+					<li class="cyPaginationListItem">
 						<a href="{{tpl:BlogURL}}" title="{{tpl:lang cyPaginationHomeTooltip}}" class="cyPaginationHome">{{tpl:lang cyPaginationHomeText}}</a>
 					</li>
-					<li>
+					<li class="cyPaginationListItem">
 						<tpl:PaginationIf start="0">
 							<a href="{{tpl:PaginationURL offset="-1"}}" title="{{tpl:lang cyPaginationNextTooltip}}" class="cyPaginationNext">{{tpl:lang cyPaginationNextText}}</a>
 						</tpl:PaginationIf>

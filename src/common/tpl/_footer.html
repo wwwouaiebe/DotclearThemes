@@ -7,11 +7,11 @@
 			<ul id="cyCategoriesMenuBottom" class="cyCategoriesMenu cyMenu">
 				<tpl:SysIf has_tpl="_ouaie.html">
 					<tpl:Categories level="1">
-						<li>
+						<li class="cyMenuItem">
 							{{tpl:CategoryTitle}}&nbsp;:
 						</li>
 						<tpl:CategoryFirstChildren>
-						<li>
+						<li class="cyMenuItem">
 							<a href="{{tpl:CategoryURL}}" title ="{{tpl:CategoryTitle}}">{{tpl:CategoryTitle}}</a>
 						</li>
 						</tpl:CategoryFirstChildren>
@@ -19,25 +19,25 @@
 				</tpl:SysIf>					
 				<tpl:SysIf has_tpl="_anthisnes.html">
 					<tpl:Categories>
-						<li>
+						<li class="cyMenuItem">
 							<a href="{{tpl:CategoryURL}}" title ="{{tpl:lang cyCategoriesMenuBottomTooltip}}{{tpl:CategoryTitle}}">{{tpl:CategoryTitle}}</a>
 						</li>
 					</tpl:Categories>
 				</tpl:SysIf>					
-				<li> 
+				<li class="cyMenuItem"> 
 					<a href="{{tpl:BlogURL}}categories" title="{{tpl:lang cyAllCategoriesMenuBottomTooltip}}">{{tpl:lang cyAllCategoriesMenuBottomText}}</a>
 				</li>
 			</ul>
 			<tpl:SysIf has_tpl="_anthisnes.html">
 				<h2 id="cyNearTitleBottom" class="cyNearTitle cyMenuTitle">{{tpl:lang cyNearTitleBottom}}</h2>
 				<ul id="cyNearMenuBottom" class="cyNearMenu cyMenu">
-					<li>
+					<li class="cyMenuItem">
 						<a target="_blank" href="{{tpl:langcyCondrozNearMenuBottomUrl}}" title ="{{tpl:lang cyCondrozNearMenuBottomTooltip}}">{{tpl:lang cyCondrozNearMenuBottomText}}</a>
 					</li>
-					<li>
+					<li class="cyMenuItem">
 						<a target="_blank" href="{{tpl:langcyMeuseNearMenuBottomUrl}}" title ="{{tpl:lang cyMeuseNearMenuBottomTooltip}}">{{tpl:lang cyMeuseNearMenuBottomText}}</a>
 					</li>
-					<li>
+					<li class="cyMenuItem">
 						<a target="_blank" href="{{tpl:langcyOurtheNearMenuBottomUrl}}" title ="{{tpl:lang cyOurtheNearMenuBottomTooltip}}">{{tpl:lang cyOurtheNearMenuBottomText}}</a>
 					</li>
 				</ul>					
@@ -45,65 +45,65 @@
 			<h2 id="cyTagsTitleBottom" class="cyTagsTitle cyMenuTitle">{{tpl:lang cyTagsTitleBottom}}</h2>
 			<ul id="cyTagsMenuBottom" class="cyTagsMenu cyMenu">
 				<tpl:Tags>
-					<li>
+					<li class="cyMenuItem">
 						<a href="{{tpl:TagURL}}" title ="{{tpl:TagID}}">{{tpl:TagID}}</a>
 					</li>
 				</tpl:Tags>
-				<li> 
+				<li class="cyMenuItem"> 
 					<a href="{{tpl:BlogURL}}tags" title="{{tpl:lang cyAllTagsMenuBottomTooltip}}">{{tpl:lang cyAllTagsMenuBottomText}}</a>
 				</li>
 			</ul>
 			<h2 id="cyArchivesTitleBottom" class="cyArchivesTitle cyMenuTitle">{{tpl:lang cyArchivesTitleBottom}}</h2>
 			<ul id="cyArchivesMenuBottom" class="cyArchivesMenu cyMenu">
 				<tpl:Archives no_context="1">
-					<li>
+					<li class="cyMenuItem">
 						<a href="{{tpl:ArchiveURL}}" title ="{{tpl:lang cyArchivesMenuBottomTooltip}}{{tpl:ArchiveDate}}">{{tpl:ArchiveDate}}</a>
 					</li>
 				</tpl:Archives>
-				<li> 
+				<li class="cyMenuItem"> 
 					<a href="{{tpl:BlogURL}}archive" title="{{tpl:lang cyAllArchivesMenuBottomTooltip}}">{{tpl:lang cyAllArchivesMenuBottomText}}</a>
 				</li>
 			</ul>
 			<h2 id="cyPagesTitleBottom" class="cyPagesTitle cyMenuTitle">{{tpl:lang cyPagesTitleBottom}}</h2>
 			<ul id="cyPagesMenuBottom" class="cyPagesMenu cyMenu">
 				<tpl:SysIf has_tpl="_anthisnes.html">
-					<li>
+					<li class="cyMenuItem">
 						<a target="_blank" href="{{tpl:lang cyParcoursArtistes2018MenuBottomUrl}}" title ="{{tpl:lang cyParcoursArtistes2018MenuBottomTooltip}}">{{tpl:lang cyParcoursArtistes2018MenuBottomText}}</a>
 					</li>
-					<li>
+					<li class="cyMenuItem">
 						<a target="_blank" href="{{tpl:lang cyParcoursArtistes2016MenuBottomUrl}}" title ="{{tpl:lang cyParcoursArtistes2016MenuBottomTooltip}}">{{tpl:lang cyParcoursArtistes2016MenuBottomText}}</a>
 					</li>
-					<li>
+					<li class="cyMenuItem">
 						<a target="_blank" href="{{tpl:lang cyOuaiebeMenuBottomUrl}}" title="{{tpl:lang cyOuaiebeMenuBottomTooltip}}">{{tpl:lang cyOuaiebeMenuBottomText}}</a>
 					</li>
 				</tpl:SysIf>
 				<tpl:SysIf has_tpl="_ouaie.html">
-					<li>
+					<li class="cyMenuItem">
 						<a href="{{tpl:BlogURL}}{{tpl:lang cyParcoursArtistes2018MenuBottomUrl}}" title ="{{tpl:lang cyParcoursArtistes2018MenuBottomTooltip}}">{{tpl:lang cyParcoursArtistes2018MenuBottomText}}</a>
 					</li>
-					<li>
+					<li class="cyMenuItem">
 						<a href="{{tpl:BlogURL}}{{tpl:lang cyParcoursArtistes2016MenuBottomUrl}}" title ="{{tpl:lang cyParcoursArtistes2016MenuBottomTooltip}}">{{tpl:lang cyParcoursArtistes2016MenuBottomText}}</a>
 					</li>
-					<li>
+					<li class="cyMenuItem">
 						<a href="{{tpl:BlogURL}}{{tpl:lang cyVeloNordMenuBottomUrl}}" title ="{{tpl:lang cyVeloNordMenuBottomTooltip}}">{{tpl:lang cyVeloNordMenuBottomText}}</a>
 					</li>
-					<li>
+					<li class="cyMenuItem">
 						<a target="_blank" href="{{tpl:lang cyAnthisnesOrgMenuBottomUrl}}" title="{{tpl:lang cyAnthisnesOrgMenuBottomTooltip}}">{{tpl:lang cyAnthisnesOrgMenuBottomText}}</a>
 					</li>
-					<li>
+					<li class="cyMenuItem">
 						<a target="_blank" href="{{tpl:lang cyGithubMenuBottomUrl}}" title="{{tpl:lang cyGithubMenuBottomTooltip}}">{{tpl:lang GithubMenuBottomText}}</a>
 					</li>
 				</tpl:SysIf>
-				<li>
+				<li class="cyMenuItem">
 					<a href="{{tpl:BlogURL}}{{tpl:lang cyContactMenuBottomUrl}}" title="{{tpl:lang cyContactMenuBottomTooltip}}">{{tpl:lang cyContactMenuBottomText}}</a>
 				</li>
-				<li>
+				<li class="cyMenuItem">
 					<a href="{{tpl:BlogURL}}{{tpl:lang cyCreativeCommonsMenuBottomUrl}}" title="{{tpl:lang cyCreativeCommonsMenuBottomTooltip}}">{{tpl:lang cyCreativeCommonsMenuBottomText}}</a>
 				</li>
-				<li>
+				<li class="cyMenuItem">
 					<a href="{{tpl:BlogURL}}{{tpl:lang cyInfoLegaleMenuBottomUrl}}" title="{{tpl:lang cyInfoLegaleMenuBottomTooltip}}">{{tpl:lang cyInfoLegaleMenuBottomText}}</a>
 				</li>
-				<li>
+				<li class="cyMenuItem">
 					<a href="{{tpl:BlogURL}}{{tpl:lang cyViePriveeMenuBottomUrl}}" title="{{tpl:lang cyViePriveeMenuBottomTooltip}}">{{tpl:lang cyViePriveeMenuBottomText}}</a>
 				</li>
 			</ul>	
@@ -128,4 +128,5 @@
 	</div>
 </div>
 <script>cySetColorChooser ( )</script>
+<script>cyStartMenu ( )</script>
 {{tpl:SysBehavior behavior="publicFooterContent"}}

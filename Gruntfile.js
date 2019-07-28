@@ -79,12 +79,8 @@ module.exports = function(grunt) {
 			},
 			target: {
 				files: {
-					'dist/ouaie/sharedstyles/presentationScheme.css': ['src/common/sharedstyles/reset.css', 'src/common/sharedstyles/presentationScheme.css', 'src/common/sharedstyles/menuScheme.css'],
-					'dist/ouaie/sharedstyles/standardColorScheme.css': ['src/common/sharedstyles/standardColorScheme.css'],
-					'dist/ouaie/sharedstyles/alternateColorScheme.css': ['src/common/sharedstyles/alternateColorScheme.css'],
-					'dist/anthisnes/sharedstyles/presentationScheme.css': ['src/common/sharedstyles/reset.css', 'src/common/sharedstyles/presentationScheme.css'],
-					'dist/anthisnes/sharedstyles/standardColorScheme.css': ['src/common/sharedstyles/standardColorScheme.css'],
-					'dist/anthisnes/sharedstyles/alternateColorScheme.css': ['src/common/sharedstyles/alternateColorScheme.css']
+					'dist/ouaie/sharedstyles/presentationScheme.css': ['src/common/sharedstyles/presentationScheme.css'],
+					'dist/anthisnes/sharedstyles/presentationScheme.css': ['src/common/sharedstyles/presentationScheme.css'],
 				}
 			}
 		}
