@@ -709,7 +709,12 @@ body.cyAlternateColor #cyHttpFaultText
 	body.cyJSPage .cyPost.cyHidden .cyPostTags,
 	body.cyJSPage .cyPost.cyHidden .cyPictureLandscape,
 	body.cyJSPage .cyPost.cyHidden .cyPicturePottrait,
-	body.cyJSPage .cyPost.cyHidden .cyPictureSquare
+	body.cyJSPage .cyPost.cyHidden .cyPictureSquare,
+	body.cyJSPage #cyPagination.cyHidden,
+	body.cyJSPage #cyPagination.cyHidden .cyPaginationList,
+	body.cyJSPage #cyPagination.cyHidden .cyPaginationList .cyPaginationListItem,
+	body.cyJSPage #cyPageCounter.cyHidden
+	
 	{
 		transform: scale(0);
 		transform-origin: 0 0;
