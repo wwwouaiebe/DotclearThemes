@@ -698,6 +698,11 @@ body.cyAlternateColor #cyHttpFaultText
 		padding:0;
 		margin:0;
 	}
+	body.cyJSPage #cyMain
+	{
+		border-width: 0;
+		border-style: none;
+	}
 	body.cyJSPage .cyPostTitleDate.cyHidden,
 	body.cyJSPage .cyPost.cyHidden, 
 	body.cyJSPage .cyPost.cyHidden .cyPostTitle,
@@ -713,8 +718,12 @@ body.cyAlternateColor #cyHttpFaultText
 	body.cyJSPage #cyPagination.cyHidden,
 	body.cyJSPage #cyPagination.cyHidden .cyPaginationList,
 	body.cyJSPage #cyPagination.cyHidden .cyPaginationList .cyPaginationListItem,
-	body.cyJSPage #cyPageCounter.cyHidden
-	
+	body.cyJSPage #cyPageCounter.cyHidden,
+	body.cyJSPage #cyCopyright.cyHidden,
+	body.cyJSPage #cyCopyright.cyHidden .cyPostCopyright,
+	body.cyJSPage #cyMenuBottom.cyHidden,
+	body.cyJSPage #cyFooter.cyHidden,
+	body.cyJSPage #cyFooter.cyHidden #cyHTMLCSSValidation
 	{
 		transform: scale(0);
 		transform-origin: 0 0;

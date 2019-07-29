@@ -2,7 +2,9 @@
 <div  class="cyPostExcerpt">{{tpl:EntryExcerpt}}</div>
 </tpl:EntryIf>
 <tpl:MediaExifInfos>
-	<div>
+	<tpl:MediaExifInfosHeader>
+		<div class="cyPostMedias">
+	</tpl:MediaExifInfosHeader>
 		<p>
 			<img class="cyPicture{{tpl:MediaExifInfoClass}}" src="{{tpl:BlogURL}}{{tpl:MediaExifInfoRelUrl}}" title=
 "<tpl:EntryCategoriesBreadcrumb>{{tpl:CategoryTitle encode_html="1"}}&#9656;</tpl:EntryCategoriesBreadcrumb>{{tpl:EntryCategory}} <tpl:SysIf has_tpl="_anthisnes.html"><tpl:EntryTags><tpl:TagsHeader>, </tpl:TagsHeader>{{tpl:TagID}}<tpl:TagsFooter> </tpl:TagsFooter></tpl:EntryTags> - </tpl:SysIf>
@@ -10,20 +12,6 @@
 <tpl:MediaExifInfoIf has_exif="0">{{tpl:EntryDate format="%A %e %B %Y"}}</tpl:MediaExifInfoIf>
 " />
 		</p>
-	</div>
-	<p class="cyPostLocationName">
-		<tpl:EntryCategoriesBreadcrumb>
-		{{tpl:CategoryTitle encode_html="1"}} &#9656;
-		</tpl:EntryCategoriesBreadcrumb>
-		{{tpl:EntryCategory}}
-		<tpl:SysIf has_tpl="_anthisnes.html">
-			<tpl:EntryTags>
-				<tpl:TagsHeader> - </tpl:TagsHeader>
-					{{tpl:TagID}}
-				<tpl:TagsFooter></tpl:TagsFooter>
-			</tpl:EntryTags>
-		</tpl:SysIf>						  
-	</p>
 	<tpl:MediaExifInfoIf has_exif="0">
 		<p class="cyPictureDate">
 			{{tpl:lang cyPostDateText1}}{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
@@ -35,6 +23,22 @@
 		</p>
 		<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaExifInfoAllExif format="%Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}</span></p>
 	</tpl:MediaExifInfoIf>
+	<tpl:MediaExifInfosFooter>
+		<p class="cyPostLocationName">
+			<tpl:EntryCategoriesBreadcrumb>
+			{{tpl:CategoryTitle encode_html="1"}} &#9656;
+			</tpl:EntryCategoriesBreadcrumb>
+			{{tpl:EntryCategory}}
+			<tpl:SysIf has_tpl="_anthisnes.html">
+				<tpl:EntryTags>
+					<tpl:TagsHeader> - </tpl:TagsHeader>
+						{{tpl:TagID}}
+					<tpl:TagsFooter></tpl:TagsFooter>
+				</tpl:EntryTags>
+			</tpl:SysIf>						  
+		</p>
+		</div>
+	</tpl:MediaExifInfosFooter>
 </tpl:MediaExifInfos>
 <tpl:EntryIf selected="1">
 	<div class="cyPostText">{{tpl:EntryContent}}</div>

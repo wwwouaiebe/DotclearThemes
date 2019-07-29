@@ -78,37 +78,105 @@ function toggleMenuPart ( menuPart ) {
 		localStorage.setItem ( 'currentMenu', currentMenu );
 	}
 }	
+/* 
+--- toggleMenuPart function ---
+*/
+
+function resizeCurrentPost ( ) {
+	var screenHeight = window.screen.availHeight;
+	var clientRect = g_posts [ g_currentPost ].getBoundingClientRect ( );
+	var top = clientRect.y - document.documentElement.getBoundingClientRect ( ).y;
+	if (  top + clientRect.height > screenHeight ) {
+		var imgElement = null;
+		var postContent = g_posts [ g_currentPost ].children [ 1 ];
+		
+		for (var counter = 0; counter < postContent.children.length; counter ++ ) {
+			if ( postContent.children [ counter ].classList.contains ( 'cyPostMedias' ) ) {
+				imgElement = postContent.children [ counter ].firstElementChild.firstElementChild;
+				if ( imgElement.tagName !== 'IMG' ) {
+					imgElement = null;
+				}
+				break;
+			}
+		}
+		if ( imgElement ) {
+			var imgScale = ( imgElement.height  - top - clientRect.height + screenHeight - 20 ) / imgElement.height;
+			console.log ( imgScale );
+			console.log ( '' + Number.parseInt ( imgScale * imgElement.width ) +'px' );
+			imgElement.style.width = '' + Number.parseInt ( imgScale * imgElement.width ) +'px';
+		}
+	}
+}
+
+/* 
+--- getClientRect function ---
+*/
+
+function getClientRect ( ) {
+	if ( -1 !== g_posts [ g_currentPost ].haveMedia ) {
+		return g_posts [ g_currentPost ].children [ 1 ].children [ g_posts [ g_currentPost ].haveMedia ].firstElementChild.firstElementChild.getBoundingClientRect ( );
+	}
+	else if ( -1 !== g_posts [ g_currentPost ].haveText ) {
+		return g_posts [ g_currentPost ].children [ 1 ].children [ g_posts [ g_currentPost ].haveText ].getBoundingClientRect ( );
+	}
+	else if ( -1 !== g_posts [ g_currentPost ].haveExcerpt ) {
+		return g_posts [ g_currentPost ].children [ 1 ].children [ g_posts [ g_currentPost ].haveExcerpt ].getBoundingClientRect ( );
+	}
+	return null;
+}
 
 /* 
 --- onPostMouseClick function ---
 */
 
 function onPostMouseClick ( mouseEvent ) {
-	if ( ( mouseEvent.target.tagName === 'IMG' ) || ( mouseEvent.target.tagName === 'VIDEO' ) ) {
-		var posts = document.getElementsByClassName ( 'cyPost' );
-		var previousPost = currentPost;
-		currentPost += ( mouseEvent.target.getBoundingClientRect ( ).width / 2 > mouseEvent.offsetX ) ? -1 : 1;
-		if ( -1 === currentPost )
+	var clientRect = getClientRect ( );
+	if ( clientRect ) {
+		var previousPost = g_currentPost;
+		g_currentPost += ( clientRect.width / 2 > mouseEvent.offsetX ) ? -1 : 1;
+		if ( -1 === g_currentPost )
 		{
-			if ( hasNextPage ) {
+			if ( g_hasNextPage ) {
 				localStorage.setItem ( 'postDirection', 'backward' );
 				document.getElementsByClassName ( 'cyPaginationNext' ) [ 0 ].click ( );
 			}
-			currentPost = 0;
+			g_currentPost = 0;
 			return;
 		}
-		if ( posts.length === currentPost )
+		if ( g_posts.length === g_currentPost )
 		{
-			if ( hasPreviousPage ){
+			if ( g_hasPreviousPage ){
 				localStorage.setItem ( 'postDirection', 'forward' );
 				document.getElementsByClassName ( 'cyPaginationPrevious' ) [ 0 ].click ( );
 			}
-			currentPost --;
+			g_currentPost --;
 			return;
 		}
 		
-		posts [ previousPost ].classList.add ( 'cyHidden' );
-		posts [ currentPost ].classList.remove ( 'cyHidden' );
+		g_posts [ previousPost ].classList.add ( 'cyHidden' );
+		g_posts [ g_currentPost ].classList.remove ( 'cyHidden' );
+		
+		resizeCurrentPost ( );		
+	}
+}
+
+/* 
+--- onPostMouse function ---
+*/
+
+function onPostMouse ( mouseEvent ) {
+	var clientRect = getClientRect ( );
+	if ( clientRect ) {
+		if ( clientRect.width  < mouseEvent.clientX - clientRect.x )
+		{
+			document.body.style.cursor = 'auto';
+		}
+		else if ( clientRect.width / 2  < mouseEvent.clientX - clientRect.x  ) {
+			document.body.style.cursor = (  g_hasPreviousPage && g_lastPost === g_currentPost ) || g_lastPost !== g_currentPost ? 'url(/blog/themes/ouaie/sharedpictures/right.png) 16 16,e-resize' : 'auto';
+		}
+		else {
+			document.body.style.cursor = ( g_hasNextPage && 0 === g_currentPost ) || 0 !== g_currentPost  ? 'url(/blog/themes/ouaie/sharedpictures/left.png) 16 16,w-resize' : 'auto';
+		}
 	}
 }
 
@@ -116,63 +184,15 @@ function onPostMouseClick ( mouseEvent ) {
 --- onPostMouseLeave function ---
 */
 
-
 function onPostMouseLeave ( mouseEvent ) {
 	document.body.style.cursor = 'auto';
 }
-function onPostMouseEnter ( mouseEvent ) {
-	var posts = document.getElementsByClassName ( 'cyPost' );
-	var clientRect = posts [ currentPost ].children [1].firstElementChild.firstElementChild.firstElementChild.getBoundingClientRect ( );
-
-	if ( clientRect.width  < mouseEvent.clientX - clientRect.x )
-	{
-		document.body.style.cursor = 'auto';
-	}
-	else if ( clientRect.width / 2  < mouseEvent.clientX - clientRect.x  ) {
-		document.body.style.cursor = (  hasPreviousPage && lastPost === currentPost ) || lastPost !== currentPost ? 'url(/blog/themes/ouaie/sharedpictures/right.png) 16 16,e-resize' : 'auto';
-	}
-	else {
-		document.body.style.cursor = ( hasNextPage && 0 === currentPost ) || 0 !== currentPost  ? 'url(/blog/themes/ouaie/sharedpictures/left.png) 16 16,w-resize' : 'auto';
-	}
-}
 
 /* 
---- onPostMouseMove function ---
+--- hideMenu function ---
 */
 
-function onPostMouseMove ( mouseEvent ) {
-	if  ( ( mouseEvent.target.tagName === 'IMG' ) || ( mouseEvent.target.tagName === 'VIDEO' ) ) {
-		if ( mouseEvent.target.getBoundingClientRect ( ).width / 2 > mouseEvent.offsetX ) {
-			document.body.style.cursor = ( hasNextPage && 0 === currentPost ) || 0 !== currentPost  ? 'url(/blog/themes/ouaie/sharedpictures/left.png) 16 16,w-resize' : 'auto';
-		}
-		else  {
-			document.body.style.cursor = (  hasPreviousPage && lastPost === currentPost ) || lastPost !== currentPost ? 'url(/blog/themes/ouaie/sharedpictures/right.png) 16 16,e-resize' : 'auto';
-		}
-	}
-	else {
-		document.body.style.cursor = 'auto';
-	}
-}
-
-/* 
---- cyStartMenu function ---
-*/
-
-var currentPost = null;
-var lastPost = null;
-var hasPreviousPage = false;
-var hasNextPage = false;
-
-function cyStartMenu ( ) {
-	
-	if ( ! cyStorageAvailable ( 'localStorage' ) ) {
-		return;
-	}
-	
-	document.getElementsByTagName ( 'body' ) [0].classList.add ( 'cyJSPage' );
-
-	// menus
-	
+function hideMenu ( ) {
 	addClassAll ( 'cyHiddenMenuPart' );
 	
 	var currentMenu = localStorage.getItem ( 'currentMenu' );
@@ -200,14 +220,19 @@ function cyStartMenu ( ) {
 		function ( ) { toggleMenuPart ( 'cyPagesMenuTop' ); }, 
 		false
 	);
-	
-	// posts
+}
 
+
+/* 
+--- hidePosts function ---
+*/
+
+function hidePosts ( ) {
 	if ( 0 < document.getElementsByClassName ( 'cyPaginationPrevious' ).length ) {
-		hasPreviousPage = true;
+		g_hasPreviousPage = true;
 	}
 	if ( 0 < document.getElementsByClassName ( 'cyPaginationNext' ).length ) {
-		hasNextPage = true;
+		g_hasNextPage = true;
 	}
 	
 	var postDirection = 'forward';
@@ -221,23 +246,22 @@ function cyStartMenu ( ) {
 	for (var counter = 0; counter < postTitleDate.length; counter++) {
 		postTitleDate [ counter ].classList.add ( 'cyHidden' );
 	}
-	
-	var posts = document.getElementsByClassName ( 'cyPost' );
-	lastPost = posts.length - 1;
-	for ( counter = 0; counter < posts.length; counter++) {
-		posts [ counter ].classList.add ( 'cyHidden' );
 		
+	g_posts = document.getElementsByClassName ( 'cyPost' );
+	g_lastPost = g_posts.length - 1;
+	for ( counter = 0; counter < g_posts.length; counter++) {
+		g_posts [ counter ].classList.add ( 'cyHidden' );
 		
-		var postContent = posts [ counter ].children [1];
+		var postContent = g_posts [ counter ].children [1];
 		// the 4 events are needed!!!
 		postContent.addEventListener (
 			'mousemove',
-			onPostMouseMove,
+			onPostMouse,
 			false
 		);
 		postContent.addEventListener (
 			'mouseenter',
-			onPostMouseEnter,
+			onPostMouse,
 			false
 		);
 		
@@ -251,14 +275,73 @@ function cyStartMenu ( ) {
 			onPostMouseClick,
 			false
 		);
+
+		g_posts [ counter ].haveExcerpt = -1;
+		g_posts [ counter ].haveMedia = -1;
+		g_posts [ counter ].haveText = -1;
+
+		for ( var childCounter = 0; childCounter < postContent.children.length ; childCounter ++ ) {
+			if ( postContent.children [ childCounter ].classList.contains ( 'cyPostExcerpt' ) ) {
+				g_posts [ counter ].haveExcerpt = childCounter;
+			}
+			if ( postContent.children [ childCounter ].classList.contains ( 'cyPostMedias' ) ) {
+				g_posts [ counter ].haveMedia = childCounter;
+			}
+			if ( postContent.children [ childCounter ].classList.contains ( 'cyPostText' ) ) {
+				g_posts [ counter ].haveText = childCounter;
+			}
+		}
 	}
 	
-	currentPost = ( 'forward' === postDirection ) ?  0 : lastPost;
+	g_currentPost = ( 'forward' === postDirection ) ?  0 : g_lastPost;
 	
-	if ( posts [ currentPost ] ) {
-		posts [ currentPost ].classList.remove ( 'cyHidden' );
+	if ( g_posts [ g_currentPost ] ) {
+		g_posts [ g_currentPost ].classList.remove ( 'cyHidden' );
+		resizeCurrentPost ( );
+	}
+}
+/* 
+--- global variables ---
+*/
+
+var g_currentPost = null;
+var g_lastPost = null;
+var g_hasPreviousPage = false;
+var g_hasNextPage = false;
+var g_posts = null;
+
+/* 
+--- cyStartMenu function ---
+*/
+
+function cyStartMenu ( ) {
+	
+	if ( ! cyStorageAvailable ( 'localStorage' ) ) {
+		return;
 	}
 	
-	document.getElementById ( 'cyPagination' ).classList.add ( 'cyHidden' );
-	document.getElementById ( 'cyPageCounter' ).classList.add ( 'cyHidden' );
+	document.getElementsByTagName ( 'body' ) [0].classList.add ( 'cyJSPage' );
+
+	hideMenu ( );
+	hidePosts ( );
+	
+	if ( document.getElementById ( 'cyPagination' ) ) {
+		document.getElementById ( 'cyPagination' ).classList.add ( 'cyHidden' );
+	}
+	
+	if ( document.getElementById ( 'cyPageCounter' ) ) {
+		document.getElementById ( 'cyPageCounter' ).classList.add ( 'cyHidden' );
+	}
+	
+	if ( document.getElementById ( 'cyCopyright' ) ) {
+		document.getElementById ( 'cyCopyright' ).classList.add ( 'cyHidden' );
+	}
+	
+	if ( document.getElementById ( 'cyMenuBottom' ) ) {
+		document.getElementById ( 'cyMenuBottom' ).classList.add ( 'cyHidden' );
+	}
+	
+	if ( document.getElementById ( 'cyFooter' ) ) {
+		document.getElementById ( 'cyFooter' ).classList.add ( 'cyHidden' );
+	}
 }
