@@ -83,7 +83,10 @@ function toggleMenuPart ( menuPart ) {
 */
 
 function resizeCurrentPost ( ) {
-	var screenHeight = window.screen.availHeight;
+	if ( window.innerWidth < 1281 ) {
+		return;
+	}
+	var screenHeight = window.innerHeight;
 	var clientRect = g_posts [ g_currentPost ].getBoundingClientRect ( );
 	var top = clientRect.y - document.documentElement.getBoundingClientRect ( ).y;
 	if (  top + clientRect.height > screenHeight ) {
@@ -99,11 +102,10 @@ function resizeCurrentPost ( ) {
 				break;
 			}
 		}
-		if ( imgElement ) {
+		if ( imgElement && ! imgElement.classList.contains ( 'cyPictureLandscape' ) ) {
 			var imgScale = ( imgElement.height  - top - clientRect.height + screenHeight - 20 ) / imgElement.height;
-			console.log ( imgScale );
-			console.log ( '' + Number.parseInt ( imgScale * imgElement.width ) +'px' );
-			imgElement.style.width = '' + Number.parseInt ( imgScale * imgElement.width ) +'px';
+			imgElement.style.width = '' + Number.parseInt ( imgScale * imgElement.width ) + 'px';
+			/*imgElement.style.height = '' + Number.parseInt ( imgScale * imgElement.height ) + 'px';*/
 		}
 	}
 }
