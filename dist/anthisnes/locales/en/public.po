@@ -89,7 +89,7 @@ msgid "cyArchivesTitleBottom"
 msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
 
 msgid "cyArchivesTitleTop"
-msgstr "Voyagez dans le temps jusqu'en&nbsp;:"
+msgstr "Le temps passé&nbsp;"
 
 msgid "cyCategoriesMenuBottomTooltip"
 msgstr "Laissez-vous pousser par le vent vers "
@@ -101,7 +101,7 @@ msgid "cyCategoriesTitleBottom"
 msgstr "Laissez-vous pousser par le vent vers&nbsp;:"
 
 msgid "cyCategoriesTitleTop"
-msgstr "Laissez-vous pousser par le vent vers&nbsp;:"
+msgstr "Les villages&nbsp;"
 
 msgid "cyChangeDisplayMenuBottomText"
 msgstr "Affichage contrasté"
@@ -307,10 +307,10 @@ msgid "cyNavigationTitleTop"
 msgstr "Navigation&nbsp;:"
 
 msgid "cyNearTitleBottom"
-msgstr "Près d'Anthisnes:"
+msgstr "Près d'Anthisnes&nbsp;"
 
 msgid "cyNearTitleTop"
-msgstr "Près d'Anthisnes:"
+msgstr "Près d'Anthisnes&nbsp;"
 
 msgid "cyOuaiebeMenuBottomText"
 msgstr "wwwouaiebe &#8599;"
@@ -352,7 +352,7 @@ msgid "cyPagesTitleBottom"
 msgstr "Et aussi&nbsp;:"
 
 msgid "cyPagesTitleTop"
-msgstr "Et aussi&nbsp;:"
+msgstr "Et aussi&nbsp;"
 
 msgid "cyPaginationHomeText"
 msgstr "Début du blog"
@@ -427,10 +427,10 @@ msgid "cyPostCopyrightTooltip"
 msgstr "Voir la license Creative Commons"
 
 msgid "cyPostDateText1"
-msgstr "Photo réalisée le "
+msgstr ""
 
 msgid "cyPostDateText2"
-msgstr " à "
+msgstr ", "
 
 msgid "cyPostDateText3"
 msgstr "&nbsp;heures&nbsp;"
@@ -463,7 +463,7 @@ msgid "cyTagsTitleBottom"
 msgstr "Parcourez les chemins et les champs&nbsp;:"
 
 msgid "cyTagsTitleTop"
-msgstr "Parcourez les chemins et les champs&nbsp;:"
+msgstr "Les chemins et les champs&nbsp;"
 
 msgid "cyVeloNordMenuBottomUrl"
 msgstr ""

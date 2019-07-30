@@ -52,20 +52,6 @@
 			<a href="{{tpl:BlogURL}}categories" title="{{tpl:lang cyAllCategoriesMenuTopTooltip}}">{{tpl:lang cyAllCategoriesMenuTopText}}</a>
 		</li>
 	</ul>					
-	<tpl:SysIf has_tpl="_anthisnes.html">
-		<h2 id="cyNearTitleTop" class="cyNearTitle cyMenuTitle">{{tpl:lang cyNearTitleTop}}</h2>
-		<ul id="cyNearMenuTop" class="cyNearMenu cyMenu">
-			<li class="cyMenuItem">
-				<a target="_blank" href="{{tpl:lang cyCondrozNearMenuTopUrl}}" title ="{{tpl:lang cyCondrozNearMenuTopTooltip}}">{{tpl:lang cyCondrozNearMenuTopText}}</a>
-			</li>
-			<li class="cyMenuItem">
-				<a target="_blank" href="{{tpl:lang cyMeuseNearMenuTopUrl}}" title ="{{tpl:lang cyMeuseNearMenuTopTooltip}}">{{tpl:lang cyMeuseNearMenuTopText}}</a>
-			</li>
-			<li class="cyMenuItem">
-				<a target="_blank" href="{{tpl:lang cyOurtheNearMenuTopUrl}}" title ="{{tpl:lang cyOurtheNearMenuTopTooltip}}">{{tpl:lang cyOurtheNearMenuTopText}}</a>
-			</li>
-		</ul>					
-	</tpl:SysIf>
 	<h2 id="cyTagsTitleTop" class="cyTagsTitle cyMenuTitle">{{tpl:lang cyTagsTitleTop}}</h2>
 	<ul id="cyTagsMenuTop" class="cyTagsMenu cyMenu">
 		<tpl:Tags>
@@ -88,6 +74,20 @@
 			<a href="{{tpl:BlogURL}}archive" title="{{tpl:lang cyAllArchivesMenuTopTooltip}}">{{tpl:lang cyAllArchivesMenuTopText}}</a>
 		</li>
 	</ul>	
+	<tpl:SysIf has_tpl="_anthisnes.html">
+		<h2 id="cyNearTitleTop" class="cyNearTitle cyMenuTitle">{{tpl:lang cyNearTitleTop}}</h2>
+		<ul id="cyNearMenuTop" class="cyNearMenu cyMenu">
+			<li class="cyMenuItem">
+				<a target="_blank" href="{{tpl:lang cyCondrozNearMenuTopUrl}}" title ="{{tpl:lang cyCondrozNearMenuTopTooltip}}">{{tpl:lang cyCondrozNearMenuTopText}}</a>
+			</li>
+			<li class="cyMenuItem">
+				<a target="_blank" href="{{tpl:lang cyMeuseNearMenuTopUrl}}" title ="{{tpl:lang cyMeuseNearMenuTopTooltip}}">{{tpl:lang cyMeuseNearMenuTopText}}</a>
+			</li>
+			<li class="cyMenuItem">
+				<a target="_blank" href="{{tpl:lang cyOurtheNearMenuTopUrl}}" title ="{{tpl:lang cyOurtheNearMenuTopTooltip}}">{{tpl:lang cyOurtheNearMenuTopText}}</a>
+			</li>
+		</ul>					
+	</tpl:SysIf>
 	<h2 id="cyPagesTitleTop" class="cyPagesTitle cyMenuTitle">{{tpl:lang cyPagesTitleTop}}</h2>
 	<ul id="cyPagesMenuTop" class="cyPagesMenu cyMenu">
 		<tpl:SysIf has_tpl="_anthisnes.html">

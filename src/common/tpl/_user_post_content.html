@@ -14,14 +14,14 @@
 		</p>
 	<tpl:MediaExifInfoIf has_exif="0">
 		<p class="cyPictureDate">
-			{{tpl:lang cyPostDateText1}}{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
+			{{tpl:EntryDate format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:EntryTime format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:EntryTime format="%M"}}
 		</p>
 	</tpl:MediaExifInfoIf>
 	<tpl:MediaExifInfoIf has_exif="1">
-		<p class="cyPictureDate">
-			{{tpl:lang cyPostDateText1}}{{tpl:MediaExifInfoDateTimeOriginal format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:MediaExifInfoDateTimeOriginal format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:MediaExifInfoDateTimeOriginal format="%M"}}
-		</p>
 		<p class="cyPictureInfo"><span>&#x1f4f7;</span><span>{{tpl:MediaExifInfoAllExif format="%Model%&nbsp;%FocalLength% mm - f&nbsp;%FNumber% %ExposureTime%&nbsp;sec. %ISOSpeedRatings%&nbsp;ISO"}}</span></p>
+		<p class="cyPictureDate">
+			{{tpl:MediaExifInfoDateTimeOriginal format="%A&nbsp;%e&nbsp;%B&nbsp;%Y"}}{{tpl:lang cyPostDateText2}}{{tpl:MediaExifInfoDateTimeOriginal format="%H"}}{{tpl:lang cyPostDateText3}}{{tpl:MediaExifInfoDateTimeOriginal format="%M"}}
+		</p>
 	</tpl:MediaExifInfoIf>
 	<tpl:MediaExifInfosFooter>
 		<p class="cyPostLocationName">

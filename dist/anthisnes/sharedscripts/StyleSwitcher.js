@@ -89,6 +89,7 @@ function cySetColorChooser ( )
 		localStorage.setItem ( 'style', strCurrentStyle );
 	
 		var colorChooserTopLi = document.createElement ( 'li' );
+		colorChooserTopLi.classList.add ( 'cyMenuItem' );
 		var colorChooserTopAnchor = document.createElement ( 'a' );
 		colorChooserTopAnchor.addEventListener ( 'click', function ( ) {cyChangeStyleSheet ( );}, false );
 		colorChooserTopAnchor.id = 'cyColorChooserMenuTop';
@@ -101,6 +102,7 @@ function cySetColorChooser ( )
 		var colorChooserBottomAnchor = null;
 		if ( menuBottom ) {
 			var colorChooserBottomLi = document.createElement ( 'li' );
+			colorChooserBottomLi.classList.add ( 'cyMenuItem' );
 			colorChooserBottomAnchor = document.createElement ( 'a' );
 			colorChooserBottomAnchor.addEventListener ( 'click', function ( ) {cyChangeStyleSheet ( );}, false );
 			colorChooserBottomAnchor.id = 'cyColorChooserMenuBottom';

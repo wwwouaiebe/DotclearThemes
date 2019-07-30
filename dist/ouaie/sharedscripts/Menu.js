@@ -35,8 +35,12 @@ function removeClass ( menuPart, className ) {
 */
 
 function addClassAll ( className ) {
-	[ 'cyCategoriesMenuTop', 'cyTagsMenuTop', 'cyArchivesMenuTop', 'cyPagesMenuTop'].forEach  (
-		function ( menuPart ) { document.getElementById ( menuPart ).classList.add ( className );}
+	[ 'cyCategoriesMenuTop', 'cyTagsMenuTop', 'cyArchivesMenuTop', 'cyPagesMenuTop', 'cyNearMenuTop','cyCategoriesTitleTop', 'cyTagsTitleTop', 'cyArchivesTitleTop', 'cyPagesTitleTop', 'cyNearTitleTop'].forEach  (
+		function ( item ) { 
+			if ( document.getElementById ( item ) ) {
+				document.getElementById ( item ).classList.add ( className );
+			}
+		}
 	);
 }
 
@@ -61,25 +65,27 @@ function cyStorageAvailable ( type ) {
 --- toggleMenuPart function ---
 */
 
-function toggleMenuPart ( menuPart ) {
+function toggleMenuPart ( menuTitle, menuPart ) {
 	var currentMenu = '';
-	if ( cyStorageAvailable ( 'localStorage' ) ) {
-		currentMenu = localStorage.getItem ( 'currentMenu' );
-	}
+	var currentTitle = '';
+	currentMenu = localStorage.getItem ( 'currentMenu' );
+	currentTitle = localStorage.getItem ( 'currentTitle' );
 	addClassAll ( 'cyHiddenMenuPart' );
 	if ( currentMenu === menuPart ) {
 		currentMenu = '';
+		currentTitle = '';
 	}
 	else {
 		removeClass ( menuPart, 'cyHiddenMenuPart' );
+		removeClass ( menuTitle, 'cyHiddenMenuPart' );
 		currentMenu = menuPart;
+		currentTitle = menuTitle;
 	}
-	if ( cyStorageAvailable ( 'localStorage' ) ) {
-		localStorage.setItem ( 'currentMenu', currentMenu );
-	}
+	localStorage.setItem ( 'currentMenu', currentMenu );
+	localStorage.setItem ( 'currentTitle', currentTitle );
 }	
 /* 
---- toggleMenuPart function ---
+--- resizeCurrentPost function ---
 */
 
 function resizeCurrentPost ( ) {
@@ -132,6 +138,9 @@ function getClientRect ( ) {
 */
 
 function onPostMouseClick ( mouseEvent ) {
+	if ( window.innerWidth < 1281 ) {
+		return;
+	}
 	var clientRect = getClientRect ( );
 	if ( clientRect ) {
 		var previousPost = g_currentPost;
@@ -167,6 +176,9 @@ function onPostMouseClick ( mouseEvent ) {
 */
 
 function onPostMouse ( mouseEvent ) {
+	if ( window.innerWidth < 1281 ) {
+		return;
+	}
 	var clientRect = getClientRect ( );
 	if ( clientRect ) {
 		if ( clientRect.width  < mouseEvent.clientX - clientRect.x )
@@ -174,10 +186,10 @@ function onPostMouse ( mouseEvent ) {
 			document.body.style.cursor = 'auto';
 		}
 		else if ( clientRect.width / 2  < mouseEvent.clientX - clientRect.x  ) {
-			document.body.style.cursor = (  g_hasPreviousPage && g_lastPost === g_currentPost ) || g_lastPost !== g_currentPost ? 'url(/blog/themes/ouaie/sharedpictures/right.png) 16 16,e-resize' : 'auto';
+			document.body.style.cursor = (  g_hasPreviousPage && g_lastPost === g_currentPost ) || g_lastPost !== g_currentPost ? 'url(' + cyCfg.cyBlogThemeURL + '/sharedpictures/right.png) 16 16,e-resize' : 'auto';
 		}
 		else {
-			document.body.style.cursor = ( g_hasNextPage && 0 === g_currentPost ) || 0 !== g_currentPost  ? 'url(/blog/themes/ouaie/sharedpictures/left.png) 16 16,w-resize' : 'auto';
+			document.body.style.cursor = ( g_hasNextPage && 0 === g_currentPost ) || 0 !== g_currentPost  ? 'url(' + cyCfg.cyBlogThemeURL + '/sharedpictures/left.png) 16 16,w-resize' : 'auto';
 		}
 	}
 }
@@ -187,6 +199,9 @@ function onPostMouse ( mouseEvent ) {
 */
 
 function onPostMouseLeave ( mouseEvent ) {
+	if ( window.innerWidth < 1281 ) {
+		return;
+	}
 	document.body.style.cursor = 'auto';
 }
 
@@ -201,25 +216,36 @@ function hideMenu ( ) {
 	if ( currentMenu && '' !== currentMenu ) {
 		removeClass ( currentMenu, 'cyHiddenMenuPart' );
 	}
+	var currentTitle = localStorage.getItem ( 'currentTitle' );
+	if ( currentTitle && '' !== currentTitle ) {
+		removeClass ( currentTitle, 'cyHiddenMenuPart' );
+	}
 	
 	document.getElementById ( 'cyCategoriesTitleTop' ).addEventListener (
 		'click',
-		function ( ) { toggleMenuPart ( 'cyCategoriesMenuTop' ); }, 
+		function ( ) { toggleMenuPart ( 'cyCategoriesTitleTop', 'cyCategoriesMenuTop' ); }, 
 		false
 	);
+	if ( document.getElementById ( 'cyNearTitleTop' ) ) {
+		document.getElementById ( 'cyNearTitleTop' ).addEventListener (
+			'click',
+			function ( ) { toggleMenuPart ( 'cyNearTitleTop', 'cyNearMenuTop' ); }, 
+			false
+		);
+	}
 	document.getElementById ( 'cyTagsTitleTop' ).addEventListener (
 		'click',
-		function ( ) { toggleMenuPart ( 'cyTagsMenuTop' ); }, 
+		function ( ) { toggleMenuPart ( 'cyTagsTitleTop', 'cyTagsMenuTop' ); }, 
 		false
 	);
 	document.getElementById ( 'cyArchivesTitleTop' ).addEventListener (
 		'click',
-		function ( ) { toggleMenuPart ( 'cyArchivesMenuTop' ); }, 
+		function ( ) { toggleMenuPart ( 'cyArchivesTitleTop', 'cyArchivesMenuTop' ); }, 
 		false
 	);
 	document.getElementById ( 'cyPagesTitleTop' ).addEventListener (
 		'click',
-		function ( ) { toggleMenuPart ( 'cyPagesMenuTop' ); }, 
+		function ( ) { toggleMenuPart ( 'cyPagesTitleTop', 'cyPagesMenuTop' ); }, 
 		false
 	);
 }
@@ -317,7 +343,6 @@ var g_posts = null;
 */
 
 function cyStartMenu ( ) {
-	
 	if ( ! cyStorageAvailable ( 'localStorage' ) ) {
 		return;
 	}

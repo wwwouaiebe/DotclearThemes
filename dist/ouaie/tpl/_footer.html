@@ -28,20 +28,6 @@
 					<a href="{{tpl:BlogURL}}categories" title="{{tpl:lang cyAllCategoriesMenuBottomTooltip}}">{{tpl:lang cyAllCategoriesMenuBottomText}}</a>
 				</li>
 			</ul>
-			<tpl:SysIf has_tpl="_anthisnes.html">
-				<h2 id="cyNearTitleBottom" class="cyNearTitle cyMenuTitle">{{tpl:lang cyNearTitleBottom}}</h2>
-				<ul id="cyNearMenuBottom" class="cyNearMenu cyMenu">
-					<li class="cyMenuItem">
-						<a target="_blank" href="{{tpl:langcyCondrozNearMenuBottomUrl}}" title ="{{tpl:lang cyCondrozNearMenuBottomTooltip}}">{{tpl:lang cyCondrozNearMenuBottomText}}</a>
-					</li>
-					<li class="cyMenuItem">
-						<a target="_blank" href="{{tpl:langcyMeuseNearMenuBottomUrl}}" title ="{{tpl:lang cyMeuseNearMenuBottomTooltip}}">{{tpl:lang cyMeuseNearMenuBottomText}}</a>
-					</li>
-					<li class="cyMenuItem">
-						<a target="_blank" href="{{tpl:langcyOurtheNearMenuBottomUrl}}" title ="{{tpl:lang cyOurtheNearMenuBottomTooltip}}">{{tpl:lang cyOurtheNearMenuBottomText}}</a>
-					</li>
-				</ul>					
-			</tpl:SysIf>					
 			<h2 id="cyTagsTitleBottom" class="cyTagsTitle cyMenuTitle">{{tpl:lang cyTagsTitleBottom}}</h2>
 			<ul id="cyTagsMenuBottom" class="cyTagsMenu cyMenu">
 				<tpl:Tags>
@@ -64,6 +50,20 @@
 					<a href="{{tpl:BlogURL}}archive" title="{{tpl:lang cyAllArchivesMenuBottomTooltip}}">{{tpl:lang cyAllArchivesMenuBottomText}}</a>
 				</li>
 			</ul>
+			<tpl:SysIf has_tpl="_anthisnes.html">
+				<h2 id="cyNearTitleBottom" class="cyNearTitle cyMenuTitle">{{tpl:lang cyNearTitleBottom}}</h2>
+				<ul id="cyNearMenuBottom" class="cyNearMenu cyMenu">
+					<li class="cyMenuItem">
+						<a target="_blank" href="{{tpl:langcyCondrozNearMenuBottomUrl}}" title ="{{tpl:lang cyCondrozNearMenuBottomTooltip}}">{{tpl:lang cyCondrozNearMenuBottomText}}</a>
+					</li>
+					<li class="cyMenuItem">
+						<a target="_blank" href="{{tpl:langcyMeuseNearMenuBottomUrl}}" title ="{{tpl:lang cyMeuseNearMenuBottomTooltip}}">{{tpl:lang cyMeuseNearMenuBottomText}}</a>
+					</li>
+					<li class="cyMenuItem">
+						<a target="_blank" href="{{tpl:langcyOurtheNearMenuBottomUrl}}" title ="{{tpl:lang cyOurtheNearMenuBottomTooltip}}">{{tpl:lang cyOurtheNearMenuBottomText}}</a>
+					</li>
+				</ul>					
+			</tpl:SysIf>					
 			<h2 id="cyPagesTitleBottom" class="cyPagesTitle cyMenuTitle">{{tpl:lang cyPagesTitleBottom}}</h2>
 			<ul id="cyPagesMenuBottom" class="cyPagesMenu cyMenu">
 				<tpl:SysIf has_tpl="_anthisnes.html">

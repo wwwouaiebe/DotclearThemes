@@ -249,6 +249,7 @@ body.cyAlternateColor #cySiteTitle > h1 > a:hover > span
 /* Fin des menus */
 
 /* Billets => post.html, _user_home.html */
+
 .cyPost
 {
 	padding-bottom: 4em;
@@ -301,7 +302,11 @@ body.cyAlternateColor .cyPictureLandscape
 {
 	border-color: black;
 }
-p.cyPictureInfo > span + span
+.cyPictureDate:first-letter
+{
+	text-transform: capitalize;
+}
+.cyPictureInfo > span + span
 {
 	display: inline-block;
 }
@@ -675,7 +680,11 @@ body.cyAlternateColor #cyHttpFaultText
 	}
 	/* Fin de la pagination */
 	/* Javascript enabled */
-	body.cyJSPage
+	body#cyTag.cyJSPage,
+	body#cyArchiveMonth.cyJSPage,
+	body#cyHome.cyJSPage,
+	body#cyCategory.cyJSPage,
+	body#cyPost.cyJSPage
 	{
 		overflow: hidden;
 	}
@@ -702,35 +711,86 @@ body.cyAlternateColor #cyHttpFaultText
 		left: 5em;
 		width: 30em;
 	}
+	body.cyJSPage #cyCategoriesTitleTop, 
+	body.cyJSPage #cyTagsTitleTop, 
+	body.cyJSPage #cyArchivesTitleTop, 
+	body.cyJSPage #cyPagesTitleTop,
+	body.cyJSPage #cyNearTitleTop
+	{
+		font-size: 100%;
+	}
+	body.cyJSPage #cyCategoriesTitleTop:hover, 
+	body.cyJSPage #cyTagsTitleTop:hover, 
+	body.cyJSPage #cyArchivesTitleTop:hover, 
+	body.cyJSPage #cyPagesTitleTop:hover,
+	body.cyJSPage #cyNearTitleTop:hover
+	{
+		cursor: copy;
+	}
+	body.cyJSPage #cyCategoriesTitleTop:after, 
+	body.cyJSPage #cyTagsTitleTop:after, 
+	body.cyJSPage #cyArchivesTitleTop:after, 
+	body.cyJSPage #cyPagesTitleTop:after,
+	body.cyJSPage #cyNearTitleTop:after
+	{
+		content: "-";
+	}
+	body.cyJSPage #cyCategoriesTitleTop.cyHiddenMenuPart:after, 
+	body.cyJSPage #cyTagsTitleTop.cyHiddenMenuPart:after, 
+	body.cyJSPage #cyArchivesTitleTop.cyHiddenMenuPart:after, 
+	body.cyJSPage #cyPagesTitleTop.cyHiddenMenuPart:after,
+	body.cyJSPage #cyNearTitleTop.cyHiddenMenuPart:after
+	{
+		content: "+";
+	}
 	body.cyJSPage #cyCategoriesMenuTop, 
 	body.cyJSPage #cyTagsMenuTop, 
 	body.cyJSPage #cyArchivesMenuTop, 
-	body.cyJSPage #cyPagesMenuTop
+	body.cyJSPage #cyPagesMenuTop,
+	body.cyJSPage #cyNearMenuTop
 	{
 		width: 20em;
+		transform: scaleY(1);
+		transform-origin: 0 0;
+		opacity:1;
+		line-height: 1.15em;
+		transition:all .5s ease;
 	}
 	body.cyJSPage #cyCategoriesMenuTop > li, 
 	body.cyJSPage #cyTagsMenuTop > li, 
 	body.cyJSPage #cyArchivesMenuTop > li, 
-	body.cyJSPage #cyPagesMenuTop > li
+	body.cyJSPage #cyPagesMenuTop > li,
+	body.cyJSPage #cyNearMenuTop > li
 	{
 		display: inline-block;
+	}
+	body.cyJSPage #cyCategoriesMenuTop > li > a, 
+	body.cyJSPage #cyTagsMenuTop > li > a, 
+	body.cyJSPage #cyArchivesMenuTop > li > a, 
+	body.cyJSPage #cyPagesMenuTop > li > a,
+	body.cyJSPage #cyNearMenuTop > li > a
+	{
+		border-left-style:none;
 	}
 	body.cyJSPage #cyCategoriesMenuTop.cyHiddenMenuPart, 
 	body.cyJSPage #cyTagsMenuTop.cyHiddenMenuPart, 
 	body.cyJSPage #cyArchivesMenuTop.cyHiddenMenuPart, 
-	body.cyJSPage #cyPagesMenuTop.cyHiddenMenuPart
+	body.cyJSPage #cyPagesMenuTop.cyHiddenMenuPart,
+	body.cyJSPage #cyNearMenuTop.cyHiddenMenuPart
 	{
 		transform: scaleY(0);
 		transform-origin: 0 0;
 		opacity:0;
 		line-height:0;
+		transition:all .5s ease;
 	}
 	body.cyJSPage #cyCategoriesMenuTop > li, 
 	body.cyJSPage #cyTagsMenuTop > li, 
 	body.cyJSPage #cyArchivesMenuTop > li, 
-	body.cyJSPage #cyPagesMenuTop > li
+	body.cyJSPage #cyPagesMenuTop > li,
+	body.cyJSPage #cyNearMenuTop > li
 	{
+		font-size: 80%;
 		padding:0;
 		margin:0;
 	}
