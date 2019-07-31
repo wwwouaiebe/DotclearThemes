@@ -144,7 +144,20 @@ function onPostMouseClick ( mouseEvent ) {
 	var clientRect = getClientRect ( );
 	if ( clientRect ) {
 		var previousPost = g_currentPost;
-		g_currentPost += ( clientRect.width / 2 > mouseEvent.offsetX ) ? -1 : 1;
+		if ( mouseEvent ) {
+			if ( -1 === mouseEvent || 1 === mouseEvent ) {
+				// fonction is called from keyboard event
+				g_currentPost += mouseEvent;
+			}
+			else {
+				// function is called from mouseEvent
+				g_currentPost += ( clientRect.width / 2 > mouseEvent.offsetX ) ? -1 : 1;
+			}
+		}
+		else {
+			// function is called from timer
+			g_currentPost ++;
+		}
 		if ( -1 === g_currentPost )
 		{
 			if ( g_hasNextPage ) {
@@ -168,6 +181,11 @@ function onPostMouseClick ( mouseEvent ) {
 		g_posts [ g_currentPost ].classList.remove ( 'cyHidden' );
 		
 		resizeCurrentPost ( );		
+
+		if ( ! mouseEvent && g_timeOutId ) {
+			window.clearTimeout( g_timeOutId );
+			g_timeOutId = window.setTimeout ( onPostMouseClick, g_timeOutDuration);
+		}
 	}
 }
 
@@ -328,6 +346,43 @@ function hidePosts ( ) {
 		resizeCurrentPost ( );
 	}
 }
+
+
+function onKeyDown ( keyBoardEvent ) {
+	switch ( keyBoardEvent.key ) {
+		case 'Escape':
+		case 'Esc':
+			if ( g_timeOutId ) {
+				window.clearTimeout ( g_timeOutId );
+				g_timeOutId = null;
+				localStorage.setItem ( 'timeOut', 'no' );
+			}
+			else {
+				localStorage.setItem ( 'timeOut', 'yes' );
+				onPostMouseClick ( 1 );
+				g_timeOutId = window.setTimeout ( onPostMouseClick, g_timeOutDuration);
+			}
+			break;
+		case '+':
+			g_timeOutDuration = g_timeOutDuration === 30000 ? 30000 : g_timeOutDuration + 1000;
+			localStorage.setItem ( 'timeOutDuration', g_timeOutDuration );
+			break;
+		case '-':
+			g_timeOutDuration = g_timeOutDuration === 2000 ? 2000 : g_timeOutDuration - 1000;
+			localStorage.setItem ( 'timeOutDuration', g_timeOutDuration );
+			break;
+		case 'ArrowRight':
+			onPostMouseClick ( 1 );
+			break;
+		case 'ArrowLeft':
+			onPostMouseClick ( -1 );
+			break;
+		default:
+			break;
+	}
+}
+
+
 /* 
 --- global variables ---
 */
@@ -337,6 +392,8 @@ var g_lastPost = null;
 var g_hasPreviousPage = false;
 var g_hasNextPage = false;
 var g_posts = null;
+var g_timeOutId = null;
+var g_timeOutDuration = 5000;
 
 /* 
 --- cyStartMenu function ---
@@ -345,6 +402,15 @@ var g_posts = null;
 function cyStartMenu ( ) {
 	if ( ! cyStorageAvailable ( 'localStorage' ) ) {
 		return;
+	}
+	g_timeOutDuration = localStorage.getItem ( 'timeOutDuration' ) || g_timeOutDuration;
+	g_timeOutDuration = Number.parseInt ( g_timeOutDuration );
+	
+	document.addEventListener ( 'keydown', onKeyDown, true );
+
+	var timeOut = localStorage.getItem ( 'timeOut' ) || 'yes';
+	if ( 'yes' === timeOut ) {
+		g_timeOutId = window.setTimeout ( onPostMouseClick, g_timeOutDuration);
 	}
 	
 	document.getElementsByTagName ( 'body' ) [0].classList.add ( 'cyJSPage' );
