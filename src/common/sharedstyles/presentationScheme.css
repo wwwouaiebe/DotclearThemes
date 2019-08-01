@@ -762,7 +762,10 @@ body.cyAlternateColor #cyHttpFaultText
 	body.cyJSPage #cyPagesMenuTop > li,
 	body.cyJSPage #cyNearMenuTop > li
 	{
-		display: inline-block;
+		display: inline;
+		font-size: 80%;
+		padding:0;
+		margin:0;
 	}
 	body.cyJSPage #cyCategoriesMenuTop > li > a, 
 	body.cyJSPage #cyTagsMenuTop > li > a, 
@@ -784,15 +787,13 @@ body.cyAlternateColor #cyHttpFaultText
 		line-height:0;
 		transition:all .5s ease;
 	}
-	body.cyJSPage #cyCategoriesMenuTop > li, 
-	body.cyJSPage #cyTagsMenuTop > li, 
-	body.cyJSPage #cyArchivesMenuTop > li, 
-	body.cyJSPage #cyPagesMenuTop > li,
-	body.cyJSPage #cyNearMenuTop > li
+	body.cyJSPage #cyCategoriesMenuTop.cyHiddenMenuPart > li, 
+	body.cyJSPage #cyTagsMenuTop.cyHiddenMenuPart > li, 
+	body.cyJSPage #cyArchivesMenuTop.cyHiddenMenuPart > li, 
+	body.cyJSPage #cyPagesMenuTop.cyHiddenMenuPart > li,
+	body.cyJSPage #cyNearMenuTop.cyHiddenMenuPart > li
 	{
-		font-size: 80%;
-		padding:0;
-		margin:0;
+		display:block;
 	}
 	body.cyJSPage #cyMain
 	{
