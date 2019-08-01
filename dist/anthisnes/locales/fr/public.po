@@ -79,6 +79,24 @@ msgstr ""
 msgid "cyAnthisnesOrgMenuTopUrl"
 msgstr ""
 
+msgid "cyAproposMenuBottomUrl"
+msgstr "pages/Apropos"
+
+msgid "cyAproposMenuBottomTooltip"
+msgstr "À propos de anthisnes.org"
+
+msgid "cyAproposMenuBottomText"
+msgstr "À propos de anthisnes.org"
+
+msgid "AproposMenuTopUrl"
+msgstr "pages/Apropos"
+
+msgid "AproposMenuTopTooltip"
+msgstr "À propos de anthisnes.org"
+
+msgid "AproposMenuTopText"
+msgstr "À propos de anthisnes.org"
+
 msgid "cyArchivesMenuBottomTooltip"
 msgstr "Voyagez dans le temps jusqu'en "
 
@@ -224,24 +242,6 @@ msgstr "HTML 5.0"
 
 msgid "cyHTMLValidationTooltip"
 msgstr "Vérifier la validité de cette page HTML 5.0"
-
-msgid "cyInfoLegaleMenuBottomUrl"
-msgstr "pages/InformationsLegales"
-
-msgid "cyInfoLegaleMenuBottomTooltip"
-msgstr "Informations légales"
-
-msgid "cyInfoLegaleMenuBottomText"
-msgstr "Informations légales"
-
-msgid "cyInfoLegaleMenuTopUrl"
-msgstr "pages/InformationsLegales"
-
-msgid "cyInfoLegaleMenuTopTooltip"
-msgstr "Informations légales"
-
-msgid "cyInfoLegaleMenuTopText"
-msgstr "Informations légales"
 
 msgid "cyMeuseNearMenuBottomText"
 msgstr "La Meuse &#8599;"
@@ -482,22 +482,3 @@ msgstr ""
 
 msgid "cyVeloNordMenuTopText"
 msgstr ""
-
-msgid "cyViePriveeMenuBottomUrl"
-msgstr "pages/ViePrivee"
-
-msgid "cyViePriveeMenuBottomTooltip"
-msgstr "Votre vie privée"
-
-msgid "cyViePriveeMenuBottomText"
-msgstr "Votre vie privée"
-
-msgid "cyViePriveeMenuTopUrl"
-msgstr "pages/ViePrivee"
-
-msgid "cyViePriveeMenuTopTooltip"
-msgstr "Votre vie privée"
-
-msgid "cyViePriveeMenuTopText"
-msgstr "Votre vie privée"
-
