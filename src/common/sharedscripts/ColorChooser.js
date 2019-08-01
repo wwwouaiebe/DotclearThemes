@@ -40,28 +40,41 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			var currentStyle = localStorage.getItem ( "style" ) || 'cyStandardColor';
 			localStorage.setItem ( 'style', currentStyle );
 		
-			var colorChooserTopLi = document.createElement ( 'li' );
-			colorChooserTopLi.classList.add ( 'cyMenuItem' );
-			var colorChooserTopAnchor = document.createElement ( 'a' );
-			colorChooserTopAnchor.addEventListener ( 'click', function ( ) {m_changeColorStyle ( );}, false );
-			colorChooserTopAnchor.id = 'cyColorChooserMenuTop';
-			colorChooserTopLi.appendChild ( colorChooserTopAnchor );
-			if ( document.getElementById ( 'cyPagesMenuTop' ) ) {
-				document.getElementById ( 'cyPagesMenuTop' ).appendChild ( colorChooserTopLi );
-			}
-			
-			var menuBottom = document.getElementById ( 'cyPagesMenuBottom' );
+			var colorChooserTopAnchor = null;
 			var colorChooserBottomAnchor = null;
-			if ( menuBottom ) {
-				var colorChooserBottomLi = document.createElement ( 'li' );
-				colorChooserBottomLi.classList.add ( 'cyMenuItem' );
-				colorChooserBottomAnchor = document.createElement ( 'a' );
-				colorChooserBottomAnchor.addEventListener ( 'click', function ( ) {m_changeColorStyle ( );}, false );
-				colorChooserBottomAnchor.id = 'cyColorChooserMenuBottom';
-				colorChooserBottomLi.appendChild ( colorChooserBottomAnchor );
-				document.getElementById ( 'cyPagesMenuBottom' ).appendChild ( colorChooserBottomLi );
+			if ( document.getElementById ( "cyMainMenu" ) ) {
+				var colorChooserTopLi = document.createElement ( 'li' );
+				colorChooserTopLi.classList.add ( 'cyMenuItem' );
+				colorChooserTopAnchor = document.createElement ( 'a' );
+				colorChooserTopAnchor.addEventListener ( 'click', function ( ) {m_changeColorStyle ( );}, false );
+				colorChooserTopAnchor.id = 'cyColorChooserMenuTop';
+				colorChooserTopLi.appendChild ( colorChooserTopAnchor );
+				if ( document.getElementById ( 'cyPagesMenuTop' ) ) {
+					document.getElementById ( 'cyPagesMenuTop' ).appendChild ( colorChooserTopLi );
+				}
+				
+				var menuBottom = document.getElementById ( 'cyPagesMenuBottom' );
+				if ( menuBottom ) {
+					var colorChooserBottomLi = document.createElement ( 'li' );
+					colorChooserBottomLi.classList.add ( 'cyMenuItem' );
+					colorChooserBottomAnchor = document.createElement ( 'a' );
+					colorChooserBottomAnchor.addEventListener ( 'click', function ( ) {m_changeColorStyle ( );}, false );
+					colorChooserBottomAnchor.id = 'cyColorChooserMenuBottom';
+					colorChooserBottomLi.appendChild ( colorChooserBottomAnchor );
+					document.getElementById ( 'cyPagesMenuBottom' ).appendChild ( colorChooserBottomLi );
+				}
 			}
-			
+			else if ( document.getElementById ( "cyMenu" ) ) {
+				// www.ouaie.be home page
+				var colorMenuItem = document.createElement ( 'div' );
+				colorMenuItem.innerHTML = '<h5><a id="cyContrastViewBottom"><img src="sharedpictures/contraste.png" class="cyMenuThumbnail"  alt="Affichage" /></a></h5><div><p><a id="cyColorChooserMenuTop" title="Passer en affichage normal" >Affichage normal</a></p></div>';
+				colorMenuItem.classList.add ( 'cyMenuItem' );
+				colorMenuItem.classList.add ( 'cyMenuTooltip' );
+				document.getElementById ( "cyMenu" ).appendChild ( colorMenuItem );
+				colorChooserTopAnchor = document.getElementById ( 'cyColorChooserMenuTop' );
+				colorChooserTopAnchor.addEventListener ( 'click', function ( ) {m_changeColorStyle ( );}, false );
+			}
+				
 			if ( 'cyStandardColor' === currentStyle )
 			{
 				colorChooserTopAnchor.innerHTML = m_language.colorChooserNormal;
