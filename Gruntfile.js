@@ -4,6 +4,28 @@ module.exports = function(grunt) {
 		jshint: {
 			files: ['Gruntfile.js', 'src/common/sharedscripts/*.js' ],
 		},
+		buildnumber: {
+			options: {
+				field: 'nextBuild',
+			},
+			files: ['package.json']
+		},
+		browserify: {
+			control: {
+				src: ['src/common/sharedscripts/*.js'],
+				dest: 'src/common/tmp/starter.js'
+			}
+		},
+		uglify: {
+			options: {
+				banner: '/*! <%= pkg.name %> - version <%= pkg.version %> - build <%= pkg.build %> - ' +
+				'<%= grunt.template.today("yyyy-mm-dd") %> - Copyright 2017 <%= grunt.template.today("yyyy") %> Christian Guyette - Contact: http//www.ouaie.be/ - This  program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or any later version.*/\n\n'
+			},
+			build: {
+				src: 'src/common/tmp/starter.js',
+				dest: 'src/common/tmp/starter.min.js'
+			}
+		},
 		copy: {
 			main: {
 				files: [
@@ -21,13 +43,13 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'src/common/sharedscripts/',
+						cwd: 'src/common/tmp/',
 						src: ['**'],
 						dest: 'dist/anthisnes/sharedscripts/'
 					},
 					{
 						expand: true,
-						cwd: 'src/common/sharedscripts/',
+						cwd: 'src/common/tmp/',
 						src: ['**'],
 						dest: 'dist/ouaie/sharedscripts/'
 					},
@@ -85,8 +107,15 @@ module.exports = function(grunt) {
 			}
 		}
 	});
+	grunt.config.data.pkg.build = ("0000" + grunt.config.data.pkg.nextBuild).substr(-4,4) ;
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-build-number');
+	grunt.loadNpmTasks('grunt-browserify');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');	
-	grunt.registerTask('default', ['jshint', 'copy', 'cssmin']);
+	grunt.registerTask('default', ['jshint', 'buildnumber', 'browserify', 'uglify', 'copy', 'cssmin']);
+	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
+	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version +' - build: '+ grunt.config.data.pkg.build + ' - ' + grunt.template.today("isoDateTime") +'\n' );
+	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
 };

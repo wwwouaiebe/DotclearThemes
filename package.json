@@ -25,5 +25,6 @@
   "bugs": {
     "url": "https://github.com/wwwouaiebe/DotclearThemes/issues"
   },
-  "homepage": "https://github.com/wwwouaiebe/DotclearThemes#readme"
+  "homepage": "https://github.com/wwwouaiebe/DotclearThemes#readme",
+  "nextBuild": "37"
 }
