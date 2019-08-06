@@ -313,6 +313,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		var m_blogThemeUrl = '';
 		
 		var m_onKeyDown = function ( keyBoardEvent ) {
+			if ( window.innerWidth < 1281 ) {
+				return;
+			}
 			switch ( keyBoardEvent.key ) {
 				case 'Escape':
 				case 'Esc':
@@ -446,6 +449,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		*/
 
 		var m_showNextPreviousPost = function ( delta ) {
+			if ( window.innerWidth < 1281 ) {
+				return;
+			}
 			if ( ! delta ) {
 				delta = 1;
 			}
@@ -492,6 +498,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		*/
 
 		var m_hidePosts = function ( ) {
+			if ( window.innerWidth < 1281 ) {
+				return;
+			}
 			if ( 0 < document.getElementsByClassName ( 'cyPaginationPrevious' ).length ) {
 				m_hasPreviousPage = true;
 			}
@@ -569,6 +578,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		*/
 
 		var m_hideFooter = function  ( ) {
+			if ( window.innerWidth < 1281 ) {
+				return;
+			}
 			if ( document.getElementById ( 'cyPagination' ) ) {
 				document.getElementById ( 'cyPagination' ).classList.add ( 'cyHidden' );
 			}
@@ -614,7 +626,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 				m_timeOutId = window.setTimeout ( m_showNextPreviousPost, m_timeOutDuration);
 			}
 		};
-
+		
 		m_parse ( );
 		m_setTimer ( );
 		
