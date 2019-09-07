@@ -419,7 +419,7 @@ msgid "cyPostCommentSubmitted"
 msgstr "Votre commentaire a été envoyé. Notez qu'il doit être approuvé par le responsable du site et que cela peut prendre du temps..."
 
 msgid "cyPostCopyrightHref"
-msgstr "/creativecommons"
+msgstr "/pages/LicenseCreativeCommons"
 
 msgid "cyPostCopyrightText"
 msgstr "&#169; "
