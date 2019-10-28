@@ -431,7 +431,7 @@ msgid "cyPostDateText1"
 msgstr "Photo réalisée le "
 
 msgid "cyPostDateText2"
-msgstr " à "
+msgstr ", "
 
 msgid "cyPostDateText3"
 msgstr "&nbsp;heures&nbsp;"
