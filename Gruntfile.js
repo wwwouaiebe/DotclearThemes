@@ -4,12 +4,6 @@ module.exports = function(grunt) {
 		jshint: {
 			files: ['Gruntfile.js', 'src/common/sharedscripts/*.js' ],
 		},
-		buildnumber: {
-			options: {
-				field: 'nextBuild',
-			},
-			files: ['package.json']
-		},
 		browserify: {
 			control: {
 				src: ['src/common/sharedscripts/*.js'],
@@ -107,15 +101,16 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-	grunt.config.data.pkg.build = ("0000" + grunt.config.data.pkg.nextBuild).substr(-4,4) ;
+	grunt.config.data.pkg.buildNumber = grunt.file.readJSON('buildNumber.json').buildNumber;
+	grunt.config.data.pkg.buildNumber = ("00000" + ( Number.parseInt ( grunt.config.data.pkg.buildNumber ) + 1 )).substr ( -5, 5 ) ;
+	grunt.file.write ( 'buildNumber.json', '{ "buildNumber" : "' + grunt.config.data.pkg.buildNumber + '"}'  );
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-build-number');
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');	
-	grunt.registerTask('default', ['jshint', 'buildnumber', 'browserify', 'uglify', 'copy', 'cssmin']);
+	grunt.registerTask('default', ['jshint', 'browserify', 'uglify', 'copy', 'cssmin']);
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
-	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version +' - build: '+ grunt.config.data.pkg.build + ' - ' + grunt.template.today("isoDateTime") +'\n' );
+	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version +' - build: '+ grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today("isoDateTime") +'\n' );
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
 };
