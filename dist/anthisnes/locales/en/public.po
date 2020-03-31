@@ -158,7 +158,7 @@ msgid "cyCondrozNearMenuBottomTooltip"
 msgstr "Le Condroz"
 
 msgid "cyCondrozNearMenuBottomUrl"
-msgstr "http://www.ouaie.be/blog/category/Belgique/Condroz"
+msgstr "https://www.ouaie.be/blog/category/Belgique/Condroz"
 
 msgid "cyCondrozNearMenuTopText"
 msgstr "Le Condroz &#8599;"
@@ -167,7 +167,7 @@ msgid "cyCondrozNearMenuTopTooltip"
 msgstr "Le Condroz"
 
 msgid "cyCondrozNearMenuTopUrl"
-msgstr "http://www.ouaie.be/blog/category/Belgique/Condroz"
+msgstr "https://www.ouaie.be/blog/category/Belgique/Condroz"
 
 msgid "cyContactMenuBottomUrl"
 msgstr "pages/Contact"
@@ -250,7 +250,7 @@ msgid "cyMeuseNearMenuBottomTooltip"
 msgstr "La Meuse"
 
 msgid "cyMeuseNearMenuBottomUrl"
-msgstr "http://www.ouaie.be/blog/category/Belgique/Vallee-de-la-Meuse"
+msgstr "https://www.ouaie.be/blog/category/Belgique/Vallee-de-la-Meuse"
 
 msgid "cyMeuseNearMenuTopText"
 msgstr "La Meuse &#8599;"
@@ -259,7 +259,7 @@ msgid "cyMeuseNearMenuTopTooltip"
 msgstr "La Meuse"
 
 msgid "cyMeuseNearMenuTopUrl"
-msgstr "http://www.ouaie.be/blog/category/Belgique/Vallee-de-la-Meuse"
+msgstr "https://www.ouaie.be/blog/category/Belgique/Vallee-de-la-Meuse"
 
 msgid "cyNavigationMenuTopArchivesText"
 msgstr "Voyagez dans le temps"
@@ -319,7 +319,7 @@ msgid "cyOuaiebeMenuBottomTooltip"
 msgstr "Mon autre blog: www.ouaie.be"
 
 msgid "cyOuaiebeMenuBottomUrl"
-msgstr "http://www.ouaie.be/"
+msgstr "https://www.ouaie.be/"
 
 msgid "cyOuaiebeMenuTopText"
 msgstr "wwwouaiebe &#8599;"
@@ -328,7 +328,7 @@ msgid "cyOuaiebeMenuTopTooltip"
 msgstr "Mon autre blog: www.ouaie.be"
 
 msgid "cyOuaiebeMenuTopUrl"
-msgstr "http://www.ouaie.be/"
+msgstr "https://www.ouaie.be/"
 
 msgid "cyOurtheNearMenuBottomText"
 msgstr "L'Ourthe &#8599;"
@@ -337,7 +337,7 @@ msgid "cyOurtheNearMenuBottomTooltip"
 msgstr "L'Ourthe"
 
 msgid "cyOurtheNearMenuBottomUrl"
-msgstr "http://www.ouaie.be/blog/category/Belgique/Vallee-de-l-Ourthe"
+msgstr "https://www.ouaie.be/blog/category/Belgique/Vallee-de-l-Ourthe"
 
 msgid "cyOurtheNearMenuTopText"
 msgstr "L'Ourthe &#8599;"
@@ -346,7 +346,7 @@ msgid "cyOurtheNearMenuTopTooltip"
 msgstr "L'Ourthe"
 
 msgid "cyOurtheNearMenuTopUrl"
-msgstr "http://www.ouaie.be/blog/category/Belgique/Vallee-de-l-Ourthe"
+msgstr "https://www.ouaie.be/blog/category/Belgique/Vallee-de-l-Ourthe"
 
 msgid "cyPagesTitleBottom"
 msgstr "Et aussi&nbsp;:"
@@ -379,7 +379,7 @@ msgid "cyParcoursArtistes2016MenuBottomTooltip"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016"
 
 msgid "cyParcoursArtistes2016MenuBottomUrl"
-msgstr "http://www.ouaie.be/blog/pages/parcours-artistes-2016"
+msgstr "https://www.ouaie.be/blog/pages/parcours-artistes-2016"
 
 msgid "cyParcoursArtistes2016MenuTopText"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016 &#8599;"
@@ -388,7 +388,7 @@ msgid "cyParcoursArtistes2016MenuTopTooltip"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2016"
 
 msgid "cyParcoursArtistes2016MenuTopUrl"
-msgstr "http://www.ouaie.be/blog/pages/parcours-artistes-2016"
+msgstr "https://www.ouaie.be/blog/pages/parcours-artistes-2016"
 
 msgid "cyParcoursArtistes2018MenuBottomText"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018 &#8599;"
@@ -397,7 +397,7 @@ msgid "cyParcoursArtistes2018MenuBottomTooltip"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
 msgid "cyParcoursArtistes2018MenuBottomUrl"
-msgstr "http://www.ouaie.be/blog/pages/parcours-artistes-2018"
+msgstr "https://www.ouaie.be/blog/pages/parcours-artistes-2018"
 
 msgid "cyParcoursArtistes2018MenuTopText"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018 &#8599;"
@@ -406,7 +406,7 @@ msgid "cyParcoursArtistes2018MenuTopTooltip"
 msgstr "Les photos exposées au &quot;Parcours&nbsp;d&apos;Artistes&quot;&nbsp;2018"
 
 msgid "cyParcoursArtistes2018MenuTopUrl"
-msgstr "http://www.ouaie.be/blog/pages/parcours-artistes-2018"
+msgstr "https://www.ouaie.be/blog/pages/parcours-artistes-2018"
 
 msgid "cyPostCategoryText"
 msgstr "Laissez-vous pousser par le vent vers "
@@ -457,7 +457,7 @@ msgid "cySiteTitleTooltip"
 msgstr "aller au début du blog"
 
 msgid "cySiteUrl"
-msgstr "http://www.anthisnes.org/"
+msgstr "https://www.anthisnes.org/"
 
 msgid "cyTagsTitleBottom"
 msgstr "Parcourez les chemins et les champs&nbsp;:"

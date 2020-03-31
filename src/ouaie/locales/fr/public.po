@@ -68,7 +68,7 @@ msgid "cyAnthisnesOrgMenuBottomTooltip"
 msgstr "Mon autre blog: www.anthisnes.org"
 
 msgid "cyAnthisnesOrgMenuBottomUrl"
-msgstr "http://www.anthisnes.org/"
+msgstr "https://www.anthisnes.org/"
 
 msgid "cyAnthisnesOrgMenuTopText"
 msgstr "anthisnes.org &#8599;"
@@ -77,7 +77,7 @@ msgid "cyAnthisnesOrgMenuTopTooltip"
 msgstr "Mon autre blog: www.anthisnes.org"
 
 msgid "cyAnthisnesOrgMenuTopUrl"
-msgstr "http://www.anthisnes.org/"
+msgstr "https://www.anthisnes.org/"
 
 msgid "cyAproposMenuBottomUrl"
 msgstr "pages/Apropos"
@@ -458,7 +458,7 @@ msgid "cySiteTitleTooltip"
 msgstr "aller à l'accueil"
 
 msgid "cySiteUrl"
-msgstr "http://www.ouaie.be/"
+msgstr "https://www.ouaie.be/"
 
 msgid "cyTagsTitleBottom"
 msgstr "Parcourez les séries&nbsp;:"
