@@ -1,3 +1,6 @@
+msgid "cy401Text"
+msgstr "Vin nin chal, hin, vî drole!"
+
 msgid "cy403Text"
 msgstr "Ènocint catwaze moussî a sot, fåte http"
 

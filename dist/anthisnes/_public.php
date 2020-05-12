@@ -78,9 +78,18 @@ class tplMyPagination {
 	}
 }
 
+$core->url->register('p401','p401','^p401/(.+)$',array('myURLHandlers','p401'));
 $core->url->register('p403','p403','^p403/(.+)$',array('myURLHandlers','p403'));
 class myURLHandlers extends dcUrlHandlers
 {
+	protected static function p401()
+	{
+		header('Content-Type: text/html; charset=UTF-8');
+		http::head(401,'Unauthorized');
+		$GLOBALS['core']->url->type = '401';
+		echo $GLOBALS['core']->tpl->getData('401.html');
+		exit;
+	}
 	protected static function p403()
 	{
 		header('Content-Type: text/html; charset=UTF-8');
