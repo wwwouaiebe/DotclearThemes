@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		var m_hasNextPage = false;
 		var m_posts = null;
 		var m_timeOutId = null;
-		var m_timeOutDuration = 5000;
+		var m_timeOutDuration = 10000;
 		var m_blogThemeUrl = '';
 		
 		var m_onKeyDown = function ( keyBoardEvent ) {
@@ -337,6 +337,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		*/
 		
 		var m_setTimer = function ( ) {
+			document.removeEventListener ( 'load', m_setTimer, true );
+			if ( m_timeOutId ) {
+				window.clearTimeout ( m_timeOutId );
+			}
 			m_timeOutDuration = localStorage.getItem ( 'timeOutDuration' ) || m_timeOutDuration;
 			m_timeOutDuration = Number.parseInt ( m_timeOutDuration );
 			
@@ -348,10 +352,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		};
 		
 		m_parse ( );
-		m_setTimer ( );
 		
 		document.addEventListener ( 'keydown', m_onKeyDown, true );
-		
+		document.addEventListener ( 'load', m_setTimer, true );
+
 		m_hidePosts ( );
 		m_hideFooter ( );
 		
