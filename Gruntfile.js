@@ -1,19 +1,62 @@
 module.exports = function(grunt) {
+	let banner = 
+		'/**\n * ' +
+		'\n * @source: <%= pkg.sources %>\n * ' + 
+		'\n * @licstart  The following is the entire license notice for the' +
+		'\n * JavaScript code in this page.\n * \n * <%= pkg.name %> - version <%= pkg.version %>' + 
+		'\n * Build <%= pkg.buildNumber %> - <%= grunt.template.today("isoDateTime") %> ' + 
+		'\n * Copyright 2017 <%= grunt.template.today("yyyy") %> wwwouaiebe ' + 
+		'\n * Contact: https://www.ouaie.be/' + 
+		'\n * License: <%= pkg.license %>' +
+		'\n * \n * The JavaScript code in this page is free software: you can' +
+		'\n * redistribute it and/or modify it under the terms of the GNU' +
+		'\n * General Public License (GNU GPL) as published by the Free Software' +
+		'\n * Foundation, either version 3 of the License, or (at your option)' +
+		'\n * any later version.  The code is distributed WITHOUT ANY WARRANTY;' +
+		'\n * without even the implied warranty of MERCHANTABILITY or FITNESS' +
+		'\n * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.' +
+		'\n * \n * As additional permission under GNU GPL version 3 section 7, you' +
+		'\n * may distribute non-source (e.g., minimized or compacted) forms of' +
+		'\n * that code without the copy of the GNU GPL normally required by' +
+		'\n * section 4, provided you include this license notice and a URL' +
+		'\n * through which recipients can access the Corresponding Source.' +
+		'\n * \n * @licend  The above is the entire license notice' +
+		'\n * for the JavaScript code in this page.' +
+		'\n * \n */\n\n';
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		jshint: {
-			files: ['Gruntfile.js', 'src/common/sharedscripts/*.js' ],
+		eslint: {
+			options: {
+				fix: true,
+				configFile: '.eslintrc.json'
+			},				
+			target: ['src/common/sharedscripts/*.js']
+		},	
+		rollup : {
+			Default : {
+				options : {
+					format : 'iife'
+				},
+				files: {
+				  'src/common/tmp/starter.js': ['src/common/sharedscripts/starter.js']
+				}
+			}
 		},
-		browserify: {
-			control: {
-				src: ['src/common/sharedscripts/*.js'],
-				dest: 'src/common/tmp/starter.js'
+		cssmin: {
+			options: {
+				mergeIntoShorthands: false,
+				roundingPrecision: -1
+			},
+			target: {
+				files: {
+					'dist/ouaie/sharedstyles/presentationScheme.css': ['src/common/sharedstyles/presentationScheme.css'],
+					'dist/anthisnes/sharedstyles/presentationScheme.css': ['src/common/sharedstyles/presentationScheme.css'],
+				}
 			}
 		},
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> - version <%= pkg.version %> - build <%= pkg.build %> - ' +
-				'<%= grunt.template.today("yyyy-mm-dd") %> - Copyright 2017 <%= grunt.template.today("yyyy") %> Christian Guyette - Contact: http//www.ouaie.be/ - This  program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or any later version.*/\n\n'
+				banner: banner
 			},
 			build: {
 				src: 'src/common/tmp/starter.js',
@@ -87,29 +130,17 @@ module.exports = function(grunt) {
 					},
 				],
 			}
-		},
-		cssmin: {
-			options: {
-				mergeIntoShorthands: false,
-				roundingPrecision: -1
-			},
-			target: {
-				files: {
-					'dist/ouaie/sharedstyles/presentationScheme.css': ['src/common/sharedstyles/presentationScheme.css'],
-					'dist/anthisnes/sharedstyles/presentationScheme.css': ['src/common/sharedstyles/presentationScheme.css'],
-				}
-			}
 		}
 	});
 	grunt.config.data.pkg.buildNumber = grunt.file.readJSON('buildNumber.json').buildNumber;
 	grunt.config.data.pkg.buildNumber = ("00000" + ( Number.parseInt ( grunt.config.data.pkg.buildNumber ) + 1 )).substr ( -5, 5 ) ;
 	grunt.file.write ( 'buildNumber.json', '{ "buildNumber" : "' + grunt.config.data.pkg.buildNumber + '"}'  );
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-browserify');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-eslint');
+	grunt.loadNpmTasks('grunt-rollup');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');	
-	grunt.registerTask('default', ['jshint', 'browserify', 'uglify', 'copy', 'cssmin']);
+	grunt.loadNpmTasks('grunt-contrib-uglify-es');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.registerTask('default', ['eslint', 'rollup', 'uglify', 'copy', 'cssmin']);
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
 	console.log ( '\n                                     ' + grunt.config.data.pkg.name + ' - ' + grunt.config.data.pkg.version +' - build: '+ grunt.config.data.pkg.buildNumber + ' - ' + grunt.template.today("isoDateTime") +'\n' );
 	console.log ( '---------------------------------------------------------------------------------------------------------------------------------------------');
