@@ -32,6 +32,30 @@ import { colorChooser } from './ColorChooser.js';
 import { menuModifier } from './MenuModifier.js';
 import { slideShow } from './SlideShow.js';
 
+const ZERO = 0;
+
+/*
+--- getDotclearVars function ------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------
+*/
+
+function getDotclearVars ( ) {
+	let parser = new DOMParser ();
+	let xmlDoc =
+		parser.parseFromString ( document.getElementById ( 'cyDotclearVars' ).childNodes[ ZERO ].data, 'text/xml' );
+	function getXmlValue ( valueTagName ) {
+		return xmlDoc.getElementsByTagName ( valueTagName ) [ ZERO ].attributes.getNamedItem ( 'value' ).nodeValue;
+	}
+	return {
+		colorChooserContraste : getXmlValue ( 'cyColorChooserContraste' ),
+		colorChooserNormal : getXmlValue ( 'cyColorChooserNormal' ),
+		colorChooserContrasteTitle : getXmlValue ( 'cyColorChooserContrasteTitle' ),
+		colorChooserNormalTitle : getXmlValue ( 'cyColorChooserNormalTitle' ),
+		blogThemeUrl : getXmlValue ( 'cyBlogThemeURL' )
+	};
+}
+
 /*
 --- haveLocalStorage function -----------------------------------------------------------------------------------------
 
@@ -56,15 +80,14 @@ function haveLocalStorage ( ) {
 -----------------------------------------------------------------------------------------------------------------------
 */
 
-const ZERO = 0;
-
 if ( haveLocalStorage ( ) ) {
-	colorChooser ( );
+	let dotclearVars = getDotclearVars ( );
+	colorChooser ( dotclearVars );
 
 	if ( document.getElementById ( 'cyMainMenu' ) ) {
-		document.getElementsByTagName ( 'body' ) [ ZERO ].classList.add ( 'cyJSPage' );
+		document.querySelector ( 'body' ).classList.add ( 'cyJSPage' );
 		menuModifier ( );
-		slideShow ( );
+		slideShow ( dotclearVars );
 	}
 }
 

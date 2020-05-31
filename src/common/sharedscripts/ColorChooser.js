@@ -34,37 +34,7 @@ Doc reviewed 20200527
 -----------------------------------------------------------------------------------------------------------------------
 */
 
-function colorChooser ( ) {
-
-	const ZERO = 0;
-
-	let myLanguage = {};
-
-	/*
-	--- myParse function ----------------------------------------------------------------------------------------------
-
-	-------------------------------------------------------------------------------------------------------------------
-	*/
-
-	function myParse ( ) {
-		let parser = new DOMParser ();
-		let xmlDoc =
-			parser.parseFromString ( document.getElementById ( 'cyDotclearVars' ).childNodes[ ZERO ].data, 'text/xml' );
-		myLanguage = {
-			colorChooserContraste :
-				xmlDoc.getElementsByTagName ( 'cyColorChooserContraste' ) [ ZERO ]
-					.attributes.getNamedItem ( 'value' ).nodeValue,
-			colorChooserNormal :
-				xmlDoc.getElementsByTagName ( 'cyColorChooserNormal' ) [ ZERO ]
-					.attributes.getNamedItem ( 'value' ).nodeValue,
-			colorChooserContrasteTitle :
-				xmlDoc.getElementsByTagName ( 'cyColorChooserContrasteTitle' ) [ ZERO ]
-					.attributes.getNamedItem ( 'value' ).nodeValue,
-			colorChooserNormalTitle :
-				xmlDoc.getElementsByTagName ( 'cyColorChooserNormalTitle' ) [ ZERO ]
-					.attributes.getNamedItem ( 'value' ).nodeValue
-		};
-	}
+function colorChooser ( dotclearVars ) {
 
 	/*
 	--- myChangeColorStyle function -----------------------------------------------------------------------------------
@@ -80,22 +50,22 @@ function colorChooser ( ) {
 
 		if ( 'cyStandardColor' === currentStyle ) {
 
-			colorChooserTopAnchor.innerHTML = myLanguage.colorChooserContraste;
-			colorChooserTopAnchor.title = myLanguage.colorChooserContrasteTitle;
+			colorChooserTopAnchor.innerHTML = dotclearVars.colorChooserContraste;
+			colorChooserTopAnchor.title = dotclearVars.colorChooserContrasteTitle;
 			if ( colorChooserBottomAnchor ) {
-				colorChooserBottomAnchor.innerHTML = myLanguage.colorChooserContraste;
-				colorChooserBottomAnchor.title = myLanguage.colorChooserContrasteTitle;
+				colorChooserBottomAnchor.innerHTML = dotclearVars.colorChooserContraste;
+				colorChooserBottomAnchor.title = dotclearVars.colorChooserContrasteTitle;
 			}
 			document.body.classList.add ( 'cyAlternateColor' );
 			document.body.classList.remove ( 'cyStandardColor' );
 			localStorage.setItem ( 'style', 'cyAlternateColor' );
 		}
 		else {
-			colorChooserTopAnchor.innerHTML = myLanguage.colorChooserNormal;
-			colorChooserTopAnchor.title = myLanguage.colorChooserNormalTitle;
+			colorChooserTopAnchor.innerHTML = dotclearVars.colorChooserNormal;
+			colorChooserTopAnchor.title = dotclearVars.colorChooserNormalTitle;
 			if ( colorChooserBottomAnchor ) {
-				colorChooserBottomAnchor.innerHTML = myLanguage.colorChooserNormal;
-				colorChooserBottomAnchor.title = myLanguage.colorChooserNormalTitle;
+				colorChooserBottomAnchor.innerHTML = dotclearVars.colorChooserNormal;
+				colorChooserBottomAnchor.title = dotclearVars.colorChooserNormalTitle;
 			}
 			document.body.classList.add ( 'cyStandardColor' );
 			document.body.classList.remove ( 'cyAlternateColor' );
@@ -161,19 +131,19 @@ function colorChooser ( ) {
 		}
 
 		if ( 'cyStandardColor' === currentStyle ) {
-			colorChooserTopAnchor.innerHTML = myLanguage.colorChooserNormal;
-			colorChooserTopAnchor.title = myLanguage.colorChooserNormalTitle;
+			colorChooserTopAnchor.innerHTML = dotclearVars.colorChooserNormal;
+			colorChooserTopAnchor.title = dotclearVars.colorChooserNormalTitle;
 			if ( colorChooserBottomAnchor ) {
-				colorChooserBottomAnchor.innerHTML = myLanguage.colorChooserNormal;
-				colorChooserBottomAnchor.title = myLanguage.colorChooserNormalTitle;
+				colorChooserBottomAnchor.innerHTML = dotclearVars.colorChooserNormal;
+				colorChooserBottomAnchor.title = dotclearVars.colorChooserNormalTitle;
 			}
 		}
 		else {
-			colorChooserTopAnchor.innerHTML = myLanguage.colorChooserContraste;
-			colorChooserTopAnchor.title = myLanguage.colorChooserContrasteTitle;
+			colorChooserTopAnchor.innerHTML = dotclearVars.colorChooserContraste;
+			colorChooserTopAnchor.title = dotclearVars.colorChooserContrasteTitle;
 			if ( colorChooserBottomAnchor ) {
-				colorChooserBottomAnchor.innerHTML = myLanguage.colorChooserContraste;
-				colorChooserBottomAnchor.title = myLanguage.colorChooserContrasteTitle;
+				colorChooserBottomAnchor.innerHTML = dotclearVars.colorChooserContraste;
+				colorChooserBottomAnchor.title = dotclearVars.colorChooserContrasteTitle;
 			}
 			document.body.classList.add ( 'cyAlternateColor' );
 			document.body.classList.remove ( 'cyStandardColor' );
@@ -186,10 +156,7 @@ function colorChooser ( ) {
 	-------------------------------------------------------------------------------------------------------------------
 	*/
 
-	myParse ( );
-
 	myAddColorMenuItem ( );
-
 }
 
 export { colorChooser };

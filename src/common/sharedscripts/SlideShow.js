@@ -31,38 +31,41 @@ Doc reviewed 20200527
 /*
 --- slideShow function ------------------------------------------------------------------------------------------------
 
+Reminder:
+- the newest post is the first post of the first page
+- the oldest post is the last post of the last page
+- the slideshow go always in the forward direction ( = from the newest post to the oldest post )
+  except when it's needed to go to the last post of the previous page because the user have
+  asked the previous post with the mouse or the keyboard and the first post of the page was displayed
+
 -----------------------------------------------------------------------------------------------------------------------
 */
 
-function slideShow ( ) {
+function slideShow ( dotclearVars ) {
 
 	const MY_MIN_SLIDE_SHOW_WIDTH = 1280;
 	const MY_MIN_SLIDE_SHOW_DURATION = 2000;
 	const MY_MAX_SLIDE_SHOW_DURATION = 30000;
 	const MY_SLIDE_SHOW_INTERVAL = 1000;
-
 	const NOT_FOUND = -1;
 	const PREVIOUS = -1;
-
-	const ZERO = 0;
 	const MY_FIRST_POST_INDEX = 0;
-
 	const ONE = 1;
 	const NEXT = 1;
-
 	const TWO = 2;
-
 	const MY_IMG_MARGIN = 20;
 
 	let myCurrentPostIndex = null;
 	let myCurrentPost = null;
 	let myLastPostIndex = null;
-	let myHasPreviousPage = false;
-	let myHasNextPage = false;
+	let myOlderPostsLink = null;
+	let myNiewerPostsLink = null;
 	let myPosts = null;
 	let myTimeOutId = null;
 	let myTimeOutDuration = 10000;
-	let myBlogThemeUrl = '';
+	let mySlideShowActive = 'yes';
+	let myPostDirection = 'forward';
+	let myBlogThemeUrl = dotclearVars.blogThemeUrl;
 
 	/*
 	--- myResizeCurrentPost function ----------------------------------------------------------------------------------
@@ -73,24 +76,15 @@ function slideShow ( ) {
 	function myResizeCurrentPost ( ) {
 		if ( MY_MIN_SLIDE_SHOW_WIDTH < window.innerWidth ) {
 			let screenHeight = window.innerHeight;
-			let clientRect = myCurrentPost.getBoundingClientRect ( );
-			let topHeight = clientRect.y - document.documentElement.getBoundingClientRect ( ).y;
-			if ( topHeight + clientRect.height > screenHeight ) {
-				let imgElement = null;
-				let postContent = myCurrentPost.children [ ONE ];
-
-				for ( let counter = ZERO; counter < postContent.children.length; counter ++ ) {
-					if ( postContent.children [ counter ].classList.contains ( 'cyPostMedias' ) ) {
-						imgElement = postContent.children [ counter ].firstElementChild.firstElementChild;
-						if ( 'IMG' !== imgElement.tagName ) {
-							imgElement = null;
-						}
-						break;
-					}
-				}
+			let postClientRect = myCurrentPost.getBoundingClientRect ( );
+			let topPost = postClientRect.y - document.documentElement.getBoundingClientRect ( ).y;
+			if ( topPost + postClientRect.height > screenHeight ) {
+				let imgElement = document.querySelector ( '#' + myCurrentPost.id + ' .cyPostMedias img' );
 				if ( imgElement && ! imgElement.classList.contains ( 'cyPictureLandscape' ) ) {
 					let imgScale =
-						( imgElement.height - topHeight - clientRect.height + screenHeight - MY_IMG_MARGIN ) / imgElement.height;
+						( imgElement.height - topPost - postClientRect.height + screenHeight - MY_IMG_MARGIN )
+						/
+						imgElement.height;
 					imgElement.style.width = String ( Number.parseInt ( imgScale * imgElement.width ) ) + 'px';
 				}
 			}
@@ -105,35 +99,28 @@ function slideShow ( ) {
 
 	function myShowNextPreviousPost ( delta ) {
 		if ( MY_MIN_SLIDE_SHOW_WIDTH < window.innerWidth ) {
-
-			if ( myCurrentPostIndex !== myLastPostIndex ) {
-				myCurrentPost.classList.add ( 'cyHidden' );
-			}
-
+			myCurrentPost.classList.add ( 'cyHidden' );
 			myCurrentPostIndex += ( delta || NEXT );
-
 			if ( NOT_FOUND === myCurrentPostIndex ) {
-				if ( myHasNextPage ) {
+				if ( myNiewerPostsLink ) {
 					localStorage.setItem ( 'postDirection', 'backward' );
-					document.querySelector ( '.cyPaginationNext' ).click ( );
+					myNiewerPostsLink.click ( );
+					return;
 				}
 				myCurrentPostIndex = MY_FIRST_POST_INDEX;
-				return;
 			}
 			if ( myPosts.length === myCurrentPostIndex ) {
-				if ( myHasPreviousPage ) {
+				if ( myOlderPostsLink ) {
 					localStorage.setItem ( 'postDirection', 'forward' );
-					document.querySelector ( '.cyPaginationPrevious' ).click ( );
+					myOlderPostsLink.click ( );
+					return;
 				}
 				myCurrentPostIndex = myLastPostIndex;
-				return;
 			}
 			myCurrentPost = myPosts.item ( myCurrentPostIndex );
 			myCurrentPost.classList.remove ( 'cyHidden' );
-
 			myResizeCurrentPost ( );
-
-			if ( 'yes' === localStorage.getItem ( 'timeOut' ) ) {
+			if ( 'yes' === mySlideShowActive ) {
 				if ( myTimeOutId ) {
 					window.clearTimeout ( myTimeOutId );
 				}
@@ -153,13 +140,17 @@ function slideShow ( ) {
 			switch ( keyBoardEvent.key ) {
 			case 'Escape' :
 			case 'Esc' :
-				if ( myTimeOutId ) {
-					window.clearTimeout ( myTimeOutId );
-					myTimeOutId = null;
-					localStorage.setItem ( 'timeOut', 'no' );
+				if ( 'yes' === mySlideShowActive ) {
+					localStorage.setItem ( 'slideShowActive', 'no' );
+					mySlideShowActive = 'no';
+					if ( myTimeOutId ) {
+						window.clearTimeout ( myTimeOutId );
+						myTimeOutId = null;
+					}
 				}
 				else {
-					localStorage.setItem ( 'timeOut', 'yes' );
+					localStorage.setItem ( 'slideShowActive', 'yes' );
+					mySlideShowActive = 'yes';
 					myShowNextPreviousPost ( NEXT );
 					myTimeOutId = window.setTimeout ( myShowNextPreviousPost, myTimeOutDuration );
 				}
@@ -242,19 +233,19 @@ function slideShow ( ) {
 				}
 				else if ( clientRect.width / TWO < mouseEvent.clientX - clientRect.x ) {
 					document.body.style.cursor =
-						( myHasPreviousPage && myLastPostIndex === myCurrentPostIndex ) || myLastPostIndex !== myCurrentPostIndex
+						( ! myOlderPostsLink && myLastPostIndex === myCurrentPostIndex )
 							?
-							'url(' + myBlogThemeUrl + '/sharedpictures/right.png) 16 16,e-resize'
+							'auto'
 							:
-							'auto';
+							'url(' + myBlogThemeUrl + '/sharedpictures/right.png) 16 16,e-resize';
 				}
 				else {
 					document.body.style.cursor =
-						( myHasNextPage && MY_FIRST_POST_INDEX === myCurrentPostIndex ) || MY_FIRST_POST_INDEX !== myCurrentPostIndex
+						( ! myNiewerPostsLink && MY_FIRST_POST_INDEX === myCurrentPostIndex )
 							?
-							'url(' + myBlogThemeUrl + '/sharedpictures/left.png) 16 16,w-resize'
+							'auto'
 							:
-							'auto';
+							'url(' + myBlogThemeUrl + '/sharedpictures/left.png) 16 16,w-resize';
 				}
 			}
 		}
@@ -280,24 +271,11 @@ function slideShow ( ) {
 
 	function myHidePosts ( ) {
 		if ( MY_MIN_SLIDE_SHOW_WIDTH < window.innerWidth ) {
-			if ( document.querySelector ( '.cyPaginationPrevious' ) ) {
-				myHasPreviousPage = true;
-			}
-			if ( document.querySelector ( 'cyPaginationNext' ) ) {
-				myHasNextPage = true;
-			}
-
-			let postDirection = 'forward';
-			let tmpPostDirection = localStorage.getItem ( 'postDirection' );
-			if ( tmpPostDirection && '' !== tmpPostDirection ) {
-				postDirection = tmpPostDirection;
-			}
-			localStorage.setItem ( 'postDirection', '' );
-
+			myOlderPostsLink = document.querySelector ( '.cyPaginationPrevious' );
+			myNiewerPostsLink = document.querySelector ( '.cyPaginationNext' );
 			document.querySelectorAll ( '.cyPostTitleDate' ).forEach (
 				postTitleDate => postTitleDate.classList.add ( 'cyHidden' )
 			);
-
 			myPosts = document.querySelectorAll ( '.cyPost' );
 			myLastPostIndex = myPosts.length - ONE;
 			myPosts.forEach (
@@ -310,10 +288,8 @@ function slideShow ( ) {
 					postContent.addEventListener ( 'click', myOnPostMouseClick, false );
 				}
 			);
-
-			myCurrentPostIndex = ( 'forward' === postDirection ) ? MY_FIRST_POST_INDEX : myLastPostIndex;
+			myCurrentPostIndex = ( 'forward' === myPostDirection ) ? MY_FIRST_POST_INDEX : myLastPostIndex;
 			myCurrentPost = myPosts.item ( myCurrentPostIndex );
-
 			if ( myCurrentPost ) {
 				myCurrentPost.classList.remove ( 'cyHidden' );
 				myResizeCurrentPost ( );
@@ -348,36 +324,16 @@ function slideShow ( ) {
 	}
 
 	/*
-	--- myParse function ----------------------------------------------------------------------------------------------
-
-	-------------------------------------------------------------------------------------------------------------------
-	*/
-
-	function myParse ( ) {
-		let parser = new DOMParser ();
-		let xmlDoc =
-			parser.parseFromString ( document.getElementById ( 'cyDotclearVars' ).childNodes[ ZERO ].data, 'text/xml' );
-		myBlogThemeUrl =
-			xmlDoc.getElementsByTagName ( 'cyBlogThemeURL' ) [ ZERO ].attributes.getNamedItem ( 'value' ).nodeValue;
-	}
-
-	/*
 	--- mySetTimer function -------------------------------------------------------------------------------------------
 
 	-------------------------------------------------------------------------------------------------------------------
 	*/
 
 	function mySetTimer ( ) {
-		document.removeEventListener ( 'load', mySetTimer, true );
 		if ( myTimeOutId ) {
 			window.clearTimeout ( myTimeOutId );
 		}
-		myTimeOutDuration = localStorage.getItem ( 'timeOutDuration' ) || myTimeOutDuration;
-		myTimeOutDuration = Number.parseInt ( myTimeOutDuration );
-
-		let timeOut = localStorage.getItem ( 'timeOut' ) || 'yes';
-		localStorage.setItem ( 'timeOut', timeOut );
-		if ( 'yes' === timeOut ) {
+		if ( 'yes' === mySlideShowActive ) {
 			myTimeOutId = window.setTimeout ( myShowNextPreviousPost, myTimeOutDuration );
 		}
 	}
@@ -388,15 +344,19 @@ function slideShow ( ) {
 	-------------------------------------------------------------------------------------------------------------------
 	*/
 
-	myParse ( );
-
 	document.removeEventListener ( 'keydown', myOnKeyDown, true );
+	document.removeEventListener ( 'load', mySetTimer, true );
 	document.addEventListener ( 'keydown', myOnKeyDown, true );
 	document.addEventListener ( 'load', mySetTimer, true );
-
+	myTimeOutDuration = Number.parseInt ( localStorage.getItem ( 'timeOutDuration' ) || myTimeOutDuration );
+	mySlideShowActive = localStorage.getItem ( 'slideShowActive' ) || 'yes';
+	myPostDirection = localStorage.getItem ( 'postDirection' ) || 'forward';
 	myHidePosts ( );
 	myHideFooter ( );
-
+	if ( 'backward' === myPostDirection ) {
+		myPostDirection = 'forward';
+		localStorage.setItem ( 'postDirection', 'forward' );
+	}
 }
 
 export { slideShow };
