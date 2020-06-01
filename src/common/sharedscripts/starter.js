@@ -52,6 +52,7 @@ function getDotclearVars ( ) {
 		colorChooserNormal : getXmlValue ( 'cyColorChooserNormal' ),
 		colorChooserContrasteTitle : getXmlValue ( 'cyColorChooserContrasteTitle' ),
 		colorChooserNormalTitle : getXmlValue ( 'cyColorChooserNormalTitle' ),
+		restartSlideShow : getXmlValue ( 'cyRestartSlideShow' ),
 		blogThemeUrl : getXmlValue ( 'cyBlogThemeURL' )
 	};
 }

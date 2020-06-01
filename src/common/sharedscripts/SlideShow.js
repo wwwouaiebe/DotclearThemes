@@ -44,16 +44,12 @@ Reminder:
 function slideShow ( dotclearVars ) {
 
 	const MY_MIN_SLIDE_SHOW_WIDTH = 1280;
-	const MY_MIN_SLIDE_SHOW_DURATION = 2000;
-	const MY_MAX_SLIDE_SHOW_DURATION = 30000;
-	const MY_SLIDE_SHOW_INTERVAL = 1000;
 	const NOT_FOUND = -1;
 	const PREVIOUS = -1;
 	const MY_FIRST_POST_INDEX = 0;
 	const ONE = 1;
 	const NEXT = 1;
 	const TWO = 2;
-	const MY_IMG_MARGIN = 20;
 
 	let myCurrentPostIndex = null;
 	let myCurrentPost = null;
@@ -65,7 +61,6 @@ function slideShow ( dotclearVars ) {
 	let myTimeOutDuration = 10000;
 	let mySlideShowActive = 'yes';
 	let myPostDirection = 'forward';
-	let myBlogThemeUrl = dotclearVars.blogThemeUrl;
 
 	/*
 	--- myResizeCurrentPost function ----------------------------------------------------------------------------------
@@ -75,6 +70,7 @@ function slideShow ( dotclearVars ) {
 
 	function myResizeCurrentPost ( ) {
 		if ( MY_MIN_SLIDE_SHOW_WIDTH < window.innerWidth ) {
+			const IMG_MARGIN = 20;
 			let screenHeight = window.innerHeight;
 			let postClientRect = myCurrentPost.getBoundingClientRect ( );
 			let topPost = postClientRect.y - document.documentElement.getBoundingClientRect ( ).y;
@@ -82,12 +78,56 @@ function slideShow ( dotclearVars ) {
 				let imgElement = document.querySelector ( '#' + myCurrentPost.id + ' .cyPostMedias img' );
 				if ( imgElement && ! imgElement.classList.contains ( 'cyPictureLandscape' ) ) {
 					let imgScale =
-						( imgElement.height - topPost - postClientRect.height + screenHeight - MY_IMG_MARGIN )
+						( imgElement.height - topPost - postClientRect.height + screenHeight - IMG_MARGIN )
 						/
 						imgElement.height;
 					imgElement.style.width = String ( Number.parseInt ( imgScale * imgElement.width ) ) + 'px';
 				}
 			}
+		}
+	}
+
+	/*
+	--- myStopSlideShow function --------------------------------------------------------------------------------------
+
+	-------------------------------------------------------------------------------------------------------------------
+	*/
+
+	function myStopSlideShow ( ) {
+		localStorage.setItem ( 'slideShowActive', 'no' );
+		mySlideShowActive = 'no';
+		if ( myTimeOutId ) {
+			window.clearTimeout ( myTimeOutId );
+			myTimeOutId = null;
+		}
+	}
+
+	/*
+	--- myAppendRestartSlideShow function -----------------------------------------------------------------------------
+
+	-------------------------------------------------------------------------------------------------------------------
+	*/
+
+	function myAppendRestartSlideShow ( postText ) {
+		if ( ! document.querySelector ( '#' + myCurrentPost.id + ' .cyRestartSlideShow' ) ) {
+			let restartElement = document.createElement ( 'p' );
+			restartElement.innerHTML = dotclearVars.restartSlideShow;
+			restartElement.classList.add ( 'cyRestartSlideShow' );
+			postText.appendChild ( restartElement );
+		}
+	}
+
+	/*
+	--- myIsPostText function -----------------------------------------------------------------------------------------
+
+	-------------------------------------------------------------------------------------------------------------------
+	*/
+
+	function myIsPostText ( ) {
+		let postText = document.querySelector ( '#' + myCurrentPost.id + ' .cyPostText' );
+		if ( postText ) {
+			myStopSlideShow ( );
+			myAppendRestartSlideShow ( postText );
 		}
 	}
 
@@ -120,6 +160,7 @@ function slideShow ( dotclearVars ) {
 			myCurrentPost = myPosts.item ( myCurrentPostIndex );
 			myCurrentPost.classList.remove ( 'cyHidden' );
 			myResizeCurrentPost ( );
+			myIsPostText ( );
 			if ( 'yes' === mySlideShowActive ) {
 				if ( myTimeOutId ) {
 					window.clearTimeout ( myTimeOutId );
@@ -136,40 +177,37 @@ function slideShow ( dotclearVars ) {
 	*/
 
 	function myOnKeyDown ( keyBoardEvent ) {
+		const MIN_SLIDE_SHOW_DURATION = 2000;
+		const MAX_SLIDE_SHOW_DURATION = 30000;
+		const SLIDE_SHOW_INTERVAL = 1000;
 		if ( MY_MIN_SLIDE_SHOW_WIDTH < window.innerWidth ) {
 			switch ( keyBoardEvent.key ) {
 			case 'Escape' :
 			case 'Esc' :
 				if ( 'yes' === mySlideShowActive ) {
-					localStorage.setItem ( 'slideShowActive', 'no' );
-					mySlideShowActive = 'no';
-					if ( myTimeOutId ) {
-						window.clearTimeout ( myTimeOutId );
-						myTimeOutId = null;
-					}
+					myStopSlideShow ( );
 				}
 				else {
 					localStorage.setItem ( 'slideShowActive', 'yes' );
 					mySlideShowActive = 'yes';
 					myShowNextPreviousPost ( NEXT );
-					myTimeOutId = window.setTimeout ( myShowNextPreviousPost, myTimeOutDuration );
 				}
 				break;
 			case '+' :
 				myTimeOutDuration =
-					MY_MAX_SLIDE_SHOW_DURATION === myTimeOutDuration
+					MAX_SLIDE_SHOW_DURATION === myTimeOutDuration
 						?
-						MY_MAX_SLIDE_SHOW_DURATION
-						: myTimeOutDuration + MY_SLIDE_SHOW_INTERVAL;
+						MAX_SLIDE_SHOW_DURATION
+						: myTimeOutDuration + SLIDE_SHOW_INTERVAL;
 				localStorage.setItem ( 'timeOutDuration', myTimeOutDuration );
 				break;
 			case '-' :
 				myTimeOutDuration =
-					MY_MIN_SLIDE_SHOW_DURATION === myTimeOutDuration
+					MIN_SLIDE_SHOW_DURATION === myTimeOutDuration
 						?
-						MY_MIN_SLIDE_SHOW_DURATION
+						MIN_SLIDE_SHOW_DURATION
 						:
-						myTimeOutDuration - MY_SLIDE_SHOW_INTERVAL;
+						myTimeOutDuration - SLIDE_SHOW_INTERVAL;
 				localStorage.setItem ( 'timeOutDuration', myTimeOutDuration );
 				break;
 			case 'ArrowRight' :
@@ -237,7 +275,7 @@ function slideShow ( dotclearVars ) {
 							?
 							'auto'
 							:
-							'url(' + myBlogThemeUrl + '/sharedpictures/right.png) 16 16,e-resize';
+							'url(' + dotclearVars.blogThemeUrl + '/sharedpictures/right.png) 16 16,e-resize';
 				}
 				else {
 					document.body.style.cursor =
@@ -245,7 +283,7 @@ function slideShow ( dotclearVars ) {
 							?
 							'auto'
 							:
-							'url(' + myBlogThemeUrl + '/sharedpictures/left.png) 16 16,w-resize';
+							'url(' + dotclearVars.blogThemeUrl + '/sharedpictures/left.png) 16 16,w-resize';
 				}
 			}
 		}
@@ -293,6 +331,7 @@ function slideShow ( dotclearVars ) {
 			if ( myCurrentPost ) {
 				myCurrentPost.classList.remove ( 'cyHidden' );
 				myResizeCurrentPost ( );
+				myIsPostText ( );
 			}
 		}
 	}
@@ -305,21 +344,20 @@ function slideShow ( dotclearVars ) {
 
 	function myHideFooter ( ) {
 		if ( MY_MIN_SLIDE_SHOW_WIDTH < window.innerWidth ) {
-			if ( document.getElementById ( 'cyPagination' ) ) {
-				document.getElementById ( 'cyPagination' ).classList.add ( 'cyHidden' );
-			}
-			if ( document.getElementById ( 'cyPageCounter' ) ) {
-				document.getElementById ( 'cyPageCounter' ).classList.add ( 'cyHidden' );
-			}
-			if ( document.getElementById ( 'cyCopyright' ) ) {
-				document.getElementById ( 'cyCopyright' ).classList.add ( 'cyHidden' );
-			}
-			if ( document.getElementById ( 'cyMenuBottom' ) ) {
-				document.getElementById ( 'cyMenuBottom' ).classList.add ( 'cyHidden' );
-			}
-			if ( document.getElementById ( 'cyFooter' ) ) {
-				document.getElementById ( 'cyFooter' ).classList.add ( 'cyHidden' );
-			}
+			[
+				'cyPagination',
+				'cyPageCounter',
+				'cyCopyright',
+				'cyMenuBottom',
+				'cyFooter'
+			].forEach (
+				elementId => {
+					let elem = document.getElementById ( elementId );
+					if ( elem ) {
+						elem.classList.add ( 'cyHidden' );
+					}
+				}
+			);
 		}
 	}
 

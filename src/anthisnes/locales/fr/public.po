@@ -444,6 +444,9 @@ msgstr "Publié le "
 msgid "cyPostTagsText"
 msgstr ""
 
+msgid "cyRestartSlideShow"
+msgstr "Appuyez sur la touche Esc pour relancer le défilement des photos"
+
 msgid "cySiteDescription"
 msgstr "Photos d'Anthisnes, au fil des saisons, au gré du vent"
 
