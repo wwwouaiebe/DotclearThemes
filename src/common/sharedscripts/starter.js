@@ -31,6 +31,7 @@ Doc reviewed 20200527
 import { colorChooser } from './ColorChooser.js';
 import { menuModifier } from './MenuModifier.js';
 import { slideShow } from './SlideShow.js';
+import { computeFR, computeEN } from './Mail.js';
 
 const ZERO = 0;
 
@@ -88,8 +89,20 @@ if ( haveLocalStorage ( ) ) {
 	if ( document.getElementById ( 'cyMainMenu' ) ) {
 		document.querySelector ( 'body' ).classList.add ( 'cyJSPage' );
 		menuModifier ( );
-		slideShow ( dotclearVars );
+		if ( document.getElementById ( 'cyHome' ) ) {
+			slideShow ( dotclearVars );
+		}
 	}
+}
+
+let mailButtonFr = document.getElementById ( 'cyButtonFR' );
+if ( mailButtonFr ) {
+	mailButtonFr.addEventListener ( 'click', computeFR );
+}
+
+let mailButtonEn = document.getElementById ( 'cyButtonEN' );
+if ( mailButtonEn ) {
+	mailButtonEn.addEventListener ( 'click', computeEN );
 }
 
 /*
