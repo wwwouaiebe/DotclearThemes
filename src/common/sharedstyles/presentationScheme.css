@@ -326,6 +326,11 @@ body.cyAlternateColor .cyPictureLandscape
 {
 	padding-top: 3em;
 }
+.cyMap
+{
+	width: 100%;
+	height: 800px;
+}
 /* Fin des pages */
 /* Pagination */
 #cyPagination
