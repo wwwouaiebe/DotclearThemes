@@ -34,6 +34,7 @@ import { slideShow } from './SlideShow.js';
 import { computeFR, computeEN } from './Mail.js';
 
 const ZERO = 0;
+const MINUS1 = -1;
 
 /*
 --- getDotclearVars function ------------------------------------------------------------------------------------------
@@ -89,7 +90,8 @@ if ( haveLocalStorage ( ) ) {
 	if ( document.getElementById ( 'cyMainMenu' ) ) {
 		document.querySelector ( 'body' ).classList.add ( 'cyJSPage' );
 		menuModifier ( );
-		if ( document.getElementById ( 'cyHome' ) ) {
+		let bodyId = document.querySelector ( 'body' ).id;
+		if ( MINUS1 !== [ 'cyHome', 'cyCategory', 'cyTag', 'cyArchiveMonth' ].indexOf ( bodyId ) ) {
 			slideShow ( dotclearVars );
 		}
 	}
